@@ -1,0 +1,14 @@
+.idea
+*.iml
+out
+target
+.metadata
+.recommenders
+RemoteSystemsTempFiles
+.classpath
+.project
+.settings
+.class
+bin
+build
+WebContent
