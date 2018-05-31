@@ -1,0 +1,11 @@
+@(channels : List[Channel])
+
+@layout("Twitch Tags - Channels"){
+    <h1>All Channels</h1>
+    @for(channel <- channels){
+        <img src="@channel.getLogo">
+        <a href="@routes.ChannelController.show(channel.getId)">@channel.getName</a>
+        <p>3 first tags</p>
+        <br>
+    }
+}

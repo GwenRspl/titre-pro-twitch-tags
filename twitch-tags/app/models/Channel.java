@@ -1,16 +1,16 @@
 package models;
 
-import io.ebean.Model;
+import com.avaje.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
+
 
 @Entity
 public class Channel extends Model {
 
     @Id
-    private Long id;
+    private int id;
 
     private String name;
 
@@ -22,6 +22,66 @@ public class Channel extends Model {
 
     private Long followerCount;
 
-    private List tags;
+    private boolean partner;
 
+    //private List tags;
+
+    public static Finder<Integer,Channel> find = new Finder<>(Channel.class);
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public Long getFollowerCount() {
+        return followerCount;
+    }
+
+    public void setFollowerCount(Long followerCount) {
+        this.followerCount = followerCount;
+    }
+
+    public boolean isPartner() {
+        return partner;
+    }
+
+    public void setPartner(boolean partner) {
+        this.partner = partner;
+    }
 }

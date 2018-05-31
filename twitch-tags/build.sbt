@@ -1,28 +1,15 @@
-name := """play-java-starter-example"""
+name := """BookStoreApp"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+lazy val root = (project in file(".")).enablePlugins(PlayJava,PlayEbean)
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.11.11"
 
-crossScalaVersions := Seq("2.11.12", "2.12.4")
-
-libraryDependencies += guice
-
-// Test Database
-libraryDependencies += "com.h2database" % "h2" % "1.4.196"
-
-// Testing libraries for dealing with CompletionStage...
-libraryDependencies += "org.assertj" % "assertj-core" % "3.6.2" % Test
-libraryDependencies += "org.awaitility" % "awaitility" % "2.0.0" % Test
-
-// Make verbose tests
-testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
-
-libraryDependencies += javaJdbc
 libraryDependencies += jdbc
+libraryDependencies += javaJdbc
+libraryDependencies += cache
 libraryDependencies += javaWs
 
-// https://mvnrepository.com/artifact/org.postgresql/postgresql
+
 libraryDependencies += "org.postgresql" % "postgresql" % "42.2.1"

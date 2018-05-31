@@ -1,6 +1,6 @@
 [<img src="https://img.shields.io/travis/playframework/play-java-starter-example.svg"/>](https://travis-ci.org/playframework/play-java-starter-example)
 
-# play-java-starter-example
+# BookStore App in Play 
 
 This is a starter application that shows how Play works.  Please see the documentation at https://www.playframework.com/documentation/latest/Home for more details.
 
@@ -47,6 +47,10 @@ There are several demonstration files available in this template.
   when the application stops.
 
 ## Filters
+
+- Filters.java:
+
+  Creates the list of HTTP filters used by your application.
 
 - ExampleFilter.java
 

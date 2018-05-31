@@ -1,0 +1,15 @@
+@(user: User)
+
+@layout("Twitch Tags - Account") {
+    <h2>My Account</h2>
+
+    <h3>Username</h3>
+    <p>@user.getUsername</p>
+    <h3>Email</h3>
+    <p>@user.getEmail</p>
+
+    <button>Change email</button>
+    <button>Change password</button>
+
+
+}

@@ -1,0 +1,25 @@
+@(channel: Channel)
+
+    @layout("Twitch Tags - " + channel.getName) {
+        <img src="@channel.getLogo">
+        <h2>@channel.getName</h2> @channel.getLanguage
+        <p>Followers : @channel.getFollowerCount</p>
+        <p><a href="@channel.getUrl">@channel.getUrl</a></p>
+        <p>Partner : @if(channel.isPartner) {
+            YES
+        } else {
+            NO
+        }
+        </p>
+
+        <h2>Tags</h2>
+        <h4>Click on a tag to endorse it !</h4>
+        <p>List of tags ....</p>
+        <a href="#">See more</a>
+
+        <h3>Want to add a tag to this channel ?</h3>
+        <input type="text"><button>Submit</button><br>
+        <a href="#">Don't find the tag you are looking for ? Submit a new tag here!</a>
+
+
+    }

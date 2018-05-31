@@ -1,0 +1,51 @@
+@(title : String )(body: Html)
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/style.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    </head>
+    <body>
+
+
+        <header>
+            <a href="@routes.HomeController.index()">Twitch Tags</a>
+
+            <button>Submit a tag</button>
+            <button>Submit a channel</button>
+            <button>Sign in</button>
+            <button>Sign up</button>
+        </header>
+
+
+        <div class="container">
+            @body
+        </div>
+
+        <footer>
+
+            <div class="row">
+                <div class="column">
+                    <h2>Feedback</h2>
+                    <p>Contact us</p>
+                    <p>Donate</p>
+                </div>
+                <div class="column">
+                    <h2>Social</h2>
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                </div>
+                <div class="column">
+                    <h2>About</h2>
+                    <p>© 2018 Twitch Tags</p>
+                    <p>Powered by Play</p>
+                </div>
+            </div>
+
+
+        </footer>
+
+        <script src="@routes.Assets.versioned("js/jquery-3.2.1.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/custom.js")" type="text/javascript"></script>
+    </body>
+</html>
