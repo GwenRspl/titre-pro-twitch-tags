@@ -1,4 +1,4 @@
-name := """BookStoreApp"""
+name := """TwitchTags"""
 
 version := "1.0-SNAPSHOT"
 

@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class User extends Model {
+public class WebsiteUser extends Model {
 
     @Id
     private int id;
@@ -15,7 +15,7 @@ public class User extends Model {
     private String email;
     private String password;
 
-    public static Finder<Integer,User> find = new Finder<>(User.class);
+    public static Finder<Integer, WebsiteUser> find = new Finder<>(WebsiteUser.class);
 
     public int getId() {
         return id;

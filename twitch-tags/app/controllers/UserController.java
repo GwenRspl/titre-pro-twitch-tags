@@ -1,7 +1,6 @@
 package controllers;
 
-import models.Channel;
-import models.User;
+import models.WebsiteUser;
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -14,15 +13,15 @@ import java.util.List;
 public class UserController extends Controller {
 
     public Result showAll(){
-        List<User> users = User.find.all();
+        List<WebsiteUser> websiteUsers = WebsiteUser.find.all();
         return TODO;
     }
 
     public Result show(int id){
-        User user = User.find.byId(id);
-        if(user==null){
+        WebsiteUser websiteUser = WebsiteUser.find.byId(id);
+        if(websiteUser ==null){
             return notFound(_404.render());
         }
-        return ok(show.render(user));
+        return ok(show.render(websiteUser));
     }
 }

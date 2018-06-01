@@ -13,13 +13,21 @@ create table book (
 
 create table channel (
   id                            serial not null,
-  name                          varchar(255),
+  channel_name                  varchar(255),
   url                           varchar(255),
-  language                      varchar(255),
+  channel_language              varchar(255),
   logo                          varchar(255),
   follower_count                bigint,
   partner                       boolean,
   constraint pk_channel primary key (id)
+);
+
+create table website_user (
+  id                            serial not null,
+  username                      varchar(255),
+  email                         varchar(255),
+  password                      varchar(255),
+  constraint pk_website_user primary key (id)
 );
 
 
@@ -28,4 +36,6 @@ create table channel (
 drop table if exists book cascade;
 
 drop table if exists channel cascade;
+
+drop table if exists website_user cascade;
 

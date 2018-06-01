@@ -12,11 +12,11 @@ public class Channel extends Model {
     @Id
     private int id;
 
-    private String name;
+    private String channelName;
 
     private String url;
 
-    private String language;
+    private String ChannelLanguage;
 
     private String logo;
 
@@ -37,12 +37,12 @@ public class Channel extends Model {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getChannelName() {
+        return channelName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
     }
 
     public String getUrl() {
@@ -53,12 +53,12 @@ public class Channel extends Model {
         this.url = url;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getChannelLanguage() {
+        return ChannelLanguage;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setChannelLanguage(String channelLanguage) {
+        this.ChannelLanguage = channelLanguage;
     }
 
     public String getLogo() {

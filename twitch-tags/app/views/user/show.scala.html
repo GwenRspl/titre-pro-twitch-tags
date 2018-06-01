@@ -1,12 +1,12 @@
-@(user: User)
+@(websiteUser: WebsiteUser)
 
 @layout("Twitch Tags - Account") {
     <h2>My Account</h2>
 
     <h3>Username</h3>
-    <p>@user.getUsername</p>
+    <p>@websiteUser.getUsername</p>
     <h3>Email</h3>
-    <p>@user.getEmail</p>
+    <p>@websiteUser.getEmail</p>
 
     <button>Change email</button>
     <button>Change password</button>

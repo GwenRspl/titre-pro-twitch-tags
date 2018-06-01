@@ -1,8 +1,8 @@
 @(channel: Channel)
 
-    @layout("Twitch Tags - " + channel.getName) {
+    @layout("Twitch Tags - " + channel.getChannelName) {
         <img src="@channel.getLogo">
-        <h2>@channel.getName</h2> @channel.getLanguage
+        <h2>@channel.getChannelName</h2> @channel.getChannelLanguage
         <p>Followers : @channel.getFollowerCount</p>
         <p><a href="@channel.getUrl">@channel.getUrl</a></p>
         <p>Partner : @if(channel.isPartner) {
