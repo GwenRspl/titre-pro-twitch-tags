@@ -17,7 +17,7 @@ public class UserController extends Controller {
         return TODO;
     }
 
-    public Result show(int id){
+    public Result show(Long id){
         WebsiteUser websiteUser = WebsiteUser.find.byId(id);
         if(websiteUser ==null){
             return notFound(_404.render());

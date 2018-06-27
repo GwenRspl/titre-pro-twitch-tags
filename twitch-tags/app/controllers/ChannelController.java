@@ -16,7 +16,7 @@ public class ChannelController extends Controller {
         return ok(showAll.render(channels));
     }
 
-    public Result show(int id){
+    public Result show(Long id){
         Channel channel = Channel.find.byId(id);
         if(channel==null){
             return notFound(_404.render());

@@ -5,9 +5,9 @@
 GET     /                           controllers.HomeController.index
 
 GET     /channels                   controllers.ChannelController.showAll()
-GET     /channels/:id               controllers.ChannelController.show(id: Integer)
+GET     /channels/:id               controllers.ChannelController.show(id: Long)
 
-GET     /account/:id                controllers.UserController.show(id: Integer)
+GET     /account/:id                controllers.UserController.show(id: Long)
 
 
 GET     /books                      controllers.BooksController.index()

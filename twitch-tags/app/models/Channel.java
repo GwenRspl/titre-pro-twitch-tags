@@ -4,13 +4,17 @@ import com.avaje.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import java.util.List;
+import java.util.Set;
 
 
 @Entity
 public class Channel extends Model {
 
     @Id
-    private int id;
+    private Long channelId;
 
     private String channelName;
 
@@ -24,17 +28,18 @@ public class Channel extends Model {
 
     private boolean partner;
 
-    //private List tags;
+    @OneToMany(mappedBy = "channel")
+    private Set<ChannelTagUserLink> channelTagUserLinks;
 
-    public static Finder<Integer,Channel> find = new Finder<>(Channel.class);
+    public static Finder<Long,Channel> find = new Finder<>(Channel.class);
 
 
-    public int getId() {
-        return id;
+    public Long getChannelId() {
+        return channelId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setChannelId(Long channelId) {
+        this.channelId = channelId;
     }
 
     public String getChannelName() {
@@ -83,5 +88,14 @@ public class Channel extends Model {
 
     public void setPartner(boolean partner) {
         this.partner = partner;
+    }
+
+
+    public Set<ChannelTagUserLink> getChannelTagUserLinks() {
+        return channelTagUserLinks;
+    }
+
+    public void setChannelTagUserLinks(Set<ChannelTagUserLink> channelTagUserLinks) {
+        this.channelTagUserLinks = channelTagUserLinks;
     }
 }

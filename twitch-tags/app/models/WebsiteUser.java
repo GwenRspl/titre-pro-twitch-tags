@@ -4,25 +4,30 @@ import com.avaje.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Entity
 public class WebsiteUser extends Model {
 
     @Id
-    private int id;
+    private Long websiteUserId;
 
     private String username;
     private String email;
     private String password;
 
-    public static Finder<Integer, WebsiteUser> find = new Finder<>(WebsiteUser.class);
+    @OneToMany(mappedBy = "websiteUser")
+    private Set<ChannelTagUserLink> channelTagUserLinks;
 
-    public int getId() {
-        return id;
+    public static Finder<Long, WebsiteUser> find = new Finder<>(WebsiteUser.class);
+
+    public Long getWebsiteUserId() {
+        return websiteUserId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setWebsiteUserId(Long websiteUserId) {
+        this.websiteUserId = websiteUserId;
     }
 
     public String getUsername() {
@@ -47,5 +52,13 @@ public class WebsiteUser extends Model {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<ChannelTagUserLink> getChannelTagUserLinks() {
+        return channelTagUserLinks;
+    }
+
+    public void setChannelTagUserLinks(Set<ChannelTagUserLink> channelTagUserLinks) {
+        this.channelTagUserLinks = channelTagUserLinks;
     }
 }

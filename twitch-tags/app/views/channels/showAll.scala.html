@@ -4,8 +4,11 @@
     <h1>All Channels</h1>
     @for(channel <- channels){
         <img src="@channel.getLogo">
-        <a href="@routes.ChannelController.show(channel.getId)">@channel.getChannelName</a>
-        <p>3 first tags</p>
+        <a href="@routes.ChannelController.show(channel.getChannelId)">@channel.getChannelName</a>
+        <p>@for(link <- channel.getChannelTagUserLinks.take(1)){
+            @link.getTag.getTagName
+        }</p>
+
         <br>
     }
 }
