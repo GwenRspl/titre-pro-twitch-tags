@@ -1,0 +1,36 @@
+.channel-name {
+    font-size: 2em;
+    /* margin-top: 5%;
+    margin-bottom: 10%; */
+}
+
+.tags-title {
+    font-size: 1.25em;
+    margin-bottom: 2%;
+}
+
+.tags-subtitle {
+    font-style: italic;
+    font-size: 0.60em;
+}
+
+.see-more {
+    float: right;
+    font-size: 0.80em;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+
+.profile {
+    width: 50%;
+}
+
+.add-tag-title {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.add-tag-subtitle {
+    margin-top: 5%;
+    font-size: 0.80em;
+}

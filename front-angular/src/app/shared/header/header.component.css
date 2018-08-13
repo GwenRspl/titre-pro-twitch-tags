@@ -1,0 +1,33 @@
+.header {
+	background-color: #6441a4;
+}
+
+.navbar-item {
+    color: white;
+}
+
+.navbar-item:hover {
+    background-color: #4a3a7a;
+    color: white;
+}
+
+.active-link {
+    background-color: #4a3a7a;
+}
+
+.navbar-brand {
+    color:white;
+    font-size: 1.25em;
+}
+
+.navbar-brand:hover {
+    color:white;
+}
+
+.navbar-start {
+    margin-left: 30%;
+}
+
+.navbar-brand {
+    margin-left: 5%;
+}
