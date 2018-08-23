@@ -1,0 +1,13 @@
+img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.channel-name {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 1%;
+}
