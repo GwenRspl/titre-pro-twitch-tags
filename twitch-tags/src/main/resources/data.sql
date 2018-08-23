@@ -1,0 +1,3 @@
+INSERT INTO public.channel(id, affiliate, avatar, followers, language, name, partner, url)
+	VALUES (1, true , 'https://static-cdn.jtvnw.net/jtv_user_pictures/e1d1c7bf-7e51-4e55-ba08-98451a3f9fc2-profile_image-300x300.png', 327, 'FR', 'Naevyah', false, 'https://twitch.tv/naevyah'),
+        (2, false , 'https://static-cdn.jtvnw.net/jtv_user_pictures/redfanny_-profile_image-25848107b59dae96-300x300.jpeg', 4432, 'FR', 'RedFanny', false, 'https://twitch.tv/redfanny_');
