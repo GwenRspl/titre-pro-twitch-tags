@@ -10,9 +10,7 @@ public interface ChannelTagUserLinkService {
 
     Optional<ChannelTagUserLink> getOne(Long id);
 
-    ChannelTagUserLink create(ChannelTagUserLink link);
-
-    ChannelTagUserLink update(Long id, ChannelTagUserLink link);
+    ChannelTagUserLink create(Long channelId, Long tagId, Long userId);
 
     void delete(Long id);
 }

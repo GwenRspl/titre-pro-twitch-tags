@@ -1,6 +1,9 @@
 package com.gwenrspl.twitchtags.service;
 
+import com.gwenrspl.twitchtags.model.Channel;
 import com.gwenrspl.twitchtags.model.ChannelTagUserLink;
+import com.gwenrspl.twitchtags.model.Tag;
+import com.gwenrspl.twitchtags.model.User;
 import com.gwenrspl.twitchtags.repository.ChannelRepository;
 import com.gwenrspl.twitchtags.repository.ChannelTagUserLinkRepository;
 import com.gwenrspl.twitchtags.repository.TagRepository;
@@ -35,13 +38,18 @@ public class ChannelTagUserLinkServiceImpl implements ChannelTagUserLinkService 
     }
 
     @Override
-    public ChannelTagUserLink create(final ChannelTagUserLink link) {
+    public ChannelTagUserLink create(Long channelId, Long tagId, Long userId) {
+        final ChannelTagUserLink link = new ChannelTagUserLink();
+        final Optional<Channel> channel = this.channelRepository.findById(channelId);
+        final Optional<Tag> tag = this.tagRepository.findById(tagId);
+        final Optional<User> user = this.userRepository.findById(userId);
+        if (!channel.isPresent() || !tag.isPresent() || !user.isPresent()) {
+            return null;
+        }
+        link.setChannel(channel.get());
+        link.setTag(tag.get());
+        link.setUser(user.get());
         return this.channelTagUserLinkRepository.save(link);
-    }
-
-    @Override
-    public ChannelTagUserLink update(final Long id, final ChannelTagUserLink link) {
-        return null;
     }
 
     @Override
