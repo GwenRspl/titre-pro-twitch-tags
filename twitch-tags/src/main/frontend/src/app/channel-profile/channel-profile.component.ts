@@ -41,10 +41,7 @@ export class ChannelProfileComponent implements OnInit {
     // }
     this.activatedRoute.params.subscribe((params: Params) => {
       const id = params['id'];
-      this.service.getChannel(id).subscribe(channel => {
-        this.channel = channel;
-        //this.tags = this.channel.tags;
-      });
+      this.channel = this.service.getChannel(id);
     });
 
   }

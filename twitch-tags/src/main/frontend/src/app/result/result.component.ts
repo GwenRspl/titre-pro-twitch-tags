@@ -19,9 +19,7 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.channelService.getChannels().subscribe((result: Channel[]) => {
-      this.channels = result;
-    });
+    this.channels = this.channelService.getChannels();
   }
 
   goToProfile(id: number) {
@@ -33,5 +31,14 @@ export class ResultComponent implements OnInit {
     // });
     // this.channelService.putChannel(channelToGoTo);
   }
+
+  onGet() {
+    this.channelService.getChannelsFromApi()
+      .subscribe(
+        (channels: any[]) => this.channels = channels,
+        (error) => console.log(error)
+      );
+  }
+
 
 }
