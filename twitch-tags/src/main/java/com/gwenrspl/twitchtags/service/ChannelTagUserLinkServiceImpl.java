@@ -10,7 +10,10 @@ import com.gwenrspl.twitchtags.repository.TagRepository;
 import com.gwenrspl.twitchtags.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class ChannelTagUserLinkServiceImpl implements ChannelTagUserLinkService {
@@ -30,6 +33,27 @@ public class ChannelTagUserLinkServiceImpl implements ChannelTagUserLinkService 
     @Override
     public Iterable<ChannelTagUserLink> listAll() {
         return this.channelTagUserLinkRepository.findAll();
+    }
+
+    @Override
+    public Iterable<ChannelTagUserLink> findByChannel(Long channelId) {
+        return StreamSupport.stream(this.channelTagUserLinkRepository.findAll().spliterator(), false)
+                .filter(link -> link.getChannel().getId().equals(channelId))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public Iterable<ChannelTagUserLink> findByTag(Long tagId) {
+        return StreamSupport.stream(this.channelTagUserLinkRepository.findAll().spliterator(), false)
+                .filter(link -> link.getTag().getId().equals(tagId))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public Iterable<ChannelTagUserLink> findByUser(Long userId) {
+        return StreamSupport.stream(this.channelTagUserLinkRepository.findAll().spliterator(), false)
+                .filter(link -> link.getUser().getId().equals(userId))
+                .collect(Collectors.toList());
     }
 
     @Override

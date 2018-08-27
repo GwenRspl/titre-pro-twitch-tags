@@ -7,6 +7,9 @@ import java.util.Optional;
 public interface ChannelTagUserLinkService {
 
     Iterable<ChannelTagUserLink> listAll();
+    Iterable<ChannelTagUserLink> findByChannel(Long channelId);
+    Iterable<ChannelTagUserLink> findByTag(Long tagId);
+    Iterable<ChannelTagUserLink> findByUser(Long userId);
 
     Optional<ChannelTagUserLink> getOne(Long id);
 

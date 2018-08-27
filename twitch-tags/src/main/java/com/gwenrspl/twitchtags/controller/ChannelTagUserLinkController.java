@@ -27,6 +27,21 @@ public class ChannelTagUserLinkController {
         return this.service.getOne(id);
     }
 
+    @GetMapping("/by-channel/{id}")
+    public Iterable< ChannelTagUserLink> searchByChannel(@PathVariable Long id) {
+        return this.service.findByChannel(id);
+    }
+
+    @GetMapping("/by-tag/{id}")
+    public Iterable< ChannelTagUserLink> searchByTag(@PathVariable Long id) {
+        return this.service.findByTag(id);
+    }
+
+    @GetMapping("/by-user/{id}")
+    public Iterable< ChannelTagUserLink> searchByUser(@PathVariable Long id) {
+        return this.service.findByUser(id);
+    }
+
     @PostMapping("/create")
     public  ChannelTagUserLink create(@RequestBody Map<String, Long> payload) {
         Long channelId = payload.get("channelId");

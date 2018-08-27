@@ -1,8 +1,6 @@
 package com.gwenrspl.twitchtags.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -20,17 +18,17 @@ public class ChannelTagUserLink {
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "channel_id")
-    @JsonIgnore
+    @JsonManagedReference
     private Channel channel;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "user_id")
-    @JsonIgnore
+    @JsonManagedReference
     private User user;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "tag_id")
-    @JsonIgnore
+    @JsonManagedReference
     private Tag tag;
 
     public ChannelTagUserLink() {

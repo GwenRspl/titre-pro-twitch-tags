@@ -1,4 +1,5 @@
 export interface Tag {
-    name: string;
-    numberOfClicks: number;
+  id: number;
+  name: string;
+  numberOfClicks: number;
 }
