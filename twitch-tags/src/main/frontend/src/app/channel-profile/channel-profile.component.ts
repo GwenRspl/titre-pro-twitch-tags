@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Location} from '@angular/common';
 
-import { Channel } from '../shared/models/channel';
-import { ChannelsService } from '../services/channels.service';
-import { Tag } from '../shared/models/tag';
+import {Channel} from '../shared/models/channel';
+import {ChannelsService} from '../services/channels.service';
 
 @Component({
   selector: 'app-channel-profile',
@@ -14,13 +13,14 @@ import { Tag } from '../shared/models/tag';
 
 export class ChannelProfileComponent implements OnInit {
   channel: Channel;
-  tags: Tag[];
+  //tags: Tag[];
   seeMoreTags = false;
 
   constructor(private route: Router,
-    private activatedRoute: ActivatedRoute,
-    private location: Location,
-    private service: ChannelsService) { }
+              private activatedRoute: ActivatedRoute,
+              private location: Location,
+              private service: ChannelsService) {
+  }
 
   ngOnInit() {
     this.getChannelAndTags();
@@ -43,7 +43,7 @@ export class ChannelProfileComponent implements OnInit {
       const id = params['id'];
       this.service.getChannel(id).subscribe(channel => {
         this.channel = channel;
-        this.tags = this.channel.tags;
+        //this.tags = this.channel.tags;
       });
     });
 

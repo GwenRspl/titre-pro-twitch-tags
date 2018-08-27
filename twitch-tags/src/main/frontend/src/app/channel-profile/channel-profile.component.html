@@ -65,24 +65,24 @@
     </div>
     <div class="column is-half">
       <div class="is-vcentered">
-          <div class="channel-name">{{ channel.name }}</div>
-          <div>Followers : {{ channel.followers }}</div>
-          <div *ngIf="channel.partner === true; else notPartner">
-            Partner: Oui
-          </div>
-          <ng-template #notPartner>
-            <ng-container *ngIf="channel.affiliate === true; else notAffiliate">
-              Affiliate: yes
-            </ng-container>
-          </ng-template>
-          <ng-template #notAffiliate>
-            Affiliate: no
-          </ng-template>
-          <div>
-            <a href="{{ channel.url }}" target="_blank">Go to Twitch channel </a>
-          </div>
+        <div class="channel-name">{{ channel.name }}</div>
+        <div>Followers : {{ channel.followers }}</div>
+        <div *ngIf="channel.partner === true; else notPartner">
+          Partner: Oui
+        </div>
+        <ng-template #notPartner>
+          <ng-container *ngIf="channel.affiliate === true; else notAffiliate">
+            Affiliate: yes
+          </ng-container>
+        </ng-template>
+        <ng-template #notAffiliate>
+          Affiliate: no
+        </ng-template>
+        <div>
+          <a href="{{ channel.url }}" target="_blank">Go to Twitch channel </a>
+        </div>
       </div>
-      
+
     </div>
   </div>
   <div class="columns">
@@ -91,22 +91,22 @@
         <span class="tags-subtitle">Click on a tag to endorse it</span>
       </div>
 
-      <div *ngIf="seeMoreTags === false; else seeMore">
-        <div class="field is-grouped is-grouped-multiline">
-          <div class="control" *ngFor="let tag of (tags | limitTag:5)">
-            <app-tag [tag]="tag"></app-tag>
-          </div>
-        </div>
+      <!--<div *ngIf="seeMoreTags === false; else seeMore">-->
+      <!--<div class="field is-grouped is-grouped-multiline">-->
+      <!--<div class="control" *ngFor="let tag of (tags | limitTag:5)">-->
+      <!--<app-tag [tag]="tag"></app-tag>-->
+      <!--</div>-->
+      <!--</div>-->
 
-      </div>
-      <ng-template #seeMore>
-          <div class="field is-grouped is-grouped-multiline">
-              <div class="control" *ngFor="let tag of tags">
-                <app-tag [tag]="tag"></app-tag>
-              </div>
-            </div>
-      </ng-template>
-      <a *ngIf="tags.length > 5" (click)="toggleTags()" class="see-more">See more</a>
+      <!--</div>-->
+      <!--<ng-template #seeMore>-->
+      <!--<div class="field is-grouped is-grouped-multiline">-->
+      <!--<div class="control" *ngFor="let tag of tags">-->
+      <!--<app-tag [tag]="tag"></app-tag>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</ng-template>-->
+      <!--<a *ngIf="tags.length > 5" (click)="toggleTags()" class="see-more">See more</a>-->
     </div>
   </div>
   <div class="columns">
@@ -118,7 +118,8 @@
         <input type="text" size="30">
         <button p-button type="button">Submit</button>
       </div>
-      <a (click)="goToSubmitTag()" class="add-tag-subtitle">Don't find the tag you are looking for ? Submit a new one here!</a>
+      <a (click)="goToSubmitTag()" class="add-tag-subtitle">Don't find the tag you are looking for ? Submit a new one
+        here!</a>
     </div>
   </div>
 </div>

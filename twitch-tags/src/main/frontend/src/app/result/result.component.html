@@ -3,9 +3,9 @@
     <img routerLink="/profile/{{channel.id}}" src="{{channel.avatar}}" (click)="goToProfile(channel.id)">
     <div class="channel-name">{{channel.name}}</div>
 
-      <div class="field is-grouped is-grouped-multiline">
-          <div class="control" *ngFor="let tag of (channel.tags | limitTag:2)">
-              <app-tag [tag]="tag"></app-tag>
-            </div>
-      </div>
+    <!--<div class="field is-grouped is-grouped-multiline">-->
+    <!--<div class="control" *ngFor="let tag of (channel.tags | limitTag:2)">-->
+    <!--<app-tag [tag]="tag"></app-tag>-->
+    <!--</div>-->
+    <!--</div>-->
   </div>
