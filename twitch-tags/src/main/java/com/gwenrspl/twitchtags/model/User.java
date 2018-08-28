@@ -1,9 +1,7 @@
 package com.gwenrspl.twitchtags.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.gwenrspl.twitchtags.converter.ListChannelTagUserLinkConverter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -13,7 +11,6 @@ import java.util.List;
 @Entity
 @Data
 @AllArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Table(name = "website_user")
 public class User {
 
@@ -25,7 +22,7 @@ public class User {
     private String password;
     private boolean admin;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonBackReference
+    @JsonSerialize(converter = ListChannelTagUserLinkConverter.class)
     private List<ChannelTagUserLink> channelTagUserLinks;
 
     public User() {

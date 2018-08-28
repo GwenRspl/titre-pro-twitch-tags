@@ -22,7 +22,7 @@ public class ChannelController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Channel> getOne(@PathVariable Long id) {
+    public Optional<Channel> getOne(@PathVariable final Long id) {
         return this.service.getOne(id);
     }
 
@@ -32,12 +32,12 @@ public class ChannelController {
     }
 
     @PutMapping("/{id}")
-    public Channel update(@PathVariable Long id, @RequestBody Channel channel) {
+    public Channel update(@PathVariable final Long id, @RequestBody final Channel channel) {
         return this.service.update(id, channel);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable final Long id) {
         this.service.delete(id);
     }
 
