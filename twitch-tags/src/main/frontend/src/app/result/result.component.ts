@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Channel} from '../shared/models/channel';
+import {Channel} from '../shared/models/channel.model';
 
 import {ChannelsService} from '../services/channels.service';
 
@@ -15,12 +15,10 @@ export class ResultComponent implements OnInit {
 
   constructor(private channelService: ChannelsService) {
     this.channels = [];
-    console.log("in contrusct");
   }
 
   ngOnInit() {
     this.getChannels();
-    console.log("on init");
   }
 
   getChannels() {
@@ -32,24 +30,4 @@ export class ResultComponent implements OnInit {
       () => console.log('done loading channels')
     );
   }
-
-  goToProfile(id: number) {
-    // let channelToGoTo: Channel;
-    // this.channels.forEach(channel => {
-    //   if (channel.id === id) {
-    //     channelToGoTo = channel;
-    //   }
-    // });
-    // this.channelService.putChannel(channelToGoTo);
-  }
-
-  // onGet() {
-  //   this.channelService.getChannels()
-  //     .subscribe(
-  //       (channels: any[]) => this.channels = channels,
-  //       (error) => console.log(error)
-  //     );
-  // }
-
-
 }

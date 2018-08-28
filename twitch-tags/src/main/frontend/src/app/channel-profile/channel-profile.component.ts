@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Data, Params, Router} from '@angular/router';
+import {ActivatedRoute, Data, Router} from '@angular/router';
 import {Location} from '@angular/common';
 
-import {Channel} from '../shared/models/channel';
+import {Channel} from '../shared/models/channel.model';
 import {ChannelsService} from '../services/channels.service';
 
 @Component({
@@ -44,15 +44,6 @@ export class ChannelProfileComponent implements OnInit {
         this.channel = data['channel']
       }
     );
-    // this.route.params.subscribe((params: Params) => {
-    //   const id = params['id'];
-    //   this.service.getChannel(id).subscribe(
-    //     (channel: Channel) => {
-    //       this.channel = channel;
-    //       console.log('finished loading');
-    //     }
-    //   );
-    // });
 
   }
 

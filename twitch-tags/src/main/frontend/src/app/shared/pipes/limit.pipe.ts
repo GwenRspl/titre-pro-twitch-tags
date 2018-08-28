@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Tag } from '../models/tag';
+import { Tag } from '../models/tag.model';
 
 @Pipe({
   name: 'limitTag'

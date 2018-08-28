@@ -1,5 +1,5 @@
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
-import {Channel} from "../shared/models/channel";
+import {Channel} from "../shared/models/channel.model";
 import {Observable} from "rxjs";
 import {ChannelsService} from "./channels.service";
 import {Injectable} from "@angular/core";
