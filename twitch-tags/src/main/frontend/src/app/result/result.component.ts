@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 
-import { Channel } from '../shared/models/channel';
+import {Channel} from '../shared/models/channel';
 
-import { ChannelsService } from '../services/channels.service';
+import {ChannelsService} from '../services/channels.service';
 
 
 @Component({
@@ -16,10 +14,23 @@ export class ResultComponent implements OnInit {
   channels: Channel[];
 
   constructor(private channelService: ChannelsService) {
+    this.channels = [];
+    console.log("in contrusct");
   }
 
   ngOnInit() {
-    this.channels = this.channelService.getChannels();
+    this.getChannels();
+    console.log("on init");
+  }
+
+  getChannels() {
+    this.channelService.getChannels().subscribe(
+      (channels: Channel[]) => {
+        this.channels = channels;
+      },
+      error => console.error(error),
+      () => console.log('done loading channels')
+    );
   }
 
   goToProfile(id: number) {
@@ -32,13 +43,13 @@ export class ResultComponent implements OnInit {
     // this.channelService.putChannel(channelToGoTo);
   }
 
-  onGet() {
-    this.channelService.getChannelsFromApi()
-      .subscribe(
-        (channels: any[]) => this.channels = channels,
-        (error) => console.log(error)
-      );
-  }
+  // onGet() {
+  //   this.channelService.getChannels()
+  //     .subscribe(
+  //       (channels: any[]) => this.channels = channels,
+  //       (error) => console.log(error)
+  //     );
+  // }
 
 
 }

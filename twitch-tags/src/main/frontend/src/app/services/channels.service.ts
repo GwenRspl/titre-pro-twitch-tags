@@ -1,50 +1,34 @@
-import {Injectable, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { Observable } from 'rxjs';
-
-import { Channel } from '../shared/models/channel';
+import {Channel} from '../shared/models/channel';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ChannelsService implements OnInit{
-  private _channels: Channel[];
+export class ChannelsService {
 
   private path = '/api/channels';
 
-  constructor(private http: HttpClient) { }
-
-  getChannelsFromApi() {
-    this.http.get<Channel[]>(this.path).pipe().subscribe(
-      (channels: Channel[]) => {
-        this.setChannels(channels);
-        return
-      }
-    );
+  constructor(private http: HttpClient) {
+    this.getChannels();
+    console.log("contructor of service");
   }
 
-  getChannel(id: number):Channel {
-    let foundChannel: Channel = null;
-    for(let channel of this._channels) {
-      if(channel.id === id){
-        foundChannel = channel;
-      }
-    }
-    return foundChannel;
-
+  getChannels() {
+    return this.http.get<Channel[]>(this.path);
   }
 
-  getChannels(): Channel[] {
-    return this._channels;
+  getChannel(id: number) {
+    const getPath = this.path + "/" + id;
+    return this.http.get<Channel>(getPath);
   }
 
-  setChannels(channels: Channel[]) {
-    this._channels = channels;
+  updateChannel(channel: Channel) {
+    const updatePath = this.path + "/" + channel.id;
+    this.http.put<Channel[]>(updatePath, channel);
   }
 
-  ngOnInit(): void {
-    this.getChannelsFromApi();
-  }
+
 }
 

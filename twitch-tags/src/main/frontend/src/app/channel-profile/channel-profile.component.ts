@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {ActivatedRoute, Data, Params, Router} from '@angular/router';
 import {Location} from '@angular/common';
 
 import {Channel} from '../shared/models/channel';
@@ -16,8 +16,8 @@ export class ChannelProfileComponent implements OnInit {
   //tags: Tag[];
   seeMoreTags = false;
 
-  constructor(private route: Router,
-              private activatedRoute: ActivatedRoute,
+  constructor(private router: Router,
+              private route: ActivatedRoute,
               private location: Location,
               private service: ChannelsService) {
   }
@@ -28,7 +28,7 @@ export class ChannelProfileComponent implements OnInit {
 
   getChannelAndTags(): void {
     // if (this.service.retrieveChannel() === null) {
-    //   this.activatedRoute.params.subscribe((params: Params) => {
+    //   this.route.params.subscribe((params: Params) => {
     //     const id = params['id'];
     //     this.service.getChannel(id).subscribe(channel => {
     //       this.channel = channel;
@@ -39,10 +39,20 @@ export class ChannelProfileComponent implements OnInit {
     //   this.channel = this.service.retrieveChannel();
     //   this.tags = this.channel.tags;
     // }
-    this.activatedRoute.params.subscribe((params: Params) => {
-      const id = params['id'];
-      this.channel = this.service.getChannel(id);
-    });
+    this.route.data.subscribe(
+      (data: Data) => {
+        this.channel = data['channel']
+      }
+    );
+    // this.route.params.subscribe((params: Params) => {
+    //   const id = params['id'];
+    //   this.service.getChannel(id).subscribe(
+    //     (channel: Channel) => {
+    //       this.channel = channel;
+    //       console.log('finished loading');
+    //     }
+    //   );
+    // });
 
   }
 
@@ -51,7 +61,7 @@ export class ChannelProfileComponent implements OnInit {
   }
 
   goToSubmitTag() {
-    this.route.navigate(['/submittag']);
+    this.router.navigate(['/submittag']);
   }
 
 }
