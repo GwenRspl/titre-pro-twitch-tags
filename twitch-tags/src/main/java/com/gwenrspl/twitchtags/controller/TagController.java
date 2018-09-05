@@ -4,10 +4,12 @@ import com.gwenrspl.twitchtags.model.Tag;
 import com.gwenrspl.twitchtags.service.TagService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/tags")
+@CrossOrigin(origins= "*")
 public class TagController {
 
     private TagService service;
@@ -17,12 +19,12 @@ public class TagController {
     }
 
     @GetMapping(value = {"", "/"})
-    public Iterable<Tag> listAll() {
+    public List<Tag> listAll() {
         return this.service.listAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Tag> getOne(@PathVariable Long id) {
+    public Tag getOne(@PathVariable Long id) {
         return this.service.getOne(id);
     }
 

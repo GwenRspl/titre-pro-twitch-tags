@@ -1,6 +1,6 @@
 <div class="columns is-multiline">
   <div class="column is-one-quarter" *ngFor="let channel of channels">
-    <img routerLink="/profile/{{channel.id}}" src="{{channel.avatar}}" (click)="goToProfile(channel.id)">
+    <img routerLink="/profile/{{channel.id}}" src="{{channel.avatar}}">
     <div class="channel-name">{{channel.name}}</div>
 
     <!--<div class="field is-grouped is-grouped-multiline">-->

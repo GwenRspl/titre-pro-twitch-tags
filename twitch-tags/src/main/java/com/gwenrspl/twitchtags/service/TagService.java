@@ -2,13 +2,18 @@ package com.gwenrspl.twitchtags.service;
 
 import com.gwenrspl.twitchtags.model.Tag;
 
+import javax.validation.constraints.Max;
+import java.util.List;
 import java.util.Optional;
 
 public interface TagService {
 
-    Iterable<Tag> listAll();
+    List<Tag> listAll();
 
-    Optional<Tag> getOne(Long id);
+    List<Tag> searchByName(String name);
+    Tag searchByNameStrict(String name);
+
+    Tag getOne(Long id);
 
     Tag create(Tag tag);
 

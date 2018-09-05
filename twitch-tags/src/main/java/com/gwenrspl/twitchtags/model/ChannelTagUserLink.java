@@ -1,6 +1,9 @@
 package com.gwenrspl.twitchtags.model;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.gwenrspl.twitchtags.converter.ChannelConverter;
+import com.gwenrspl.twitchtags.converter.TagConverter;
+import com.gwenrspl.twitchtags.converter.UserConverter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -9,26 +12,25 @@ import javax.persistence.*;
 @Entity
 @Data
 @AllArgsConstructor
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ChannelTagUserLink {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "channel_id")
-    @JsonManagedReference
+    @JsonSerialize(converter = ChannelConverter.class)
     private Channel channel;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "user_id")
-    @JsonManagedReference
+    @JsonSerialize(converter = UserConverter.class)
     private User user;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "tag_id")
-    @JsonManagedReference
+    @JsonSerialize(converter = TagConverter.class)
     private Tag tag;
 
     public ChannelTagUserLink() {
