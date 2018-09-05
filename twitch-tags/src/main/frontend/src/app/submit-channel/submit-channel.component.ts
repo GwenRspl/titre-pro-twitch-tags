@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ChannelsService} from "../services/channels.service";
 import {Channel} from "../shared/models/channel.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-submit-channel',
@@ -11,7 +12,7 @@ export class SubmitChannelComponent implements OnInit {
 
   submittedChannel: string;
 
-  constructor(private service: ChannelsService) { }
+  constructor(private service: ChannelsService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,7 @@ export class SubmitChannelComponent implements OnInit {
             console.log(channel);
             this.service.saveChannel(channel).subscribe(data => {
               console.log(data);
+              this.router.navigate(['/profile/' + data.id]);
             })
           }
         }, error1 => console.log("Channel not found " + error1.toString()))
