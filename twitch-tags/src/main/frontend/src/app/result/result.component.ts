@@ -30,4 +30,8 @@ export class ResultComponent implements OnInit {
       () => console.log('done loading channels')
     );
   }
+
+  goToProfile(id: number) {
+
+  }
 }

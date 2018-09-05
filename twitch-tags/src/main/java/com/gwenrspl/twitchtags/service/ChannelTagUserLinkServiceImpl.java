@@ -31,48 +31,49 @@ public class ChannelTagUserLinkServiceImpl implements ChannelTagUserLinkService 
     }
 
     @Override
-    public Iterable<ChannelTagUserLink> listAll() {
+    public List<ChannelTagUserLink> listAll() {
         return this.channelTagUserLinkRepository.findAll();
     }
 
     @Override
-    public Iterable<ChannelTagUserLink> findByChannel(Long channelId) {
-        return StreamSupport.stream(this.channelTagUserLinkRepository.findAll().spliterator(), false)
+    public List<ChannelTagUserLink> findByChannel(Long channelId) {
+        return this.channelTagUserLinkRepository.findAll().stream()
                 .filter(link -> link.getChannel().getId().equals(channelId))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Iterable<ChannelTagUserLink> findByTag(Long tagId) {
-        return StreamSupport.stream(this.channelTagUserLinkRepository.findAll().spliterator(), false)
+    public List<ChannelTagUserLink> findByTag(Long tagId) {
+        return this.channelTagUserLinkRepository.findAll().stream()
                 .filter(link -> link.getTag().getId().equals(tagId))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Iterable<ChannelTagUserLink> findByUser(Long userId) {
-        return StreamSupport.stream(this.channelTagUserLinkRepository.findAll().spliterator(), false)
+    public List<ChannelTagUserLink> findByUser(Long userId) {
+        return this.channelTagUserLinkRepository.findAll().stream()
                 .filter(link -> link.getUser().getId().equals(userId))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Optional<ChannelTagUserLink> getOne(final Long id) {
-        return this.channelTagUserLinkRepository.findById(id);
+    public ChannelTagUserLink getOne(final Long id) {
+        Optional<ChannelTagUserLink> link = this.channelTagUserLinkRepository.findById(id);
+        return link.orElse(null);
     }
 
     @Override
     public ChannelTagUserLink create(Long channelId, Long tagId, Long userId) {
         final ChannelTagUserLink link = new ChannelTagUserLink();
-        final Optional<Channel> channel = this.channelRepository.findById(channelId);
-        final Optional<Tag> tag = this.tagRepository.findById(tagId);
-        final Optional<User> user = this.userRepository.findById(userId);
-        if (!channel.isPresent() || !tag.isPresent() || !user.isPresent()) {
+        final Channel channel = this.channelRepository.getOne(channelId);
+        final Tag tag = this.tagRepository.getOne(tagId);
+        final User user = this.userRepository.getOne(userId);
+        if (channel == null || tag == null || user == null) {
             return null;
         }
-        link.setChannel(channel.get());
-        link.setTag(tag.get());
-        link.setUser(user.get());
+        link.setChannel(channel);
+        link.setTag(tag);
+        link.setUser(user);
         return this.channelTagUserLinkRepository.save(link);
     }
 

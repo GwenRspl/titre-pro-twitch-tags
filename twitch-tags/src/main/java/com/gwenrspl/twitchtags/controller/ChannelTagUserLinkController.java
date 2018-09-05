@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/channel-tag-user-link")
+@CrossOrigin(origins= "*")
 public class ChannelTagUserLinkController {
 
     private ChannelTagUserLinkService service;
@@ -23,7 +24,7 @@ public class ChannelTagUserLinkController {
     }
 
     @GetMapping("/{id}")
-    public Optional< ChannelTagUserLink> getOne(@PathVariable Long id) {
+    public  ChannelTagUserLink getOne(@PathVariable Long id) {
         return this.service.getOne(id);
     }
 

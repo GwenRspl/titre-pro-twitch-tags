@@ -2,16 +2,17 @@ package com.gwenrspl.twitchtags.service;
 
 import com.gwenrspl.twitchtags.model.ChannelTagUserLink;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ChannelTagUserLinkService {
 
-    Iterable<ChannelTagUserLink> listAll();
-    Iterable<ChannelTagUserLink> findByChannel(Long channelId);
-    Iterable<ChannelTagUserLink> findByTag(Long tagId);
-    Iterable<ChannelTagUserLink> findByUser(Long userId);
+    List<ChannelTagUserLink> listAll();
+    List<ChannelTagUserLink> findByChannel(Long channelId);
+    List<ChannelTagUserLink> findByTag(Long tagId);
+    List<ChannelTagUserLink> findByUser(Long userId);
 
-    Optional<ChannelTagUserLink> getOne(Long id);
+    ChannelTagUserLink getOne(Long id);
 
     ChannelTagUserLink create(Long channelId, Long tagId, Long userId);
 

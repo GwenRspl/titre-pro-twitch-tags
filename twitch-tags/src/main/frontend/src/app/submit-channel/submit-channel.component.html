@@ -5,10 +5,10 @@
 	<div class="ui-g-6">
 
 		<h2 class="title">Submit a new channel</h2>
-			
-		<input id="input" type="text" size="30" pInputText [(ngModel)]="submittedTag"> 
+
+		<input id="input" type="text" size="30" pInputText [(ngModel)]="submittedChannel">
 		<br>
-		<button pButton type="button" label="Submit" (click)="submitTag($event)"></button>
+		<button pButton type="button" label="Submit" (click)="submitChannel($event)"></button>
 		<div class="submitChannelDetails">
 			<p>Here you can add a channel if you did not find the one you were looking for. On submitting, we will check that the channel does really exist and add it to our database.</p>
 		</div>

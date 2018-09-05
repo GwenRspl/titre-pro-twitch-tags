@@ -1,16 +1,22 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Channel} from '../shared/models/channel.model';
+import {TwitchChannel} from "../shared/models/twitch-channel.model";
+import {catchError} from "rxjs/operators";
+import {throwError} from "rxjs/internal/observable/throwError";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChannelsService {
 
-  private defaultPath = '/api/channels/';
-  private createPath = this.defaultPath + '/create';
-
+  private defaultPath = 'http://localhost:8080/api/channels/';
+  //private defaultPath = '/api/channels/';
+  private createPath = this.defaultPath + 'create';
+  private existencePath = this.defaultPath + 'is-present';
+  private twitchApiPath = 'https://api.twitch.tv/kraken/channels/';
+  private twitchApiHeaders = new HttpHeaders().set('Client-ID','wbgsc1jmwkz93veikuxudvjwh18d39');
 
   constructor(private http: HttpClient) {
     this.getChannels();
@@ -31,7 +37,7 @@ export class ChannelsService {
   }
 
   saveChannel(channel: Channel) {
-    return this.http.post<Channel>(this.createPath, channel.id);
+    return this.http.post<Channel>(this.createPath, channel);
   }
 
   deleteChannel(channel: Channel) {
@@ -39,6 +45,15 @@ export class ChannelsService {
     return this.http.delete(idPath);
   }
 
+  getDataFromTwitchApi(channel: string) {
+    const path = this.twitchApiPath + channel;
+    return this.http.get<TwitchChannel>(path,{
+      headers: this.twitchApiHeaders
+    }).pipe(catchError( err => throwError(err)));
+  }
 
+  alreadyExist(channelName: string) {
+    return this.http.post(this.existencePath, channelName);
+  }
 }
 
