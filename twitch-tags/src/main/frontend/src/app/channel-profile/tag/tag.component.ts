@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Tag } from '../../shared/models/tag.model';
+import {ChannelTagUserLink} from "../../shared/models/channel-tag-user-link.model";
+import {TagItemService} from "../../services/tag-item.service";
 
 @Component({
   selector: 'app-tag',
@@ -7,11 +8,14 @@ import { Tag } from '../../shared/models/tag.model';
   styleUrls: ['./tag.component.css']
 })
 export class TagComponent implements OnInit {
-  @Input() tag: Tag;
+  @Input() links: ChannelTagUserLink[];
+  @Input() limit: number;
+  arr : Array<[string, number]>;
 
-  constructor() { }
+  constructor(private service: TagItemService) { }
 
   ngOnInit() {
+    this.arr = this.service.prepArray(this.links);
   }
 
 }

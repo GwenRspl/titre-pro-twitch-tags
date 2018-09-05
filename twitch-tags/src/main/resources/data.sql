@@ -11,12 +11,30 @@ INSERT INTO public.channel(affiliate, avatar, followers, language, name, partner
 
 INSERT INTO public.website_user(admin, email, password, username)
 	VALUES (TRUE, 'admin@admin.fr', 'admin', 'admin'),
-	      (FALSE, 'user@user.fr', 'user1', 'user1');
+	      (FALSE, 'user1@user.fr', 'user1', 'user1'),
+	      (FALSE, 'user2@user.fr', 'user2', 'user2'),
+	      (FALSE, 'user3@user.fr', 'user3', 'user3'),
+	      (FALSE, 'user4@user.fr', 'user4', 'user4'),
+	      (FALSE, 'user5@user.fr', 'user5', 'user5');
 
 INSERT INTO public.tag(name)
 	VALUES ('humor'),
-	      ('positivity');
+	      ('positivity'),
+	      ('MMORPG'),
+	      ('kid-friendly'),
+	      ('FPS'),
+	      ('LGBTQ+-friendly'),
+	      ('chill');
 
 INSERT INTO public.channel_tag_user_link(channel_id, tag_id, user_id)
 	VALUES (1, 1, 1),
-      (2, 1, 2);
+      (2, 1, 2),
+      (3, 1, 2),
+      (3, 2, 2),
+      (3, 3, 2),
+      (3, 4, 2),
+      (3, 5, 2),
+      (3, 6, 2),
+      (3, 1, 1),
+      (3, 1, 3),
+      (3, 1, 4);

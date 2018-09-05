@@ -1,22 +1,29 @@
 import { Tag } from './tag.model';
+import {ChannelTagUserLink} from "./channel-tag-user-link.model";
 
 export class Channel {
     id: number;
     name: string;
     url: string;
+    language: string;
     avatar: string;
     followers: number;
     partner: boolean;
     affiliate: boolean;
-    //tags: Tag[];
+    channelTagUserLinks: ChannelTagUserLink[];
 
 
-  constructor(name: string, url: string, avatar: string, followers: number, partner: boolean) {
+  constructor(name: string, url: string, language: string, avatar: string, followers: number, partner: boolean, channelTagUserLinks?: ChannelTagUserLink[]) {
     this.name = name;
     this.url = url;
+    this.language = language;
     this.avatar = avatar;
     this.followers = followers;
     this.partner = partner;
     this.affiliate = false;
+    if(channelTagUserLinks){
+      this.channelTagUserLinks = channelTagUserLinks;
+    }
+    this.channelTagUserLinks = [];
   }
 }

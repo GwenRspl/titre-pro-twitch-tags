@@ -25,6 +25,7 @@ export class ResultComponent implements OnInit {
     this.channelService.getChannels().subscribe(
       (channels: Channel[]) => {
         this.channels = channels;
+        console.log(channels);
       },
       error => console.error(error),
       () => console.log('done loading channels')

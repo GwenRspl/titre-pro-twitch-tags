@@ -29,6 +29,7 @@ import {TagComponent} from './channel-profile/tag/tag.component';
 import {ForgotPasswordComponent} from './account/forgot-password/forgot-password.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ChannelResolver} from "./services/channel-resolver.service";
+import {TagItemService} from "./services/tag-item.service";
 
 library.add(fas);
 
@@ -58,7 +59,7 @@ library.add(fas);
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [ChannelsService, ChannelResolver],
+  providers: [ChannelsService, ChannelResolver, TagItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

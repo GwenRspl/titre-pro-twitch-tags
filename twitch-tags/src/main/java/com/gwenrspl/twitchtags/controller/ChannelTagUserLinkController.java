@@ -47,7 +47,7 @@ public class ChannelTagUserLinkController {
     public  ChannelTagUserLink create(@RequestBody Map<String, Long> payload) {
         Long channelId = payload.get("channelId");
         Long tagId = payload.get("tagId");
-        Long userId = payload.get("channelId");
+        Long userId = payload.get("userId");
         return this.service.create(channelId, tagId, userId);
     }
 
