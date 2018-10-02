@@ -1,21 +1,28 @@
-<div class="ui-g">
-	<div class="ui-g-3">
-	</div>
+<div class="container">
+  <div class="columns">
+	<div class="column"></div>
+	<div class="column is-half">
 
-	<div class="ui-g-6">
+    <h2 class="title">Submit a new channel</h2>
 
-		<h2 class="title">Submit a new channel</h2>
-
-		<input id="input" type="text" size="30" pInputText [(ngModel)]="submittedChannel">
-		<br>
-		<button pButton type="button" label="Submit" (click)="submitChannel($event)"></button>
-		<div class="submitChannelDetails">
-			<p>Here you can add a channel if you did not find the one you were looking for. On submitting, we will check that the channel does really exist and add it to our database.</p>
-		</div>
-
-	</div>
-
-	<div class="ui-g-3">
-	</div>
-
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" id="input" type="text" placeholder="Type channel name here" [(ngModel)]="submittedChannel">
+      </div>
+      <div class="control">
+        <a class="button is-info" (click)="submitChannel($event)">
+          Submit
+        </a>
+      </div>
+    </div>
+    <br>
+    <div class="submitChannelDetails has-text-justified">
+      <p>Here you can add a channel if you did not find the one you were looking for. On submitting, we will check that the channel does really exist and add it to our database.</p>
+    </div>
+  </div>
+	<div class="column"></div>
 </div>
+</div>
+
+
+

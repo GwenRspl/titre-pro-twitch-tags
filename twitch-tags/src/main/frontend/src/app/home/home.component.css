@@ -6,6 +6,10 @@
   float: left;
 }
 
+.title, .subtitle {
+  color: #ffffff;
+}
+
 .tint:before {
   content: "";
   display: block;
