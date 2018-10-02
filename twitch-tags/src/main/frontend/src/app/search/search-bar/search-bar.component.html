@@ -1,0 +1,38 @@
+<div class="level">
+  <div class="level-item has-text-centered">
+    <div class="dropdown is-active is-grouped-centered">
+
+      <input type="text" class="input" [(ngModel)]="userInput" (keyup)="filter()" >
+      <button class="button is-link" (click)="search()" >Search</button>
+
+      <div class="dropdown-menu"  *ngIf="filteredList.length > 0">
+        <div class="dropdown-content">
+          <div *ngFor="let tag of filteredList" >
+            <a class="dropdown-item" (click)="select(tag)" >{{tag.name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="columns">
+	<div class="column"></div>
+	<div class="column is-half">
+    <div class="field is-grouped is-grouped-multiline">
+      <div class="control" *ngFor="let tag of selected" >
+        <div class="tags">
+      <span class="tag is-rounded" >{{tag.name}}
+      <button class="delete is-small" (click)="remove(tag)"></button>
+    </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+	<div class="column"></div>
+</div>
+
+
+
+

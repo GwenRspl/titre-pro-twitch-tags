@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="columns is-multiline">
+    <div class="column is-one-quarter" *ngFor="let channel of channels">
+      <img routerLink="/profile/{{channel.id}}" src="{{channel.avatar}}">
+      <div class="channel-name">{{channel.name}}</div>
+      <app-tag [links]="channel.channelTagUserLinks" [limit]="2"></app-tag>
+    </div>
+  </div>
+</div>
+
+

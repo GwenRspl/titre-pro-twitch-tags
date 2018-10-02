@@ -13,7 +13,7 @@ import {HeaderComponent} from './shared/header/header.component';
 import {FooterComponent} from './shared/footer/footer.component';
 import {ContentComponent} from './shared/content/content.component';
 import {SearchComponent} from './search/search.component';
-import {ResultComponent} from './result/result.component';
+import {ResultComponent} from './search/result/result.component';
 import {ChannelProfileComponent} from './channel-profile/channel-profile.component';
 import {SigninComponent} from './account/signin/signin.component';
 import {SignupComponent} from './account/signup/signup.component';
@@ -25,11 +25,16 @@ import {LimitPipe} from './shared/pipes/limit.pipe';
 
 import {ChannelsService} from './services/channels.service';
 
-import {TagComponent} from './channel-profile/tag/tag.component';
+import {TagComponent} from './shared/tag/tag.component';
 import {ForgotPasswordComponent} from './account/forgot-password/forgot-password.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ChannelResolver} from "./services/channel-resolver.service";
 import {TagItemService} from "./services/tag-item.service";
+import { SearchBarComponent } from './search/search-bar/search-bar.component';
+import {TagsService} from "./services/tags.service";
+import { PopularComponent } from './home/popular/popular.component';
+import {SearchService} from "./services/search.service";
+import { HomeComponent } from './home/home.component';
 
 library.add(fas);
 
@@ -49,7 +54,10 @@ library.add(fas);
     SubmitChannelComponent,
     TagComponent,
     LimitPipe,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    SearchBarComponent,
+    PopularComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,7 @@ library.add(fas);
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [ChannelsService, ChannelResolver, TagItemService],
+  providers: [ChannelsService, ChannelResolver, TagItemService, TagsService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

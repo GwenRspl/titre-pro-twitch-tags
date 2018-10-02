@@ -51,6 +51,17 @@ public class ChannelServiceImpl implements ChannelService {
         return this.repository.findAllById(id);
     }
 
+    @Override
+    public List<Channel> searchByTags(List<String> tags) {
+        List<Long> channelIds = new ArrayList<>();
+        for(String tag : tags) {
+            Tag newTag = this.tagService.searchByNameStrict(tag);
+            this.linkService.findByTag(newTag.getId()).stream()
+                    .forEach(link -> channelIds.add(link.getChannel().getId()));
+        }
+        return this.repository.findAllById(channelIds);
+    }
+
 
     @Override
     public Channel getOne(final Long id) {

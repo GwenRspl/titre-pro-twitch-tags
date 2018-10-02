@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ChannelTagUserLink} from "../../shared/models/channel-tag-user-link.model";
+import {ChannelTagUserLink} from "../models/channel-tag-user-link.model";
 import {TagItemService} from "../../services/tag-item.service";
 
 @Component({

@@ -1,16 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-
-import {Channel} from '../shared/models/channel.model';
-
-import {ChannelsService} from '../services/channels.service';
-
+import { Component, OnInit } from '@angular/core';
+import {ChannelsService} from "../../services/channels.service";
+import {Channel} from "../../shared/models/channel.model";
 
 @Component({
-  selector: 'app-result',
-  templateUrl: './result.component.html',
-  styleUrls: ['./result.component.css']
+  selector: 'app-popular',
+  templateUrl: './popular.component.html',
+  styleUrls: ['./popular.component.css']
 })
-export class ResultComponent implements OnInit {
+export class PopularComponent implements OnInit {
   channels: Channel[];
 
   constructor(private channelService: ChannelsService) {
@@ -32,7 +29,4 @@ export class ResultComponent implements OnInit {
     );
   }
 
-  goToProfile(id: number) {
-
-  }
 }

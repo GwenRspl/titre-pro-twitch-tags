@@ -15,6 +15,8 @@ public interface ChannelService {
 
     List<Channel> searchById(List<Long> id);
 
+    List<Channel> searchByTags(List<String> tags);
+
     Channel getOne(Long id);
 
     Channel create(Channel channel);

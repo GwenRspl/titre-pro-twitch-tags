@@ -9,10 +9,12 @@ import {ChannelProfileComponent} from './channel-profile/channel-profile.compone
 import {ForgotPasswordComponent} from './account/forgot-password/forgot-password.component';
 import {SearchComponent} from './search/search.component';
 import {ChannelResolver} from "./services/channel-resolver.service";
+import {HomeComponent} from "./home/home.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
-  {path: 'index', component: SearchComponent},
+  {path: 'index', component: HomeComponent},
+  {path: 'search', component: SearchComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'account', component: AccountComponent},

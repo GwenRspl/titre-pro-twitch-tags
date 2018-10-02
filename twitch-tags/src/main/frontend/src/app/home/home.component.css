@@ -1,7 +1,3 @@
-/*.hero {*/
-  /*background-color: #4a3a7a;*/
-/*}*/
-
 .home-banner {
   background-image: url("../../assets/img/banner.jpg");
 }
@@ -21,6 +17,7 @@
   background-color: rgba(44,37,65,0.80);
 }
 
-h1 {
-  color: white;
+.buttons {
+  display: block;
+  margin: 0 auto;
 }
