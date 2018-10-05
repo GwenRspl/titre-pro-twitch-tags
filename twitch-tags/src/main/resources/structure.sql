@@ -55,7 +55,7 @@ ALTER TABLE public.tag OWNER TO postgres;
 
 CREATE TABLE public.website_user (
     id serial NOT NULL,
-    admin boolean NOT NULL,
+    admin integer,
     email character varying(255),
     password character varying(255),
     username character varying(255)

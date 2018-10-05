@@ -10,12 +10,12 @@ INSERT INTO public.channel(affiliate, avatar, followers, language, name, partner
         (false , 'https://static-cdn.jtvnw.net/jtv_user_pictures/83f7ac2b8a6813e6-profile_image-300x300.png', 12116, 'FR', 'Nat_Ali', true, 'https://www.twitch.tv/nat_ali');
 
 INSERT INTO public.website_user(admin, email, password, username)
-	VALUES (TRUE, 'admin@admin.fr', 'admin', 'admin'),
-	      (FALSE, 'user1@user.fr', 'user1', 'user1'),
-	      (FALSE, 'user2@user.fr', 'user2', 'user2'),
-	      (FALSE, 'user3@user.fr', 'user3', 'user3'),
-	      (FALSE, 'user4@user.fr', 'user4', 'user4'),
-	      (FALSE, 'user5@user.fr', 'user5', 'user5');
+	VALUES (0, 'admin@admin.fr', 'admin', 'admin'),
+	      (1, 'user1@user.fr', 'user1', 'user1'),
+	      (1, 'user2@user.fr', 'user2', 'user2'),
+	      (1, 'user3@user.fr', 'user3', 'user3'),
+	      (1, 'user4@user.fr', 'user4', 'user4'),
+	      (1, 'user5@user.fr', 'user5', 'user5');
 
 INSERT INTO public.tag(name)
 	VALUES ('humor'),

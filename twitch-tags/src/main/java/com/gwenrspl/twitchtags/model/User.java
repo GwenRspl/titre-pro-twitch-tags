@@ -20,11 +20,32 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private boolean admin;
+    private UserRole admin;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonSerialize(converter = ListChannelTagUserLinkConverter.class)
     private List<ChannelTagUserLink> channelTagUserLinks;
 
     public User() {
     }
+
+    public enum UserRole {
+        ADMIN(0),
+        STANDARD_USER(1);
+
+        int roleCode;
+
+        UserRole(int roleCode) {
+            this.roleCode = roleCode;
+        }
+
+        public int getRoleCode() {
+            return roleCode;
+        }
+
+        public void setRoleCode(int roleCode) {
+            this.roleCode = roleCode;
+        }
+    }
 }
+
+
