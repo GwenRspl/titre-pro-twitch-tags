@@ -20,12 +20,11 @@ SET default_with_oids = false;
 
 CREATE TABLE public.channel (
     id serial NOT NULL,
-    affiliate boolean NOT NULL,
     avatar character varying(255),
+    status integer,
     followers bigint,
     language character varying(255),
     name character varying(255),
-    partner boolean NOT NULL,
     url character varying(255)
 );
 ALTER TABLE public.channel OWNER TO postgres;

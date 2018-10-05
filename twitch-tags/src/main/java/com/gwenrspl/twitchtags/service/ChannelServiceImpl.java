@@ -76,8 +76,15 @@ public class ChannelServiceImpl implements ChannelService {
 
     @Override
     public Channel update(final Long id, final Channel channel) {
-        final Channel optChannel = this.repository.getOne(id);
-        if (optChannel == null) return null;
+        final Optional<Channel> optChannel = this.repository.findById(id);
+        if (!optChannel.isPresent()) return null;
+        if (channel.getName()== null) channel.setName(optChannel.get().getName());
+        if (channel.getAvatar()== null) channel.setAvatar(optChannel.get().getAvatar());
+        if (channel.getFollowers()== null) channel.setFollowers(optChannel.get().getFollowers());
+        if (channel.getLanguage()== null) channel.setLanguage(optChannel.get().getLanguage());
+        if (channel.getStatus()== null) channel.setStatus(optChannel.get().getStatus());
+        if (channel.getUrl()== null) channel.setUrl(optChannel.get().getUrl());
+        if (channel.getChannelTagUserLinks()== null) channel.setChannelTagUserLinks(optChannel.get().getChannelTagUserLinks());
         channel.setId(id);
         return channel;
     }

@@ -21,12 +21,31 @@ public class Channel {
     private String language;
     private Long followers;
     private String avatar;
-    private boolean partner;
-    private boolean affiliate;
+    private ChannelStatus status;
     @OneToMany(mappedBy = "channel", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonSerialize(converter = ListChannelTagUserLinkConverter.class)
     private List<ChannelTagUserLink> channelTagUserLinks;
 
     public Channel() {
+    }
+
+    public enum ChannelStatus {
+        PARTNER(0),
+        AFFILIATE(1),
+        NONE(2);
+
+        private int statusCode;
+
+        ChannelStatus(int statusCode) {
+            this.statusCode = statusCode;
+        }
+
+        public int getStatusCode() {
+            return statusCode;
+        }
+
+        public void setStatusCode(int statusCode) {
+            this.statusCode = statusCode;
+        }
     }
 }

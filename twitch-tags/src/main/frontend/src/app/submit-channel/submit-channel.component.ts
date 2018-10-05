@@ -28,7 +28,10 @@ export class SubmitChannelComponent implements OnInit {
           if(data.status == '404') {
             console.log('channel does not exist');
           } else {
-            let channel: Channel = new Channel(data.display_name, data.url, data.broadcaster_language, data.logo, data.followers, data.partner);
+            let status = 'NONE';
+            if (data.partner) status = 'PARTNER';
+
+            let channel: Channel = new Channel(data.display_name, data.url, data.broadcaster_language, data.logo, data.followers, data.partner, status );
             console.log(channel);
             this.service.saveChannel(channel).subscribe(data => {
               console.log(data);

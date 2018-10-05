@@ -7,16 +7,16 @@
       <div class="is-vcentered">
         <div class="channel-name">{{ channel.name }}</div>
         <div>Followers : {{ channel.followers }}</div>
-        <div *ngIf="channel.partner === true; else notPartner">
-          Partner: Oui
+        <div *ngIf="channel.status === 'PARTNER'; else notPartner">
+          Status: Partner
         </div>
         <ng-template #notPartner>
-          <ng-container *ngIf="channel.affiliate === true; else notAffiliate">
-            Affiliate: yes
+          <ng-container *ngIf="channel.status === 'AFFILIATE'; else notAffiliate">
+            Status: Affiliate
           </ng-container>
         </ng-template>
         <ng-template #notAffiliate>
-          Affiliate: no
+          Status: ni Partner, ni affiliate
         </ng-template>
         <div>
           <a href="{{ channel.url }}" target="_blank">Go to Twitch channel </a>

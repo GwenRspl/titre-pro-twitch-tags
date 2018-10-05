@@ -32,7 +32,7 @@ public class User {
         ADMIN(0),
         STANDARD_USER(1);
 
-        int roleCode;
+        private int roleCode;
 
         UserRole(int roleCode) {
             this.roleCode = roleCode;
