@@ -86,6 +86,7 @@ public class ChannelServiceImpl implements ChannelService {
         if (channel.getUrl()== null) channel.setUrl(optChannel.get().getUrl());
         if (channel.getChannelTagUserLinks()== null) channel.setChannelTagUserLinks(optChannel.get().getChannelTagUserLinks());
         channel.setId(id);
+        this.repository.save(channel);
         return channel;
     }
 

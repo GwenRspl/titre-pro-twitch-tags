@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
         if (user.getChannelTagUserLinks() == null) user.setChannelTagUserLinks(optUser.get().getChannelTagUserLinks());
         if (user.getAdmin() == null) user.setAdmin(optUser.get().getAdmin());
         user.setId(id);
+        this.repository.save(user);
         return user;
     }
 
