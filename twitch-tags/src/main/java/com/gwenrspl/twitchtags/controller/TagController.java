@@ -42,4 +42,9 @@ public class TagController {
     public void delete(@PathVariable Long id) {
         this.service.delete(id);
     }
+
+    @GetMapping("/is-present/{tag}")
+    public boolean isPresent(@PathVariable String tag) {
+        return this.service.searchByNameStrict(tag) != null;
+    }
 }

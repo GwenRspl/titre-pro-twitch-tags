@@ -7,13 +7,17 @@
 
       <div class="field has-addons">
         <div class="control is-expanded">
-          <input class="input" id="input" type="text" placeholder="Type tag name here" [(ngModel)]="submittedTag">
+          <input class="input" id="input" type="text" placeholder="Type tag name here" [(ngModel)]="submittedTag" [ngClass]="{'is-danger': tagAlreadyExist}">
         </div>
         <div class="control">
           <a class="button is-info" (click)="submitTag($event)">
             Submit
           </a>
         </div>
+      </div>
+      <div class="notification is-danger" *ngIf="tagAlreadyExist">
+        <button class="delete" (click)="toggleTagAlreadyExists()"></button>
+        This tag already exists!
       </div>
       <br>
       <div class="submitTagDetails has-text-justified">
