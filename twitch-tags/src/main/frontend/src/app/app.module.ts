@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -35,6 +35,8 @@ import {TagsService} from "./services/tags.service";
 import { PopularComponent } from './home/popular/popular.component';
 import {SearchService} from "./services/search.service";
 import { HomeComponent } from './home/home.component';
+import {UsersService} from "./services/users.service";
+import { ChangePasswordComponent } from './account/change-password/change-password.component';
 
 library.add(fas);
 
@@ -57,7 +59,8 @@ library.add(fas);
     ForgotPasswordComponent,
     SearchBarComponent,
     PopularComponent,
-    HomeComponent
+    HomeComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -65,9 +68,10 @@ library.add(fas);
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
-  providers: [ChannelsService, ChannelResolver, TagItemService, TagsService, SearchService],
+  providers: [ChannelsService, ChannelResolver, TagItemService, TagsService, SearchService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

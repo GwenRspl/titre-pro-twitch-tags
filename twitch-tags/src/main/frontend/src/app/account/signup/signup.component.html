@@ -1,4 +1,4 @@
-<div class="container">
+<form class="container" [formGroup]="registerForm" (ngSubmit)="registerUser()" >
   <div class="columns">
     <div class="column"></div>
     <div class="column is-one-third">
@@ -7,35 +7,51 @@
           <h1 class="title">Sign Up</h1>
           <div class="field">
             <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="Username">
+              <input formControlName="username" class="input" type="text" placeholder="Username" name="username" [ngClass]="{ 'is-danger': submitted && f.username.errors }">
               <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
             </div>
+            <div *ngIf="submitted && f.username.errors">
+              <p *ngIf="f.username.errors.required" class="help is-danger has-text-left">This field is required</p>
+              <p *ngIf="f.username.errors.forbiddenUsername" class="help is-danger has-text-left">Username already used</p>
+            </div>
           </div>
           <div class="field">
             <p class="control has-icons-left has-icons-right">
-              <input class="input" type="email" placeholder="Email">
+              <input formControlName="email" class="input" type="email" placeholder="Email" name="email" [ngClass]="{ 'is-danger': submitted && f.email.errors }">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
               </span>
             </p>
+            <div *ngIf="submitted && f.email.errors">
+              <p *ngIf="f.email.errors.email" class="help is-danger has-text-left">This email is invalid</p>
+              <p *ngIf="f.email.errors.required" class="help is-danger has-text-left">This field is required</p>
+            </div>
           </div>
           <div class="field">
             <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Password">
+              <input formControlName="password" class="input" type="password" placeholder="Password" name="password" [ngClass]="{ 'is-danger': submitted && f.password.errors }">
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
             </p>
+            <div *ngIf="submitted && f.password.errors">
+              <p *ngIf="f.password.errors.minlength" class="help is-danger has-text-left">The password should be at least 6 characters long</p>
+              <p *ngIf="f.password.errors.required" class="help is-danger has-text-left">This field is required</p>
+            </div>
           </div>
           <div class="field">
             <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Confirm password">
+              <input formControlName="confirmPassword" class="input" type="password" placeholder="Confirm password" name="cpassword" [ngClass]="{ 'is-danger': submitted && (f.confirmPassword.errors || passwordsNotEquals) }">
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
             </p>
+            <div *ngIf="submitted && f.confirmPassword.errors">
+              <p *ngIf="f.confirmPassword.errors.required" class="help is-danger has-text-left">This field is required</p>
+              <p *ngIf="f.confirmPassword.errors.passwordsNotMatching" class="help is-danger has-text-left">Passwords don't match</p>
+            </div>
           </div>
           <div class="field">
             <p class="control has-text-centered">
@@ -55,6 +71,6 @@
     <div class="column"></div>
   </div>
 
-</div>
+</form>
 
 

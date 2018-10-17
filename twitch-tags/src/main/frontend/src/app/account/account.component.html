@@ -1,3 +1,56 @@
-<p>
-  account works!
-</p>
+<div class="container">
+	<div class="columns">
+		<div class="column"></div>
+		<div class="column is-one-third">
+      <section class=" section has-text-centered">
+        <h1 class="title">My Account</h1>
+      </section>
+
+      <section class="section">
+        <div class="detail-item">
+          <h2 class="subtitle">Username : </h2>
+          <input class="input" value={{user.username}} disabled>
+        </div>
+        <div class="detail-item">
+          <h2 class="subtitle">Email :</h2>
+          <input class="input" value={{user.email}} *ngIf="!editMode" disabled>
+          <form [formGroup]="changeEmailForm" class="field has-addons" *ngIf="editMode">
+            <div class="control">
+              <input formControlName="email" type="text" class="input" value={{user.email}} [ngClass]="{ 'is-danger': submitted && f.email.errors }">
+            </div>
+            <div class="control">
+              <a class="button is-success" (click)="changeEmail()">
+                SUBMIT
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="buttons is-centered">
+          <a class="button btn-width is-danger" (click)="switchToEditMode()" *ngIf="editMode">Cancel</a>
+          <a class="button btn-width" (click)="switchToEditMode()" *ngIf="!editMode">Change email</a>
+          <a class="button btn-width" (click)="changePassword()">Change password</a>
+        </div>
+      </section>
+      <section class="section is-centered">
+        <a class="button is-medium is-fullwidth is-danger" (click)="toggleModal()">Delete account</a>
+      </section>
+    </div>
+		<div class="column"></div>
+	</div>
+</div>
+<div class="modal" [ngClass]="{'is-active' : modalActive}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Warning! Please confirm your action</p>
+    </header>
+    <section class="modal-card-body">
+      <p>You are about to delete your account. This action is irreversible.</p>
+      <p>Are you sure you want to continue ?</p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-danger" (click)="deleteAccount()">YES! DELETE MY ACCOUNT!</button>
+      <button class="button" (click)="toggleModal()">NO! DON'T DELETE MY ACCOUNT!</button>
+    </footer>
+  </div>
+</div>

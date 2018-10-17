@@ -10,6 +10,7 @@ import {ForgotPasswordComponent} from './account/forgot-password/forgot-password
 import {SearchComponent} from './search/search.component';
 import {ChannelResolver} from "./services/channel-resolver.service";
 import {HomeComponent} from "./home/home.component";
+import {ChangePasswordComponent} from "./account/change-password/change-password.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
@@ -21,7 +22,8 @@ export const routes: Routes = [
   {path: 'submitchannel', component: SubmitChannelComponent},
   {path: 'submittag', component: SubmitTagComponent},
   {path: 'profile/:id', component: ChannelProfileComponent, resolve: {channel: ChannelResolver}},
-  {path: 'fpswrd', component: ForgotPasswordComponent}
+  {path: 'fpswrd', component: ForgotPasswordComponent},
+  {path: 'chgpswrd', component: ChangePasswordComponent}
 ];
 
 @NgModule({
