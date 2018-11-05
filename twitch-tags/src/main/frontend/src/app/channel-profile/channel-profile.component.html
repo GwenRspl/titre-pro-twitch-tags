@@ -40,7 +40,7 @@
           <app-tag [links]="channel.channelTagUserLinks" [limit]="0"></app-tag>
         </div>
       </ng-template>
-      <a *ngIf="channel.channelTagUserLinks.length > 5" (click)="toggleTags()" class="see-more">See more</a>
+      <a *ngIf="channel.channelTagUserLinks.length > 5" (click)="toggleTags()" class="see-more">{{ seeMoreTagsString }}</a>
     </div>
   </div>
   <div class="columns">
@@ -48,10 +48,24 @@
       <div class="add-tag-title">
         Want to add a tag to this channel ?
       </div>
-      <div>
-        <input type="text" size="30">
-        <button p-button type="button">Submit</button>
-      </div>
+          <div class="field has-addons">
+          <div class="dropdown is-active is-grouped-centered">
+
+            <p class="control">
+              <input type="text" class="input" [(ngModel)]="userInput" (keyup)="filter()" >
+            </p>
+            <p class="control">
+              <button class="button is-link" (click)="addTag()" >Add to channel</button>
+            </p>
+            <div class="dropdown-menu"  *ngIf="filteredList.length > 0">
+              <div class="dropdown-content">
+                <div *ngFor="let tag of filteredList" >
+                  <a class="dropdown-item" (click)="select(tag)" >{{tag.name}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       <a (click)="goToSubmitTag()" class="add-tag-subtitle">Don't find the tag you are looking for ? Submit a new one
         here!</a>
     </div>

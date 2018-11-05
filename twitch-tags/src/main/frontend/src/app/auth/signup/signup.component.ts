@@ -50,11 +50,6 @@ export class SignupComponent implements OnInit {
       console.log('invalid form');
       return;
     }
-    // let user : User = new User(this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
-    // this.usersService.saveUser(user).subscribe(data => {
-    //   console.log(data);
-    //   console.log("done");
-    // })
 
     this.signupInfo = new SignupInfo(this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
     console.log(this.signupInfo);
