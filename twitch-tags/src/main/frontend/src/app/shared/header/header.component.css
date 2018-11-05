@@ -1,4 +1,4 @@
-.header {
+.header, #navbarLinksMobile {
 	background-color: #6441a4;
 }
 
@@ -31,3 +31,4 @@
 .navbar-brand {
     margin-left: 5%;
 }
+

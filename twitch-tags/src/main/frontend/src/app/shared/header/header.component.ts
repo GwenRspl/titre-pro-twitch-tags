@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
   private roles: string[];
   private authority: string;
+  toggled: boolean = false;
 
   constructor(private tokenStorage: TokenStorageService, private router: Router) { }
 
@@ -31,6 +32,13 @@ export class HeaderComponent implements OnInit {
     this.tokenStorage.signOut();
     this.authority = null;
     this.router.navigate(['/'])
+  }
+
+  toggleMenuBurger(){
+    console.log("toggled!");
+    console.log(this.toggled);
+    this.toggled = this.toggled != true;
+    console.log(this.toggled);
   }
 
 }
