@@ -23,7 +23,7 @@ INSERT INTO public.tag(name)
 	      ('MMORPG'),
 	      ('kid-friendly'),
 	      ('FPS'),
-	      ('LGBTQ+-friendly'),
+	      ('LGBTQ-friendly'),
 	      ('chill');
 
 INSERT INTO public.channel_tag_user_link(channel_id, tag_id, user_id)
