@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../shared/models/user.model";
-import {UsersService} from "../services/users.service";
+import {User} from "../../shared/models/user.model";
+import {UsersService} from "../../services/users.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {TokenStorageService} from "../token-storage.service";
 
 @Component({
   selector: 'app-account',
@@ -16,10 +17,20 @@ export class AccountComponent implements OnInit {
   changeEmailForm: FormGroup;
   modalActive = false;
 
-  constructor(private usersService: UsersService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private usersService: UsersService, private formBuilder: FormBuilder, private router: Router, private tokenService: TokenStorageService) { }
 
   ngOnInit() {
-    this.user = new User('user1', 'user@email.com', '12345678');
+
+    let username = this.tokenService.getUsername();
+    this.usersService.getUserByUsername(username).subscribe(
+      data => {
+        console.log(data);
+        this.user = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   get f() {
@@ -46,10 +57,6 @@ export class AccountComponent implements OnInit {
     }
     this.editMode = false;
     this.user.email = this.changeEmailForm.controls.email.value;
-
-    //TODO : delete when auth done
-    this.user.id = 3;
-
     this.usersService.updateUser(this.user).subscribe( data => {
       console.log(data);
     })
@@ -64,12 +71,10 @@ export class AccountComponent implements OnInit {
   }
 
   deleteAccount(){
-    //TODO : delete when auth done
-    this.user.id = 3;
-
     this.usersService.deleteUser(this.user).subscribe(data => {
       console.log(data);
     });
+    this.tokenService.signOut();
     this.router.navigate(['/index']);
   }
 

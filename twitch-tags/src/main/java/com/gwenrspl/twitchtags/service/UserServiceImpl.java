@@ -26,6 +26,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Optional<User> getOneByUsername(String username) {
+        return this.repository.findByUsername(username);
+    }
+
+    @Override
+    public Boolean existsByUsername(String username) {
+        return this.repository.existsByUsername(username);
+    }
+
+    @Override
+    public Boolean existsByEmail(String email) {
+        return this.repository.existsByEmail(email);
+    }
+
+    @Override
     public User create(final User user) {
         return this.repository.save(user);
     }
@@ -38,7 +53,7 @@ public class UserServiceImpl implements UserService {
         if (user.getEmail() == null) user.setEmail(optUser.get().getEmail());
         if (user.getPassword() == null) user.setPassword(optUser.get().getPassword());
         if (user.getChannelTagUserLinks() == null) user.setChannelTagUserLinks(optUser.get().getChannelTagUserLinks());
-        if (user.getAdmin() == null) user.setAdmin(optUser.get().getAdmin());
+        if (user.getRole() == null) user.setRole(optUser.get().getRole());
         user.setId(id);
         this.repository.save(user);
         return user;

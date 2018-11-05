@@ -10,6 +10,12 @@ public interface UserService {
 
     Optional<User> getOne(Long id);
 
+    Optional<User> getOneByUsername(String username);
+
+    Boolean existsByUsername(String username);
+
+    Boolean existsByEmail(String email);
+
     User create(User user);
 
     User update(Long id, User user);

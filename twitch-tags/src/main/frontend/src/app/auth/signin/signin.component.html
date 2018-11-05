@@ -1,4 +1,9 @@
-<div class="container">
+<div *ngIf="isLoggedIn; else loggedOut">
+  You are logged in ! Go yo my account ?
+</div>
+
+<ng-template #loggedOut>
+<form class="container" [formGroup]="loginForm" (ngSubmit)="login()" >
   <div class="columns">
     <div class="column"></div>
     <div class="column is-one-third">
@@ -8,19 +13,25 @@
           <h1 class="title">Sign In</h1>
           <div class="field">
             <p class="control has-icons-left has-icons-right">
-              <input class="input" type="email" placeholder="Email">
+              <input formControlName="username" name="username" class="input" type="text" placeholder="Username" [ngClass]="{ 'is-danger': submitted && f.username.errors}">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
               </span>
             </p>
+            <div *ngIf="submitted && f.username.errors">
+              <p *ngIf="f.username.errors.required" class="help is-danger has-text-left">This field is required</p>
+            </div>
           </div>
           <div class="field">
             <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Password">
+              <input formControlName="password" name="password" class="input" type="password" placeholder="Password" [ngClass]="{ 'is-danger': submitted && f.username.errors}">
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
             </p>
+            <div *ngIf="submitted && f.password.errors">
+              <p *ngIf="f.password.errors.required" class="help is-danger has-text-left">This field is required</p>
+            </div>
           </div>
           <div class="field">
             <p class="control has-text-centered">
@@ -28,6 +39,9 @@
                 Login
               </button>
             </p>
+          </div>
+          <div *ngIf="submitted && isLoginFailed" class="alert alert-danger">
+            Login failed: username and/or password incorrect
           </div>
 
         </div>
@@ -41,6 +55,7 @@
     <div class="column"></div>
   </div>
 
-</div>
+</form>
+</ng-template>
 
 

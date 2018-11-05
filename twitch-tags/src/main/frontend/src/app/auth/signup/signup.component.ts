@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../shared/models/user.model";
 import {UsersService} from "../../services/users.service";
+import {SignupInfo} from "../signup-info";
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-signup',
@@ -13,14 +15,16 @@ export class SignupComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   usedUsernames = ['user','user1'];
+  signupInfo: SignupInfo;
+  isSignedUp = false;
+  isSignupFailed = false;
+  errorMessage = '';
 
-  constructor(private route: Router, private formBuilder: FormBuilder, private usersService: UsersService) { }
+  constructor(private route: Router, private formBuilder: FormBuilder, private usersService: UsersService, private authService: AuthService) { }
 
   ngOnInit() {
-    this.usersService.getUsers().subscribe(data => {
-      for(let user of data) {
-        this.usedUsernames.push(user.username);
-      }
+    this.usersService.getUsernameList().subscribe(data => {
+      this.usedUsernames = data;
     });
     this.registerForm = this.formBuilder.group({
       username: ['', [Validators.required, this.forbiddenUsernames.bind(this)]],
@@ -46,12 +50,26 @@ export class SignupComponent implements OnInit {
       console.log('invalid form');
       return;
     }
-    let user : User = new User(this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
-    this.usersService.saveUser(user).subscribe(data => {
-      console.log(data);
-      console.log("done");
-    })
+    // let user : User = new User(this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
+    // this.usersService.saveUser(user).subscribe(data => {
+    //   console.log(data);
+    //   console.log("done");
+    // })
 
+    this.signupInfo = new SignupInfo(this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
+    console.log(this.signupInfo);
+    this.authService.signup(this.signupInfo).subscribe(
+      data => {
+        console.log(data);
+        this.isSignedUp = true;
+        this.isSignupFailed = false;
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isSignupFailed = true;
+      }
+    );
   }
 
   forbiddenUsernames(control: FormControl): {[s: string]: boolean} {

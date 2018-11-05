@@ -14,10 +14,16 @@
       <a class="navbar-item" routerLinkActive="active-link" routerLink="/submittag">Submit a new tag</a>
     </div>
 
-    <div class="navbar-end">
+    <div class="navbar-end" *ngIf="!authority; else LoggedIn">
         <a class="navbar-item" routerLinkActive="active-link" routerLink="/signin">Sign in</a>
         <a class="navbar-item" routerLinkActive="active-link" routerLink="/signup">Sign up</a>
-
     </div>
+    <ng-template #LoggedIn>
+      <div class="navbar-end">
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/account">My Account</a>
+        <a class="navbar-item" style="cursor: pointer" (click)="logout()">Logout</a>
+      </div>
+    </ng-template>
+
   </div>
 </nav>

@@ -10,6 +10,7 @@ import {User} from "../shared/models/user.model";
 export class UsersService {
 
   private defaultPath = 'http://localhost:8080/api/users/';
+  private usernamesPath = 'http://localhost:8080/api/users/usernames';
   private createPath = 'http://localhost:8080/api/users/create';
 
   constructor(private http: HttpClient) {
@@ -19,9 +20,18 @@ export class UsersService {
     return this.http.get<User[]>(this.defaultPath);
   }
 
+  getUsernameList(){
+    return this.http.get<string[]>(this.usernamesPath);
+  }
+
   getUser(id: number) {
     const idPath = this.defaultPath + id;
     return this.http.get<User>(idPath);
+  }
+
+  getUserByUsername(username: string) {
+    const usernamePath = this.defaultPath + 'username/' + username;
+    return this.http.get<User>(usernamePath);
   }
 
   saveUser(user: User){
