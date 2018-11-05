@@ -17,8 +17,8 @@
 </div>
 
 <div class="columns">
-	<div class="column"></div>
-	<div class="column is-half">
+  <div class="column"></div>
+  <div class="column is-half">
     <div class="field is-grouped is-grouped-multiline">
       <div class="control" *ngFor="let tag of selected" >
         <div class="tags">
@@ -28,9 +28,12 @@
         </div>
       </div>
     </div>
+    <article class="message is-warning" *ngIf="error">
+      <div class="message-body">{{message}}</div>
+    </article>
 
   </div>
-	<div class="column"></div>
+  <div class="column"></div>
 </div>
 
 

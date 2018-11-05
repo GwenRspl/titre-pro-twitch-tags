@@ -20,6 +20,8 @@ export class SearchBarComponent implements OnInit {
   private tags: Tag[] = [];
   private _filteredList = [];
   private _selected = [];
+  message: string;
+  error = false;
 
   constructor(private elementRef: ElementRef, private tagservice: TagsService, private channelsService: ChannelsService, private searchService : SearchService) { }
 
@@ -36,6 +38,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   select(item) {
+    this.error = false;
     this._selected.push(item);
     this.userInput = '';
     this._filteredList = [];
@@ -59,6 +62,12 @@ export class SearchBarComponent implements OnInit {
   }
 
   search(){
+    if(this._selected.length == 0){
+      this.message = 'Please select a tag. Cannot search for empty selection.';
+      this.error = true;
+      return;
+    }
+    this.error = false;
     let tagNames : string = '';
     for(let tag of this._selected){
       tagNames = tagNames + tag.name + ",";
