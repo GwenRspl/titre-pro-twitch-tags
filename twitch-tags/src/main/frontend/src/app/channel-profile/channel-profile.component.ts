@@ -22,11 +22,12 @@ export class ChannelProfileComponent implements OnInit {
     this.handleClick(target);
   }
 
-  channel: Channel;
-  seeMoreTags = false;
-  seeMoreTagsString = 'See more';
-  userInput='';
-  private tags: Tag[] = [];
+  private _authenticated = false;
+  private _channel: Channel;
+  private _seeMoreTags = false;
+  private _seeMoreTagsString = 'See more';
+  private _userInput='';
+  private _tags: Tag[] = [];
   private _filteredList = [];
   private _tagToAdd: Tag;
 
@@ -39,37 +40,28 @@ export class ChannelProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._authenticated = this.tokenStorage.isAuthenticated();
     this.getChannelAndTags();
     this.tagService.getTags().subscribe(data => {
-      this.tags = data;
-      let channelTags = this.channel.channelTagUserLinks;
-      console.log(channelTags);
-
-      // this.tags.forEach(tag => {
-      //   channelTags.forEach(link => {
-      //     if(tag.id == link.tag.id){
-      //       this.tags.splice(this.tags.indexOf(tag),1)
-      //     }
-      //   })
-      // })
+      this._tags = data;
     })
   }
 
   getChannelAndTags(): void {
     this.route.data.subscribe(
       (data: Data) => {
-        this.channel = data['channel']
+        this._channel = data['channel']
       }
     );
   }
 
   toggleTags() {
-    if(this.seeMoreTags == true ){
-      this.seeMoreTags = false;
-      this.seeMoreTagsString = 'See more';
+    if(this._seeMoreTags == true ){
+      this._seeMoreTags = false;
+      this._seeMoreTagsString = 'See more';
     } else {
-      this.seeMoreTags = true;
-      this.seeMoreTagsString = 'See less';
+      this._seeMoreTags = true;
+      this._seeMoreTagsString = 'See less';
     }
   }
 
@@ -78,14 +70,14 @@ export class ChannelProfileComponent implements OnInit {
   }
 
   filter() {
-    this._filteredList = this.tags.filter(tag => {
-      return tag.name.toLowerCase().indexOf(this.userInput.toLowerCase()) > -1;
+    this._filteredList = this._tags.filter(tag => {
+      return tag.name.toLowerCase().indexOf(this._userInput.toLowerCase()) > -1;
     })
   }
 
   select(item) {
     console.log(item);
-    this.userInput = item.name;
+    this._userInput = item.name;
     this._tagToAdd = item;
     this._filteredList = [];
   }
@@ -109,7 +101,7 @@ export class ChannelProfileComponent implements OnInit {
     this.userService.getUserByUsername(username).subscribe(
       data => {
         user = data;
-        let link = new LinkTagChannelUserInfo(this.channel.id, this.tagToAdd.id, user.id);
+        let link = new LinkTagChannelUserInfo(this._channel.id, this.tagToAdd.id, user.id);
         this.tagService.addTagToChannel(link).subscribe(
           data => {
             console.log(data);
@@ -133,5 +125,31 @@ export class ChannelProfileComponent implements OnInit {
 
   get tagToAdd(): Tag {
     return this._tagToAdd;
+  }
+
+
+  get authenticated(): boolean {
+    return this._authenticated;
+  }
+
+
+  get channel(): Channel {
+    return this._channel;
+  }
+
+  get seeMoreTags(): boolean {
+    return this._seeMoreTags;
+  }
+
+  get seeMoreTagsString(): string {
+    return this._seeMoreTagsString;
+  }
+
+  get userInput(): string {
+    return this._userInput;
+  }
+
+  get tags(): Tag[] {
+    return this._tags;
   }
 }
