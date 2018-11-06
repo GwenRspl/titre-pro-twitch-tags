@@ -57,5 +57,19 @@
 
 </form>
 </ng-template>
-
+<div class="modal" [ngClass]="{'is-active' : isLoggedIn}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Success !</p>
+    </header>
+    <section class="modal-card-body">
+      <p>You successfully logged in.</p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" (click)="goToAccount()">Go to my account</button>
+      <button class="button" (click)="goToHomepage()">Go to homepage</button>
+    </footer>
+  </div>
+</div>
 

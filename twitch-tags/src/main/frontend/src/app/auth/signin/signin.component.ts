@@ -44,6 +44,14 @@ export class SigninComponent implements OnInit {
     this.route.navigate(['/fpswrd']);
   }
 
+  goToAccount() {
+    this.route.navigate(['/account']);
+  }
+
+  goToHomepage() {
+    this.route.navigate(['/']);
+  }
+
   login() {
     this.submitted = true;
     if(this.loginForm.invalid) {
@@ -61,7 +69,6 @@ export class SigninComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
         window.location.reload();
-        //this.route.navigate(['/account']);
       },
       error => {
         console.log(error);

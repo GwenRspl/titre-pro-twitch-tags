@@ -72,5 +72,19 @@
   </div>
 
 </form>
+<div class="modal" [ngClass]="{'is-active' : isSignedUp}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Success !</p>
+    </header>
+    <section class="modal-card-body">
+      <p>Your new account is ready. You can now log yourself.</p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" (click)="goToLogin()">Go to login page</button>
+    </footer>
+  </div>
+</div>
 
 
