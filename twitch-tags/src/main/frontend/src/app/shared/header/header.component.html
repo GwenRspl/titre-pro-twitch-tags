@@ -20,6 +20,7 @@
     </div>
     <ng-template #LoggedIn>
       <div class="navbar-end">
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/admin" *ngIf="authority === 'admin'">Admin Dashboard</a>
         <a class="navbar-item" routerLinkActive="active-link" routerLink="/account">My Account</a>
         <a class="navbar-item" style="cursor: pointer" (click)="logout()">Logout</a>
       </div>
@@ -39,6 +40,7 @@
     </div>
     <ng-template #LoggedIn>
       <div class="navbar-end">
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/admin" *ngIf="authority === 'admin'">Admin Dashboard</a>
         <a class="navbar-item" routerLinkActive="active-link" routerLink="/account">My Account</a>
         <a class="navbar-item" style="cursor: pointer" (click)="logout()">Logout</a>
       </div>

@@ -69,6 +69,7 @@
     <footer class="modal-card-foot">
       <button class="button" (click)="goToAccount()">Go to my account</button>
       <button class="button" (click)="goToHomepage()">Go to homepage</button>
+      <button class="button" (click)="goToAdmin()" *ngIf="isAdmin">Go to admin dashboard</button>
     </footer>
   </div>
 </div>

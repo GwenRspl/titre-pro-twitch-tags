@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   private roles: string[];
-  private authority: string;
+  private _authority: string;
   toggled: boolean = false;
 
   constructor(private tokenStorage: TokenStorageService, private router: Router) { }
@@ -19,18 +19,19 @@ export class HeaderComponent implements OnInit {
       this.roles = this.tokenStorage.getAuthorities();
       this.roles.every(role => {
         if(role === 'ROLE_ADMIN') {
-          this.authority = 'admin';
+          this._authority = 'admin';
           return false;
         }
-        this.authority = 'user';
+        this._authority = 'user';
         return true;
       });
     }
+    console.log(this.authority);
   }
 
   logout(){
     this.tokenStorage.signOut();
-    this.authority = null;
+    this._authority = null;
     this.router.navigate(['/'])
   }
 
@@ -41,4 +42,8 @@ export class HeaderComponent implements OnInit {
     console.log(this.toggled);
   }
 
+
+  get authority(): string {
+    return this._authority;
+  }
 }

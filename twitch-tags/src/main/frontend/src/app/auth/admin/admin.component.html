@@ -1,0 +1,43 @@
+<section class="hero is-large">
+  <div class="hero-head">
+    <h1 class="title has-text-centered">Admin Dashboard</h1>
+    <div class="tabs is-left is-boxed">
+      <ul>
+        <li [ngClass]="{'is-active': currentTab == 'channels'}">
+          <a (click)="channelsTab()">
+            <span class="icon is-small"><i class="fas fa-tv" aria-hidden="true"></i></span>
+            <span>Channels</span>
+          </a>
+        </li>
+        <li [ngClass]="{'is-active': currentTab == 'tags'}">
+          <a (click)="tagsTab()">
+            <span class="icon is-small"><i class="fas fa-tags" aria-hidden="true"></i></span>
+            <span>Tags</span>
+          </a>
+        </li>
+        <li [ngClass]="{'is-active': currentTab == 'users'}">
+          <a (click)="usersTab()">
+            <span class="icon is-small"><i class="fas fa-users" aria-hidden="true"></i></span>
+            <span>Users</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="hero-body">
+    <section class="container" *ngIf="currentTab == 'users'" >
+      <app-users-dashboard></app-users-dashboard>
+    </section>
+    <section class="container" *ngIf="currentTab == 'tags'" >
+      <app-tags-dashboard></app-tags-dashboard>
+    </section>
+    <section class="container has-text-centered" *ngIf="currentTab == 'channels'" >
+      <app-channels-dashboard></app-channels-dashboard>
+    </section>
+  </div>
+
+
+</section>
+
+
+

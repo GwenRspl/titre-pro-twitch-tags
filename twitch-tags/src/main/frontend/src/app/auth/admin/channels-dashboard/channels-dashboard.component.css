@@ -1,0 +1,41 @@
+
+table {
+  background-color: #f8f8f8;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.fa-times {
+  color: red;
+}
+
+.fa-sync-alt {
+  color: green;
+}
+
+.sync-button {
+  margin: 2%;
+}
+
+thead {
+  background-color: #6441a4;
+}
+
+thead>th {
+  color: #f8f8f8;
+}
+
+.add-channel-button {
+  background-color: #6441a4;
+  color : #f8f8f8;
+}
+
+
+.add-channel-button:hover {
+  background-color: #845ec9;
+  color : #f8f8f8;
+}
+
+

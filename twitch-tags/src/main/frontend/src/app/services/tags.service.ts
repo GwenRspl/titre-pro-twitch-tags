@@ -35,4 +35,13 @@ export class TagsService {
 
   }
 
+  updateTag(tag: Tag){
+    let updatePath = this.defaultPath + tag.id;
+    return this.http.put<Tag>(updatePath, tag);
+  }
+  deleteTag(tag: Tag){
+    let deletePath = this.defaultPath + tag.id;
+    return this.http.delete<Tag>(deletePath);
+  }
+
 }

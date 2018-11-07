@@ -52,4 +52,9 @@ export class TokenStorageService {
   public isAuthenticated() {
     return !!this.getToken();
   }
+
+  public isAdmin() {
+    let authorities = this.getAuthorities();
+    return authorities.includes('ROLE_ADMIN');
+  }
 }

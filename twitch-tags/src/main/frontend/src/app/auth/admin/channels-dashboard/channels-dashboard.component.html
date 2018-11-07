@@ -1,0 +1,33 @@
+<div class="sync-button">
+  <a class="button is-large is-warning" (click)="syncAllChannels()">Synchronize all from Twitch API</a>
+</div>
+<div class="field has-addons">
+  <div class="control is-expanded">
+    <input class="input" id="input" type="text" placeholder="Type channel name here" [(ngModel)]="submittedChannel">
+  </div>
+  <div class="control">
+    <a class="button is-info add-channel-button" (click)="addNewChannel()">
+      Add new channel to database
+    </a>
+  </div>
+</div>
+<table class="table is-fullwidth is-bordered">
+  <thead>
+  <th class="has-text-centered">Id</th>
+  <th class="has-text-centered">Name</th>
+  <th class="has-text-centered">Followers</th>
+  <th class="has-text-centered">Url</th>
+  <th class="has-text-centered">Update</th>
+  <th class="has-text-centered">Delete</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let channel of channels">
+    <th class="has-text-centered">{{channel.id}}</th>
+    <td>{{channel.name}}</td>
+    <td>{{channel.followers}}</td>
+    <td><a>{{channel.url}}</a></td>
+    <td class="has-text-centered is-clickable" (click)="syncOneChannel(channel)"><span class="icon is-small"><i class="fas fa-sync-alt" aria-hidden="true"></i></span></td>
+    <td class="has-text-centered is-clickable" (click)="deleteOneChannel(channel)"><span class="icon is-small"><i class="fas fa-times" aria-hidden="true"></i></span></td>
+  </tr>
+  </tbody>
+</table>

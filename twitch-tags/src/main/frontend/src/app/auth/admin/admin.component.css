@@ -1,0 +1,68 @@
+.tabs ul {
+  border-bottom: 1px solid #9f98a2 !important;
+}
+
+.tabs .is-active a {
+  background-color: #c5c5c5;
+  border-color: #9f98a2;
+  color: #6441a4;
+}
+
+.tabs a:hover {
+  background-color: #ababab;
+  border-bottom: #9f98a2;
+
+}
+
+h1 {
+  margin: 3%;
+}
+
+.hero .hero-body {
+  padding-top: 0;
+  padding-bottom: 5%;
+
+}
+
+
+/*table {*/
+  /*background-color: #f8f8f8;*/
+/*}*/
+
+
+/*.is-clickable {*/
+  /*cursor: pointer;*/
+/*}*/
+
+/*.fa-times {*/
+  /*color: red;*/
+/*}*/
+
+/*.fa-sync-alt {*/
+  /*color: green;*/
+/*}*/
+
+/*.sync-button {*/
+  /*margin-bottom: 2%;*/
+/*}*/
+
+/*thead {*/
+  /*background-color: #6441a4;*/
+/*}*/
+
+/*thead>th {*/
+  /*color: #f8f8f8;*/
+/*}*/
+
+/*.add-channel-button {*/
+  /*background-color: #6441a4;*/
+  /*color : #f8f8f8;*/
+/*}*/
+
+
+/*.add-channel-button:hover {*/
+  /*background-color: #845ec9;*/
+  /*color : #f8f8f8;*/
+/*}*/
+
+

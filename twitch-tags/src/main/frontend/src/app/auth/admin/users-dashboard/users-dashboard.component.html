@@ -1,0 +1,16 @@
+<table class="table is-fullwidth is-bordered">
+  <thead>
+  <th class="has-text-centered">Id</th>
+  <th class="has-text-centered">Username</th>
+  <th class="has-text-centered">Email</th>
+  <th class="has-text-centered">Delete</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <th class="has-text-centered">{{user.id}}</th>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+    <td class="has-text-centered is-clickable" (click)="deleteUser(user)"><span class="icon is-small"><i class="fas fa-times" aria-hidden="true"></i></span></td>
+  </tr>
+  </tbody>
+</table>

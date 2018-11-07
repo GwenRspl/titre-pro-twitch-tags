@@ -38,6 +38,10 @@ import { HomeComponent } from './home/home.component';
 import {UsersService} from "./services/users.service";
 import { ChangePasswordComponent } from './auth/change-password/change-password.component';
 import {HttpInterceptorProviders} from "./auth/auth-interceptor";
+import { AdminComponent } from './auth/admin/admin.component';
+import { ChannelsDashboardComponent } from './auth/admin/channels-dashboard/channels-dashboard.component';
+import { TagsDashboardComponent } from './auth/admin/tags-dashboard/tags-dashboard.component';
+import { UsersDashboardComponent } from './auth/admin/users-dashboard/users-dashboard.component';
 
 library.add(fas);
 
@@ -61,7 +65,11 @@ library.add(fas);
     SearchBarComponent,
     PopularComponent,
     HomeComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AdminComponent,
+    ChannelsDashboardComponent,
+    TagsDashboardComponent,
+    UsersDashboardComponent
   ],
   imports: [
     BrowserModule,

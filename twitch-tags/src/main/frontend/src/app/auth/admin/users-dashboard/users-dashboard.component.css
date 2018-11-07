@@ -1,0 +1,24 @@
+
+table {
+  background-color: #f8f8f8;
+  margin-top: 2%;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.fa-times {
+  color: red;
+}
+
+
+thead {
+  background-color: #6441a4;
+}
+
+thead>th {
+  color: #f8f8f8;
+}
+
+

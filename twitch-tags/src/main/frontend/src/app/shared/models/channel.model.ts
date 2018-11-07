@@ -28,4 +28,6 @@ export class Channel {
     }
     this.channelTagUserLinks = [];
   }
+
+
 }

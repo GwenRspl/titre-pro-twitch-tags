@@ -18,6 +18,7 @@ export class SigninComponent implements OnInit {
   roles: string[];
   private loginInfo: LoginInfo;
   errorMessage = '';
+  isAdmin = false;
 
   constructor(private route: Router, private formBuilder: FormBuilder, private authService:AuthService, private tokenStorage: TokenStorageService) { }
 
@@ -29,6 +30,7 @@ export class SigninComponent implements OnInit {
     if(this.tokenStorage.getToken()){
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
+      this.isAdmin = this.tokenStorage.isAdmin();
     }
   }
 
@@ -52,6 +54,10 @@ export class SigninComponent implements OnInit {
     this.route.navigate(['/']);
   }
 
+  goToAdmin() {
+    this.route.navigate(['/admin']);
+  }
+
   login() {
     this.submitted = true;
     if(this.loginForm.invalid) {
@@ -68,6 +74,7 @@ export class SigninComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
+        this.isAdmin = this.tokenStorage.isAdmin();
         window.location.reload();
       },
       error => {

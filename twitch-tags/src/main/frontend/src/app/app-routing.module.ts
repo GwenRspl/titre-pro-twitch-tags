@@ -12,6 +12,8 @@ import {ChannelResolver} from "./services/channel-resolver.service";
 import {HomeComponent} from "./home/home.component";
 import {ChangePasswordComponent} from "./auth/change-password/change-password.component";
 import {AuthGuard} from "./auth/auth-guard.service";
+import {AdminComponent} from "./auth/admin/admin.component";
+import {AuthAdminGuard} from "./auth/admin/auth-admin-guard.service";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
@@ -20,6 +22,7 @@ export const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthAdminGuard]},
   {path: 'submitchannel', component: SubmitChannelComponent},
   {path: 'submittag', component: SubmitTagComponent},
   {path: 'profile/:id', component: ChannelProfileComponent, resolve: {channel: ChannelResolver}},
@@ -30,7 +33,7 @@ export const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard, AuthAdminGuard]
 })
 export class AppRoutingModule {
 }
