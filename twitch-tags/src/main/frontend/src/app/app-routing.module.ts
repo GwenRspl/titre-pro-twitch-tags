@@ -14,6 +14,7 @@ import {ChangePasswordComponent} from "./auth/change-password/change-password.co
 import {AuthGuard} from "./auth/auth-guard.service";
 import {AdminComponent} from "./auth/admin/admin.component";
 import {AuthAdminGuard} from "./auth/admin/auth-admin-guard.service";
+import {ErrorComponent} from "./error/error.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
@@ -28,7 +29,8 @@ export const routes: Routes = [
   {path: 'submittag', component: SubmitTagComponent},
   {path: 'profile/:id', component: ChannelProfileComponent, resolve: {channel: ChannelResolver}},
   {path: 'fpswrd', component: ForgotPasswordComponent},
-  {path: 'chgpswrd', component: ChangePasswordComponent}
+  {path: 'chgpswrd', component: ChangePasswordComponent},
+  {path: '**', component: ErrorComponent}
 ];
 
 @NgModule({

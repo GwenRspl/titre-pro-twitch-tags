@@ -43,6 +43,7 @@ import { ChannelsDashboardComponent } from './auth/admin/channels-dashboard/chan
 import { TagsDashboardComponent } from './auth/admin/tags-dashboard/tags-dashboard.component';
 import { UsersDashboardComponent } from './auth/admin/users-dashboard/users-dashboard.component';
 import { SearchBarNameComponent } from './search/search-bar-name/search-bar-name.component';
+import { ErrorComponent } from './error/error.component';
 
 library.add(fas);
 
@@ -71,7 +72,8 @@ library.add(fas);
     ChannelsDashboardComponent,
     TagsDashboardComponent,
     UsersDashboardComponent,
-    SearchBarNameComponent
+    SearchBarNameComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
