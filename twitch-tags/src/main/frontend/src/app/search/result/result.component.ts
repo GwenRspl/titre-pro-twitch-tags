@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Channel} from '../../shared/models/channel.model';
-
-import {ChannelsService} from '../../services/channels.service';
 import {SearchService} from "../../services/search.service";
 
 

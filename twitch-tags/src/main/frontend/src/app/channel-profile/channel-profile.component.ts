@@ -8,7 +8,6 @@ import {LinkTagChannelUserInfo} from "../services/link-tag-channel-user-info";
 import {User} from "../shared/models/user.model";
 import {TokenStorageService} from "../auth/token-storage.service";
 import {UsersService} from "../services/users.service";
-import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-channel-profile',

@@ -1,9 +1,13 @@
 <section class="hero" [ngClass]="{'is-large': !searching, 'is-medium': searching}">
   <figure class="tint">
     <div class="hero-body home-banner">
-      <div class="container has-text-centered">
+      <div class="container has-text-centered" *ngIf="!searchName">
         <h1 class="title">Find channels by tag</h1>
         <app-search-bar></app-search-bar>
+      </div>
+      <div class="container has-text-centered" *ngIf="searchName">
+        <h1 class="title">Find channels by name</h1>
+        <app-search-bar-name></app-search-bar-name>
       </div>
     </div>
   </figure>

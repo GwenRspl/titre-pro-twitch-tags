@@ -18,6 +18,6 @@ export class HomeComponent implements OnInit {
   }
 
   goToSearchByName() {
-    this.router.navigate(['/search']);
+    this.router.navigate(['/searchName']);
   }
 }

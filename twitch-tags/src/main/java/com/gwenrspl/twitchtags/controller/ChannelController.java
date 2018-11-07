@@ -38,13 +38,18 @@ public class ChannelController {
         return this.service.searchByTags(tags);
     }
 
-    @PostMapping("/search/tag")
-    public List<Channel> searchByTag(@RequestBody String tag) {
-        return this.service.searchByTag(tag);
-    }
+//    @PostMapping("/search/tag")
+//    public List<Channel> searchByTag(@RequestBody String tag) {
+//        return this.service.searchByTag(tag);
+//    }
 
     @PostMapping("/search/name")
     public List<Channel> searchByName(@RequestBody String name) {
+        return this.service.searchByName(name);
+    }
+
+    @GetMapping("/search/name")
+    public List<Channel> searchByChannelName(@RequestParam("channel") String name) {
         return this.service.searchByName(name);
     }
 

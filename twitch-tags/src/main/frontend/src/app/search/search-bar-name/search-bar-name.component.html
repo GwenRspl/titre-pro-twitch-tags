@@ -1,0 +1,23 @@
+<div class="columns">
+	<div class="column"></div>
+	<div class="column is-two-thirds">
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" type="text" placeholder="Type channel name here" [(ngModel)]="submittedName">
+      </div>
+      <div class="control">
+        <a class="button is-info add-tag-button" (click)="search()">
+          Search
+        </a>
+      </div>
+    </div>
+    <article class="message is-danger" *ngIf="error">
+      <div class="message-body">{{message}}</div>
+    </article>
+  </div>
+	<div class="column"></div>
+</div>
+
+
+
+

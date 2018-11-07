@@ -32,7 +32,7 @@ public class ChannelServiceImpl implements ChannelService {
     @Override
     public List<Channel> searchByName(String name) {
         return this.repository.findAll().stream()
-                .filter(channel -> channel.getName().contains(name))
+                .filter(channel -> channel.getName().toUpperCase().contains(name.toUpperCase()))
                 .collect(Collectors.toList());
     }
 

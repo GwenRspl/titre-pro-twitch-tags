@@ -16,6 +16,7 @@ export class ChannelsService {
   private createPath = this.defaultPath + 'create';
   private existencePath = this.defaultPath + 'is-present';
   private searchPath = this.defaultPath + 'search';
+  private searchNamePath = this.defaultPath + 'search/name';
   private twitchApiPath = 'https://api.twitch.tv/kraken/channels/';
   private twitchApiHeaders = new HttpHeaders().set('Client-ID','wbgsc1jmwkz93veikuxudvjwh18d39');
 
@@ -58,6 +59,10 @@ export class ChannelsService {
 
   search(tags: string){
     return this.http.get(this.searchPath + '?tag=' + tags);
+  }
+
+  searchName(name: string){
+    return this.http.get(this.searchNamePath + '?channel=' + name);
   }
 }
 

@@ -19,6 +19,7 @@ export const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
   {path: 'index', component: HomeComponent},
   {path: 'search', component: SearchComponent},
+  {path: 'searchName', component: SearchComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
