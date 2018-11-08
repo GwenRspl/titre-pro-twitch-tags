@@ -37,8 +37,7 @@ export class TagsDashboardComponent implements OnInit {
 
   deleteTag(tag: Tag) {
     this.tagService.deleteTag(tag).subscribe(
-      data => {
-        console.log(data);
+      () => {
         this.ngOnInit();
       },
       error => {
@@ -50,13 +49,10 @@ export class TagsDashboardComponent implements OnInit {
   addNewTag() {
     this.tagService.tagExists(this.submittedTag).subscribe(data => {
       if(data) {
-        console.log('tag already exists');
         this.tagAlreadyExist = true;
       } else {
-        console.log('ok!');
         const newTag = new Tag(this.submittedTag);
-        this.tagService.createTag(newTag).subscribe(data => {
-          console.log(data);
+        this.tagService.createTag(newTag).subscribe(() => {
           this.ngOnInit();
         })
       }

@@ -15,7 +15,9 @@
         </a>
       </div>
     </div>
-    <br>
+    <article class="message is-danger" *ngIf="error">
+      <div class="message-body">{{message}}</div>
+    </article>
     <div class="submitChannelDetails has-text-justified">
       <p>Here you can add a channel if you did not find the one you were looking for. On submitting, we will check that the channel does really exist and add it to our database.</p>
     </div>

@@ -52,15 +52,12 @@ export class SignupComponent implements OnInit {
     }
 
     this.signupInfo = new SignupInfo(this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
-    console.log(this.signupInfo);
     this.authService.signup(this.signupInfo).subscribe(
-      data => {
-        console.log(data);
+      () => {
         this.isSignedUp = true;
         this.isSignupFailed = false;
       },
       error => {
-        console.log(error);
         this.errorMessage = error.error.message;
         this.isSignupFailed = true;
       }

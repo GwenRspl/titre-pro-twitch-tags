@@ -1,7 +1,10 @@
 package com.gwenrspl.twitchtags.controller;
 
+import com.gwenrspl.twitchtags.message.response.ResponseMessage;
 import com.gwenrspl.twitchtags.model.ChannelTagUserLink;
 import com.gwenrspl.twitchtags.service.ChannelTagUserLinkService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -44,15 +47,17 @@ public class ChannelTagUserLinkController {
     }
 
     @PostMapping("/create")
-    public  ChannelTagUserLink create(@RequestBody Map<String, Long> payload) {
+    public ResponseEntity<?> create(@RequestBody Map<String, Long> payload) {
         Long channelId = payload.get("channelId");
         Long tagId = payload.get("tagId");
         Long userId = payload.get("userId");
-        return this.service.create(channelId, tagId, userId);
+        this.service.create(channelId, tagId, userId);
+        return new ResponseEntity<>(new ResponseMessage("Link created successfully"), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         this.service.delete(id);
+        return new ResponseEntity<>(new ResponseMessage("Link deleted successfully"), HttpStatus.OK);
     }
 }

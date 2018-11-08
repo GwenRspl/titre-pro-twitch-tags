@@ -15,11 +15,9 @@
           </a>
         </div>
       </div>
-      <div class="notification is-danger" *ngIf="tagAlreadyExist">
-        <button class="delete" (click)="toggleTagAlreadyExists()"></button>
-        This tag already exists!
-      </div>
-      <br>
+      <article class="message is-danger" *ngIf="tagAlreadyExist">
+        <div class="message-body">This tag already exists.</div>
+      </article>
       <div class="submitTagDetails has-text-justified">
         <p>Here you can submit a tag if you did not find the one you were looking for.
           Please don't submit hateful, racist, homophobic, or otherwise socially derogatory words.</p>
@@ -27,6 +25,22 @@
       </div>
     </div>
     <div class="column"></div>
+  </div>
+</div>
+
+<div class="modal" [ngClass]="{'is-active' : modalActive}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Success!</p>
+    </header>
+    <section class="modal-card-body">
+      <p>The tag {{submittedTag}} was successfully added to our database.</p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-danger" (click)="addAnother()">Submit another tag</button>
+      <button class="button is-danger" (click)="goToHomepage()">Go back to homepage</button>
+    </footer>
   </div>
 </div>
 

@@ -65,7 +65,6 @@ export class SigninComponent implements OnInit {
       return;
     }
     this.loginInfo = new LoginInfo(this.loginForm.value.username, this.loginForm.value.password);
-    console.log(this.loginInfo);
     this.authService.attemptAuthentication(this.loginInfo).subscribe(
       data => {
         this.tokenStorage.saveToken(data.token);

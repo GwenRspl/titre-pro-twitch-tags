@@ -1,7 +1,10 @@
 package com.gwenrspl.twitchtags.controller;
 
+import com.gwenrspl.twitchtags.message.response.ResponseMessage;
 import com.gwenrspl.twitchtags.model.User;
 import com.gwenrspl.twitchtags.service.UserService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +43,7 @@ public class UserController {
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public Optional<User> getOne(@PathVariable Long id) {
         return this.service.getOne(id);
+
     }
 
     @GetMapping("/username/{username}")
@@ -50,13 +54,15 @@ public class UserController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public User update(@PathVariable Long id, @RequestBody User user) {
-        return this.service.update(id, user);
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody User user) {
+        this.service.update(id, user);
+        return new ResponseEntity<>(new ResponseMessage("User updated successfully"), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public void delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         this.service.delete(id);
+        return new ResponseEntity<>(new ResponseMessage("User deleted successfully"), HttpStatus.OK);
     }
 }

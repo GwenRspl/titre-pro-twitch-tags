@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TagsService} from "../services/tags.service";
 import {Tag} from "../shared/models/tag.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-submit-tag',
@@ -10,30 +11,33 @@ import {Tag} from "../shared/models/tag.model";
 export class SubmitTagComponent implements OnInit {
 	submittedTag: string;
 	tagAlreadyExist = false;
+	modalActive = false;
 
-  constructor(private tagsService: TagsService) { }
+  constructor(private tagsService: TagsService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  toggleTagAlreadyExists(){
-    this.tagAlreadyExist = !this.tagAlreadyExist;
-  }
-
   submitTag(){
-  	console.log('Tag ' + this.submittedTag + ' submitted !');
     this.tagsService.tagExists(this.submittedTag).subscribe(data => {
       if(data) {
-        console.log('tag already exists');
         this.tagAlreadyExist = true;
       } else {
-        console.log('ok!');
+        this.tagAlreadyExist = false;
         const newTag = new Tag(this.submittedTag);
-        this.tagsService.createTag(newTag).subscribe(data => {
-          console.log(data);
+        this.tagsService.createTag(newTag).subscribe(() => {
+          this.modalActive = true;
         })
       }
     })
   }
 
+  addAnother() {
+    this.submittedTag = '';
+    this.modalActive = !this.modalActive;
+  }
+
+  goToHomepage(){
+    this.router.navigate(['/']);
+  }
 }

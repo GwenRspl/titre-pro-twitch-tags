@@ -1,7 +1,10 @@
 package com.gwenrspl.twitchtags.controller;
 
+import com.gwenrspl.twitchtags.message.response.ResponseMessage;
 import com.gwenrspl.twitchtags.model.Tag;
 import com.gwenrspl.twitchtags.service.TagService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,18 +32,21 @@ public class TagController {
     }
 
     @PostMapping("/create")
-    public Tag create(@RequestBody final Tag tag) {
-        return this.service.create(tag);
+    public ResponseEntity<?> create(@RequestBody final Tag tag) {
+        this.service.create(tag);
+        return new ResponseEntity<>(new ResponseMessage("Tag created successfully"), HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public Tag update(@PathVariable Long id, @RequestBody Tag tag) {
-        return this.service.update(id, tag);
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Tag tag) {
+        this.service.update(id, tag);
+        return new ResponseEntity<>(new ResponseMessage("Tag updated successfully"), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         this.service.delete(id);
+        return new ResponseEntity<>(new ResponseMessage("Tag deleted successfully"), HttpStatus.OK);
     }
 
     @GetMapping("/is-present/{tag}")

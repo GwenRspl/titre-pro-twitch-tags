@@ -22,7 +22,6 @@ export class SearchBarNameComponent implements OnInit {
     this.error = false;
     this.channelService.searchName(this.submittedName).subscribe((data: Channel[]) => {
       if(data.length == 0){
-        console.log('nothing found');
         this.error = true;
         this.message = 'No channels found !';
       } else {

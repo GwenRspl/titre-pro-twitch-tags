@@ -75,7 +75,6 @@ export class ChannelProfileComponent implements OnInit {
   }
 
   select(item) {
-    console.log(item);
     this._userInput = item.name;
     this._tagToAdd = item;
     this._filteredList = [];
@@ -93,8 +92,6 @@ export class ChannelProfileComponent implements OnInit {
   }
 
   addTag(){
-    console.log("adding tag");
-
     let username = this.tokenStorage.getUsername();
     let user: User;
     this.userService.getUserByUsername(username).subscribe(
@@ -102,8 +99,7 @@ export class ChannelProfileComponent implements OnInit {
         user = data;
         let link = new LinkTagChannelUserInfo(this._channel.id, this.tagToAdd.id, user.id);
         this.tagService.addTagToChannel(link).subscribe(
-          data => {
-            console.log(data);
+          () => {
             let str = this.route.snapshot['_routerState'].url;
             this.router.navigate(['/']).then(()=> this.router.navigate([str]));
           },

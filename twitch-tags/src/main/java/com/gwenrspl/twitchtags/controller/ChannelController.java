@@ -1,7 +1,10 @@
 package com.gwenrspl.twitchtags.controller;
 
+import com.gwenrspl.twitchtags.message.response.ResponseMessage;
 import com.gwenrspl.twitchtags.model.Channel;
 import com.gwenrspl.twitchtags.service.ChannelService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,11 +41,6 @@ public class ChannelController {
         return this.service.searchByTags(tags);
     }
 
-//    @PostMapping("/search/tag")
-//    public List<Channel> searchByTag(@RequestBody String tag) {
-//        return this.service.searchByTag(tag);
-//    }
-
     @PostMapping("/search/name")
     public List<Channel> searchByName(@RequestBody String name) {
         return this.service.searchByName(name);
@@ -54,13 +52,15 @@ public class ChannelController {
     }
 
     @PutMapping("/{id}")
-    public Channel update(@PathVariable final Long id, @RequestBody final Channel channel) {
-        return this.service.update(id, channel);
+    public ResponseEntity<?> update(@PathVariable final Long id, @RequestBody final Channel channel) {
+        this.service.update(id, channel);
+        return new ResponseEntity<>(new ResponseMessage("Channel updated successfully"), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable final Long id) {
+    public ResponseEntity<?> delete(@PathVariable final Long id) {
         this.service.delete(id);
+        return new ResponseEntity<>(new ResponseMessage("Channel deleted successfully"), HttpStatus.OK);
     }
 
     @PostMapping("/is-present")

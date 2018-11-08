@@ -22,7 +22,9 @@ export class SearchComponent implements OnInit {
       this._searchName = true;
     }
     this.service.resultChanged.subscribe(
-      () => {this._searching = true;}
+      (data) => {
+        this._searching = data != null;
+      }
     );
   }
 

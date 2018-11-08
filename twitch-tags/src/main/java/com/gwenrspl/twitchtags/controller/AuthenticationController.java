@@ -25,17 +25,17 @@ import javax.validation.Valid;
 @RequestMapping("/api/auth")
 public class AuthenticationController {
 
-    @Autowired
-    AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
+    private UserService userService;
+    private PasswordEncoder encoder;
+    private JwtProvider jwtProvider;
 
-    @Autowired
-    UserService userService;
-
-    @Autowired
-    PasswordEncoder encoder;
-
-    @Autowired
-    JwtProvider jwtProvider;
+    public AuthenticationController(final UserService service, AuthenticationManager authenticationManager, PasswordEncoder encoder, JwtProvider jwtProvider) {
+        this.userService = service;
+        this.authenticationManager = authenticationManager;
+        this.encoder = encoder;
+        this.jwtProvider = jwtProvider;
+    }
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
@@ -74,9 +74,4 @@ public class AuthenticationController {
         return new ResponseEntity<>(new ResponseMessage("User registered successfully"), HttpStatus.OK);
     }
 
-    @PostMapping("/update")
-    public ResponseEntity<?> updatePassword(@Valid @RequestBody LoginForm updateForm) {
-        //TODO
-        return null;
-    }
 }

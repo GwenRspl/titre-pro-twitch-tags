@@ -10,6 +10,8 @@ import {Router} from "@angular/router";
 })
 export class SubmitChannelComponent implements OnInit {
 
+  private _error = false;
+  private _message = '';
   submittedChannel: string;
 
   constructor(private service: ChannelsService, private router: Router) { }
@@ -18,29 +20,39 @@ export class SubmitChannelComponent implements OnInit {
   }
 
   submitChannel(){
-    console.log('Tag ' + this.submittedChannel + ' submitted !');
     this.service.alreadyExist(this.submittedChannel).subscribe((data: boolean) => {
       if(data) {
-        console.log("this channel already exist in database")
+        this._error = true;
+        this._message = 'This channel already exist in database.';
       } else {
         this.service.getDataFromTwitchApi(this.submittedChannel).subscribe(data => {
-          console.log(data);
           if(data.status == '404') {
-            console.log('channel does not exist');
+            this._error = true;
+            this._message = 'This channel does not exist.';
           } else {
             let status = 'NONE';
             if (data.partner) status = 'PARTNER';
 
             let channel: Channel = new Channel(data.display_name, data.url, data.broadcaster_language, data.logo, data.followers, data.partner, status );
-            console.log(channel);
             this.service.saveChannel(channel).subscribe(data => {
-              console.log(data);
               this.router.navigate(['/profile/' + data.id]);
             })
           }
-        }, error1 => console.log("Channel not found " + error1.toString()))
+        }, error1 => {
+          console.log("Channel not found " + error1);
+          this._error = true;
+          this._message = 'This channel does not exist.';
+        })
       }
     });
   }
 
+
+  get error(): boolean {
+    return this._error;
+  }
+
+  get message(): string {
+    return this._message;
+  }
 }

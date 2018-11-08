@@ -10,7 +10,8 @@
     <th class="has-text-centered">{{user.id}}</th>
     <td>{{user.username}}</td>
     <td>{{user.email}}</td>
-    <td class="has-text-centered is-clickable" (click)="deleteUser(user)"><span class="icon is-small"><i class="fas fa-times" aria-hidden="true"></i></span></td>
+    <td class="has-text-centered is-clickable" (click)="deleteUser(user)" *ngIf="username != user.username"><span class="icon is-small"><i class="fas fa-times" aria-hidden="true"></i></span></td>
+    <td class="has-text-centered" *ngIf="username == user.username" title="You cannot delete your own account here">-</td>
   </tr>
   </tbody>
 </table>

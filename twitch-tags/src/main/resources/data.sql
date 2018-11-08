@@ -10,8 +10,7 @@ INSERT INTO public.channel(status, avatar, followers, language, name, url)
         (0 , 'https://static-cdn.jtvnw.net/jtv_user_pictures/83f7ac2b8a6813e6-profile_image-300x300.png', 12116, 'FR', 'Nat_Ali', 'https://www.twitch.tv/nat_ali');
 
 INSERT INTO public.website_user(role, email, password, username)
-	VALUES (0, 'admin@admin.fr', 'admin', 'admin'),
-	      (1, 'user1@user.fr', 'user1', 'user1'),
+	VALUES (1, 'user1@user.fr', 'user1', 'user1'),
 	      (1, 'user2@user.fr', 'user2', 'user2'),
 	      (1, 'user3@user.fr', 'user3', 'user3'),
 	      (1, 'user4@user.fr', 'user4', 'user4'),

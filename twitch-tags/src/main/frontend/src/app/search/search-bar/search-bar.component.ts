@@ -72,14 +72,13 @@ export class SearchBarComponent implements OnInit {
     for(let tag of this._selected){
       tagNames = tagNames + tag.name + ",";
     }
-    console.log(tagNames);
     tagNames = tagNames.slice(0,-1);
-    console.log(tagNames);
     this.channelsService.search(tagNames).subscribe((data: Channel[]) => {
       if(data.length == 0){
-        console.log('nothin found');
         this.error = true;
         this.message = 'No channels found !';
+        this.searchService.searchResult = null;
+
       } else {
         this.searchService.searchResult = data;
       }

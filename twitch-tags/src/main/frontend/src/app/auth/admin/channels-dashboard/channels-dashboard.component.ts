@@ -44,7 +44,6 @@ export class ChannelsDashboardComponent implements OnInit {
           let updatedChannel: Channel = new Channel(data.display_name, data.url, data.broadcaster_language, data.logo, data.followers, data.partner, status );
           updatedChannel.id = channel.id;
           this.channelService.updateChannel(updatedChannel).subscribe(data => {
-            console.log('finish1');
             channelProcessed++;
             if(channelProcessed === this.channels.length) {
               this.ngOnInit();
@@ -64,8 +63,7 @@ export class ChannelsDashboardComponent implements OnInit {
         if (data.partner) status = 'PARTNER';
         let updatedChannel: Channel = new Channel(data.display_name, data.url, data.broadcaster_language, data.logo, data.followers, data.partner, status );
         updatedChannel.id = channel.id;
-        this.channelService.updateChannel(updatedChannel).subscribe(data => {
-          console.log(data);
+        this.channelService.updateChannel(updatedChannel).subscribe(() => {
           this.ngOnInit();
         })
       }
@@ -74,8 +72,7 @@ export class ChannelsDashboardComponent implements OnInit {
 
   deleteOneChannel(channel: Channel) {
     this.channelService.deleteChannel(channel).subscribe(
-      data => {
-        console.log(data);
+      () => {
         this.ngOnInit();
       },
       error => {

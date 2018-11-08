@@ -17,14 +17,15 @@ export class AccountComponent implements OnInit {
   changeEmailForm: FormGroup;
   modalActive = false;
 
-  constructor(private usersService: UsersService, private formBuilder: FormBuilder, private router: Router, private tokenService: TokenStorageService) { }
+  constructor(private usersService: UsersService, private formBuilder: FormBuilder, private router: Router, private tokenService: TokenStorageService) {
+    this.user = new User(null, null, null);
+  }
 
   ngOnInit() {
 
     let username = this.tokenService.getUsername();
     this.usersService.getUserByUsername(username).subscribe(
       data => {
-        console.log(data);
         this.user = data;
       },
       error => {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from "../../../shared/models/user.model";
 import {UsersService} from "../../../services/users.service";
 import {Router} from "@angular/router";
+import {TokenStorageService} from "../../token-storage.service";
 
 @Component({
   selector: 'app-users-dashboard',
@@ -10,10 +11,12 @@ import {Router} from "@angular/router";
 })
 export class UsersDashboardComponent implements OnInit {
   private _users: User[];
+  private _username;
 
-  constructor(private userService: UsersService, private router: Router) { }
+  constructor(private userService: UsersService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
+    this._username = this.tokenStorage.getUsername();
     this.userService.getUsers().subscribe(
       data => {
         this._users = data;
@@ -26,8 +29,7 @@ export class UsersDashboardComponent implements OnInit {
 
   deleteUser(user: User) {
     this.userService.deleteUser(user).subscribe(
-      data => {
-        console.log(data);
+      () => {
         this.ngOnInit();
       },
       error => {
@@ -39,5 +41,10 @@ export class UsersDashboardComponent implements OnInit {
 
   get users(): User[] {
     return this._users;
+  }
+
+
+  get username() {
+    return this._username;
   }
 }

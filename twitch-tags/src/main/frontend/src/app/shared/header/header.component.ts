@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
         return true;
       });
     }
-    console.log(this.authority);
   }
 
   logout(){
@@ -36,10 +35,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleMenuBurger(){
-    console.log("toggled!");
-    console.log(this.toggled);
     this.toggled = this.toggled != true;
-    console.log(this.toggled);
   }
 
 
