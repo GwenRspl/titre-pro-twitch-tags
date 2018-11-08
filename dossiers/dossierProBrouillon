@@ -1,0 +1,28 @@
+Angular likes
+
+1 - Décrivez les tâches ou opérations que vous avez effectuées, et dans quelles conditions :
+Ce projet a été réalisé pendant la pré-formation à mon alternance, nous devions créer une application reliée utilisant les données fournies par une API de notre choix trouvable sur internet. J'ai choisi d'utiliser l'API Harry Potter mettant à disposition les personnages de la saga.
+J'ai donc décider de développer une application recensant les personnages d'Harry Potter, et permettant de mettre en favori nos personnages préférés.
+
+J'ai commencé par dessiner les maquettes, puis j'ai créé mon projet à l'aide d'Angular CLI et j'ai istallé Angular Material.J'ai ensuite commencé à créer les composants qui formeront la structure de mon application et le service qui va permettre à mon application et l'API de communiquer.
+Quand l'application se lance, le composant sensé afficher les personnages va demander au service de récuperer les données de l'API, ceci étant une opération asynchrone, le composant doit s'abonner au résultat que va renvoyer le service. Le composant stocke ensuite les données renvoyées par le service dans un tableau.
+Concernant le système de favoris, quand sur l'application on clique sur l'icone de favori d'un personnage, le service va le stocker dans un tableau. Ainsi le composant s'occupant de l'affichage des favoris pourra y accéder facilement sans avoir à communiquer directement avec le composant des personnages.
+
+Pour finir, je me suis occupée du design de mon application à l'aide d'Angular Material et de pages CSS.
+
+
+2. Précisez les moyens utilisés :
+
+Pour développer cette application, j'ai utilisé l'éditeur de texte Sublime Test.
+J'ai dessiné les maquettes à la main sur une feuille blanche.
+J'ai utilisé Angular 4 ainsi que le framework Angular Material pour le design de l'application, et pour l'API, j'ai utilisé celle trouvable à l'adresse https://hp-api.herokuapp.com/.
+Enfin j'ai utilisé GitHub pour le versioning du projet.
+
+
+3. Avec qui avez-vous travaillé ?
+
+Ce projet étant un exercice personnel demandé par ma formatrice, j'ai travaillé seule dessus.
+
+4. ets : Simplon.co
+chantier: Projet exercice pendant la formation POEC JAVA
+Période :  du 25/10/2017 au 27/10/2017
