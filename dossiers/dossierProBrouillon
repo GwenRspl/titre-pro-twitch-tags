@@ -1,10 +1,12 @@
+Front-Exemple 1
 Angular likes
 
 1 - Décrivez les tâches ou opérations que vous avez effectuées, et dans quelles conditions :
+
 Ce projet a été réalisé pendant la pré-formation à mon alternance, nous devions créer une application reliée utilisant les données fournies par une API de notre choix trouvable sur internet. J'ai choisi d'utiliser l'API Harry Potter mettant à disposition les personnages de la saga.
 J'ai donc décider de développer une application recensant les personnages d'Harry Potter, et permettant de mettre en favori nos personnages préférés.
 
-J'ai commencé par dessiner les maquettes, puis j'ai créé mon projet à l'aide d'Angular CLI et j'ai istallé Angular Material.J'ai ensuite commencé à créer les composants qui formeront la structure de mon application et le service qui va permettre à mon application et l'API de communiquer.
+J'ai commencé par dessiner les maquettes, puis j'ai créé mon projet à l'aide d'Angular CLI et j'ai installé Angular Material.J'ai ensuite commencé à créer les composants qui formeront la structure de mon application et le service qui va permettre à mon application et l'API de communiquer.
 Quand l'application se lance, le composant sensé afficher les personnages va demander au service de récuperer les données de l'API, ceci étant une opération asynchrone, le composant doit s'abonner au résultat que va renvoyer le service. Le composant stocke ensuite les données renvoyées par le service dans un tableau.
 Concernant le système de favoris, quand sur l'application on clique sur l'icone de favori d'un personnage, le service va le stocker dans un tableau. Ainsi le composant s'occupant de l'affichage des favoris pourra y accéder facilement sans avoir à communiquer directement avec le composant des personnages.
 
@@ -16,7 +18,7 @@ Pour finir, je me suis occupée du design de mon application à l'aide d'Angular
 Pour développer cette application, j'ai utilisé l'éditeur de texte Sublime Test.
 J'ai dessiné les maquettes à la main sur une feuille blanche.
 J'ai utilisé Angular 4 ainsi que le framework Angular Material pour le design de l'application, et pour l'API, j'ai utilisé celle trouvable à l'adresse https://hp-api.herokuapp.com/.
-Enfin j'ai utilisé GitHub pour le versioning du projet.
+Enfin j'ai utilisé Git et GitHub pour le versioning du projet.
 
 
 3. Avec qui avez-vous travaillé ?
@@ -26,3 +28,32 @@ Ce projet étant un exercice personnel demandé par ma formatrice, j'ai travaill
 4. ets : Simplon.co
 chantier: Projet exercice pendant la formation POEC JAVA
 Période :  du 25/10/2017 au 27/10/2017
+
+
+
+
+Back-Exemple 1
+Book catalog
+
+1 - Décrivez les tâches ou opérations que vous avez effectuées, et dans quelles conditions :
+
+J'ai réalisé ce projet pendant ma formation en alternance afin de bien assimiler la façon de développer une API REST en Jdbc. J'ai donc choisi de développer le backend d'une application de collection de livres.
+
+J'ai commencé par faire un diagramme de classe et un diagramme Entité-Relation grace au logiciel StarUML.
+J'ai ensuite initialisé un projet SpringBoot via SpringCLI, j'ai créé les fichiers schema.sql et data.sql dans le dossier resources pour créer les tables de ma base de données et y insérer des entrées. Ensuite j'ai créé les entitées de mes deux classes Book et Author ainsi que leurs mappers respectifs. Cela permet de transformer directement le résultat des requêtes SQL en objet java. J'ai ensuite créé les repositorys des deux classes Book et Author qui seront chargés d'executer les requêtes SQL. Puis j'ai créé un service pour chaque classe, c'est lui qui se chargera de faire communiquer les repository avec les controllers.
+Et enfin, j'ai créé les controllers de Book et Author, puis j'ai testé que les requêtes marchaient bien avec Insomnia.
+
+2. Précisez les moyens utilisés :
+J'ai utilisé StarUML pour le diagramme Entité-Relation et diagramme de classe.
+Pour développer ce projet j'ai utilisé l'environnement de développement Intellij IDEA et j'ai utilisé GitHub pour le versionning. Il s'agit d'un projet SpringBoot avec les dépendances Web, jdbc...
+Pour la database, j'ai utilisé PostgreSQL avec PgAdmin.
+Insomnia est un logiciel qui permet de tester les api rest ...//TODO
+
+
+3. Avec qui avez-vous travaillé ?
+
+Ce projet étant un exercice que j'ai fait à titre personel pour comprendre le fonctionnement d'un CRUD en Jdbc, j'ai travaillé seule dessus.
+
+4. ets : Simplon.co
+chantier: Projet exercice pendant la formation en alternance
+Période :  du 09/11/2018 au ??/11/2018
