@@ -41,7 +41,7 @@ J'ai réalisé ce projet pendant ma formation en alternance afin de bien assimil
 
 J'ai commencé par faire un diagramme de classe et un diagramme Entité-Relation grace au logiciel StarUML.
 J'ai ensuite initialisé un projet SpringBoot via SpringCLI, j'ai créé les fichiers schema.sql et data.sql dans le dossier resources pour créer les tables de ma base de données et y insérer des entrées. Ensuite j'ai créé les entitées de mes deux classes Book et Author ainsi que leurs mappers respectifs. Cela permet de transformer directement le résultat des requêtes SQL en objet java. J'ai ensuite créé les repositorys des deux classes Book et Author qui seront chargés d'executer les requêtes SQL. Puis j'ai créé un service pour chaque classe, c'est lui qui se chargera de faire communiquer les repository avec les controllers.
-Et enfin, j'ai créé les controllers de Book et Author, puis j'ai testé que les requêtes marchaient bien avec Insomnia.
+Et enfin, j'ai créé les controllers de Book et Author, puis j'ai testé que les requêtes marchaient bien grâce à Insomnia.
 
 2. Précisez les moyens utilisés :
 J'ai utilisé StarUML pour le diagramme Entité-Relation et diagramme de classe.
