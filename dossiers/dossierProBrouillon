@@ -57,3 +57,26 @@ Ce projet étant un exercice que j'ai fait à titre personel pour comprendre le 
 4. ets : Simplon.co
 chantier: Projet exercice pendant la formation en alternance
 Période :  du 09/11/2018 au ??/11/2018
+
+
+WORDPRESS
+
+Pour utiliser VVV, j'ai d'abord installé VitualBox et Vagrant. J'ai aussi utilisé le plugin vagrant-hostupdater qui va modifier le fichier des hosts afin de pouvoir accéder aux instances de wordpress via des urls simples comme http://vvv.test par exemple. Ensuite j'ai installé VVV, en clonant son repo GitHub en local et je l'ai lancé avec la ligne de commande vagrant up.
+
+J'ai utilisé l'extension Elementor pour contruire la page d'accueil de façon plus personelle, WPForms Lite afin de créer un formulaire de contact et WooCommerce et WooComercePaypal Checkout Gateway pour faire de mon site WordPress un véritable e-commerce.
+
+J'ai aussi créé un rôle Shop Manager en plus de l'administrateur, ainsi qu'un compte Customer.
+Des captures d'écran du site sont disponibles en annexe.
+
+Pour le déploiement du site, j'ai utilisé l'option gratuite de Byethost.com et leur installateur Softaculous pour installer WordPress, puis j'ai utilisé l'extension All-in-One WP Migration pour exporter mon site local dans un fichier, puis l'importer sur mon nouveau serveur.
+Mon site wordpress est donc visible à l'adresse http://doggy-treats.byethost6.com/wp/.
+
+
+
+Vagrant est un outil pour construire et distribuer des environnement de development. Ca marche avec des logiciels de machine virtuel (comme VirtualBox donc) pour proposer une machine virtuelle depuis notre environement local.
+
+Pixabay
+
+
+
+
