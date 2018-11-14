@@ -122,17 +122,55 @@ L'informatique étant un domaine en constante évolution, le développeur doit être
 3. A PROPOS (200-250 mots chacun)
 a Francais
 
-Avant de parler de mon application Twitch-Tags, je dois d'abord présenter Twitch. Il s'agit d'un site permettant de regarder ou de diffuser des vidéos live. C'est un site très similaire à Youtube, sauf que l'accent est mis sur les diffusions en live et sur l'interaction entre les spectateurs et les diffuseurs. La thématique du contenu que l'on trouve sur Twitch est surtout le jeu-vidéo, car le site n'autorisait par le passé que ce genre de contenu, mais depuis récemment, plus de thématiques sont désormais autorisées. Twitch est donc composé de chaines, et chaque chaine possède une chat-room où les spectateurs peuvnt discuter entre eux ou parler directement au diffuseur.
+Avant de parler de Twitch-Tags, mon application, je dois d'abord présenter Twitch. Il s'agit d'un site permettant de regarder ou de diffuser des vidéos live. C'est un site très similaire à Youtube, sauf que l'accent est mis sur les diffusions en live et sur l'interaction entre les spectateurs et les diffuseurs. La thématique du contenu que l'on trouve sur Twitch est surtout le jeu-vidéo, car le site n'autorisait par le passé que ce genre de contenu, mais depuis récemment, plus de thématiques sont désormais autorisées. Twitch est donc composé de chaines, et chaque chaine possède une chat-room où les spectateurs peuvnt discuter entre eux ou parler directement au diffuseur.
 
-J'ai décidé de faire de mon application un catalogue de chaines Twitch, sur lesquels il est possible d'ajouter des tags afin de mieux définir ces chaines, leur contenu, leur ambiance. Il est possible de sélectionner des tags pour effectuer un recherche qui retournera ainsi un résultat spécifique aux attentes de l'utilisateur. Si il manque une chaine à l'application, l'utilisateur peut la rajouter à l'application. Il est aussi possible de créer un compte pour avoir accès à des fonctionnalités supplémentaires. Un utilisateur enregistré peut donc rajouter un nouveau tag à une chaine, ou encore exprimer son accord quant à un tag d'un simple clic.
+J'ai décidé de faire de mon application un catalogue de chaines Twitch, sur lesquels il est possible d'ajouter des tags afin de mieux définir ces chaines, leur contenu, leur ambiance. Il est possible de sélectionner des tags pour effectuer un recherche qui retournera ainsi un résultat spécifique aux attentes de l'utilisateur. Si il manque une chaine à l'application, l'utilisateur peut la rajouter. Il est aussi possible de créer un compte pour avoir accès à des fonctionnalités supplémentaires. Un utilisateur enregistré peut donc rajouter un nouveau tag à une chaine, ou encore exprimer son accord quant à un tag d'un simple clic.
 L'objectif de mon application est de permettre à ses utilisateurs de découvrir facilement de nouvelles chaines correspondant à ses goûts.
 
 
 b Anglais
 
+Before talking about Twitch-Tags, my application, I must introduce Twitch. It is a website for watching and streaming digital video broadcast. It is very similar to Youtube, except the focus is on live broadcast and on the interaction between viewers and streamers.  Twitch originally focused entirely on video games but has since expanded to include more themes for its content. Twitch is composed of channels, and each of theses channels has a chat room where viewers can talk among themselves or directly speak to the streamer.
+
+I hav decided that my application would be a catalog of Twitch channel, on which it is possible to add tags to better characterize it, its content, and its atmosphere.It is possible to selct tags to perfom a search that will return a result custom made for the expectations of the user. If a user cannot find the channel he was looking for, he can add it to the application. It is also possible de create an account, or also agree with a tag with a simple clic.
+The goal of my application is to help users to easily discover new channels matching their needs.
+
 4.CONCEPTION
 > Cahier des charges : contexte et définition du problème, objectif du projet
-> user stories, use case
+L'idée pour mon application m'est venue d'une problématique personnelle. J'utilise Twitch autant en tant que spectatrice qu'en tant que diffuseuse et cela m'a permit de faire émerger une problématique de chaque côté qui en fait se rejoignent. 
+
+Quand je suis diffuseuse, ma préoccupation première est de réussir à attirer des spectateurs. Pour ça, tout ce que je peux faire, c'est lancer ma diffusion, et prier pour qu'un spectateur clique sur ma vignette dans le répertoire de ma catégorie de jeu. Seulement ce répertoire est classé pour que les channels populaires soient tout en haut de la page, et il n'y aucun moyen d'inverser ce tri. Donc pour trouver mon channel, le spectateur devra scroller jusqu'à tomber sur mon channel. Sachant qu'il y a plusieurs centaines de channels dans cette catégorie et que les channels les plus populaires ont entre 2000 et 5000 spectateurs, le spectateur potentiel devra scroller pendant de longues secondes pour arriver jusqu'à la ligne où se situe mon channel. Tout cela n'est pas très pratique pour les diffuseurs qui débutent, puisque évidémment, les spectateurs choisissent généralement de regarder les premiers channels.
+
+Quand je suis spectatrice et que je veux découvrir une nouvelle chaine sur Twitch, je suis obligée de choisir un jeu ou une catégorie en particulier pour pouvoir afficher une liste de channel. Cette liste m'affiche uniquement le nom du channel, le titre de la diffusion, une capture d'écran et le nombre de personne regardant cette diffusion. Et c'est tout. Est-ce que le diffuseur est un très bon dans ce jeu ? Est-il drôle ? Est-ce qu'il a plutôt tendance à s'énerver ? Est-ce que cette chaine est regardable par toute la famille ? Autant de questions auquelles on ne peut répondre qu'en prenant du temps pour voir ce que propose le diffuseur. En tant que spectatrice, j'ai déjà passé une heure, à cliquer sur des chaines au hasard pour voir si elles me convenaient, pour finalement abandonner faute d'avoir trouvé ce que je cherchais.
+
+L'objectif de mon application est donc d'aider les spectateurs de Twitch à découvrir de nouvelles chaines correspondant le mieux possible à ses attentes grâce à un système de tag. Un diffuseur sur Twitch pourra par exemple rajouter son channel à l'application et y rentrer les tags qu'il pense lui correspondent. Ainsi les utilisateurs venant sur l'application pour faire une recherche pourront sélectionner les tags qu'ils désirent et afficher toutes les chaines correspondant à ces tags. Si il trouve qu'un tag convient particulièrement bien à  un channel, ils pourront même cliquer dessus et ainsi incrémenter un compteur qui montrera aux autres utilisaturs que ce tag est tout à fait pertinent sur cette chaine.
+De cette manière un diffuseur possédant une chaine ayant peu de spectateurs pourra plus facilement être trouvé si il s'adresse à une niche en particulier par exemple.
+
+> user stories
+Les user stories ou récit utilisateur sont des courtes et simples descriptions d'une fonctionnalité décrite par la personne à laquelle elle est destinée : "En tant que <role de l'utilisateur>, je veux <but de la fonctionnalité>.
+
+J'ai choisi de débuter la phase de conception de mon application en écrivant des User Stories. Cela m'a permit de clarifier les roles utilisateurs, de bien définir les fonctionnalités dont j'aurai besoin et d'aider à l'organisation et à a répartition du temps de travail.
+
+Voici la liste des Users Stories principales de mon projet :
+
+-En tant qu'utilisateur, je veux pouvoir taper le nom d'une chaine pour la rechercher.
+-En tant qu'utilisateur, je veux pouvoir sélectionner des tags dans une lister pour chercher des chaines.
+-En tant qu'utilisateur, je veux pouvoir rajouter une nouvelle chaine à l'application.
+-En tant qu'utilisateur, je veux pouvoir créer un compte pour accéder aux fonctionnalités supplémentaires.
+-En tant qu'utilisateur, je veux pouvoir accéder aux détails d'une chaine.
+-En tant qu'utilisateur, je veux pouvoir rajouter un tag à une chaine.
+-En tant qu'utilisateur, je veux pouvoir supprimer mon compte.
+-En tant qu'administrateur, je veux pouvoir supprimer un tag.
+-En tant qu'administrateur, je veux pouvoir modifier ou supprimer une chaine.
+
+> Use case
+Le Use Case ou Cas d'utilisation est un diagramme qui permet d'identifier les interactions entre le système et ses utilisateurs. Le Use Case différe des User Stories dans le sens où il permet de mieux identifier les liaisons et  apporte une vision globale facilitée.
+
+Voici mon diagramme Use Case :
+
+
+
+
 > Maquette, schéma enchaine maquette
 > diagramme ER, diagramme de classe
 
