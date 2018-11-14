@@ -1,0 +1,41 @@
+Maquetter une application
+-Use case
+-user stories
+-maquette wireframe -> faire schéma d'enchainement des écrans
+
+Réaliser une interface utilisateur web statique et adaptable & Développer une interface utilisateur web dynamique
+-conforme à la maquette
+-bonne pratique structuration
+-responsive
+-référencement naturel
+-veille vulnérabilité
+
+Créer une base de données
+-conforme au schema physique
+-script créa et insert sans erreurs
+-Les besoins de sécurité du SGBD sont exprimés selon l’état de l’art et les exigences de sécurité identifiées
+- base test peut être restaurée en cas d'incident
+
+Développer les composants d’accès aux données & Développer la partie back-end d’une application web ou web
+mobile
+- schéma de mes routes pour rest api
+-test unitaire fonctionnel et sécuritaire
+-vulnérabilité
+-code source documenté ou auto-documenté
+
+Elaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce & Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce
+-comptes utilisateurs droits t roles sécuritaires
+-référencement natural
+-vulnérabilité
+- composants complémentaires ou réalisé s'intégrent bien
+-tests ?
+
+Utiliser l’anglais dans son activité professionnelle en développement web et web mobile :
+doc comprise sans contre sens
+
+Actualiser et partager ses compétences en développement web et web mobile :
+La veille sur les vulnérabilités connues permet d’identifier et corriger des failles potentielles
+Le partage du résultat de veille est effectué oralement ou par écrit avec ses pair
+
+Déployer l'app
+déployer wordpress 

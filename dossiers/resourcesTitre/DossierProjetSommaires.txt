@@ -1,0 +1,241 @@
+Contenu du dossier de projet
+Le dossier de projet respecte ce plan type :
+1. Liste des compétences du référentiel qui sont couvertes par le projet
+2. Résumé du projet en français d’une longueur d’environ 20 lignes soit 200 à 250 mots, ou environ 1200 caractères espaces non compris
+3. Cahier des charges, expression des besoins, ou spécifications fonctionnelles du projet
+4. Spécifications techniques du projet, élaborées par le candidat, y compris pour la sécurité et le web mobile
+5. Réalisations du candidat comportant les extraits de code les plus significatifs et en les argumentant, y compris pour la sécurité et le web mobile
+6. Présentation du jeu d’essai élaboré par le candidat de la fonctionnalité la plus représentative (données en entrée, données attendues, donnéesobtenues)
+7. Description de la veille, effectuée par le candidat durant le projet, sur les vulnérabilités de sécurité
+8. Description d’une situation de travail ayant nécessité une recherche, effectuée par le candidat durant le projet, à partir de site anglophone
+9. Extrait du site anglophone, utilisé dans le cadre de la recherche décrite précédemment, accompagné de la traduction en français effectuée par lecandidat sans traducteur automatique (environ 750 signes).
+La description de la veille sur les vulnérabilités de sécurité est liée à l’une des deux compétences « Développer une interface utilisateur web dynamique » ou « Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce » dans le cadre du projet en entreprise.
+La description de la situation de travail, ayant nécessité une recherche basée sur un ou des sites anglophones, concerne un problème technique ou une nouvelle fonctionnalité à mettre en œuvre, dans le cadre du projet en entreprise. Elle est liée à l’une des compétences du titre professionnel. Dans le cas de la recherche de solution, basée sur un ou des sites anglophones, à un problème technique ou une nouvelle fonctionnalité à mettre en œuvre, le candidat décrit le besoin d’information, et indique comment il a effectué la recherche : les mots clés de recherche utilisés et la liste des sites retournés. Il précise les critères de sélection du (ou des) site(s). Il indique la solution trouvée et si elle a pu être mise en œuvre.
+Dans le cas de la veille sur les vulnérabilités, le candidat indique comment il a effectué la veille : les sites et les mots clés utilisés. Il indique les vulnérabilités trouvées et éventuellement les failles potentielles corrigées.
+La longueur du dossier de projet hors annexes est de 30 à 35 pages, soit environ 48750 caractères espaces non compris.
+
+Paul (32pages)
+1. Remerciements
+2. À Propos (Version Française et Anglaise)
+3. Compétences Mises en Oeuvre
+4. Conception
+Contexte
+User Stories
+Lots Fonctionnels
+Maquette
+Diagramme de Use Case
+Diagramme de Classes
+5. Réalisation
+Choix des Technologies
+Organisation du Travail
+Architecture
+Player : fonctionnalités et spécificités
+Présentation : Back-Office et Index
+6. Conclusion
+
+Stéphane (46p)
+INTRODUCTION………………………………………………… p 3
+RESUME DU PROJET…………………………………………. p 5
+LISTE DES COMPÉTENCES…………………………………. p 6
+CAHIER DES CHARGES………………………………………. p 10
+GESTION DE PROJET…………………………………………. p 16
+SPECIFICATIONS FONCTIONNELLES…………………… p 19
+SPECIFICATIONS TECHNIQUES………………………….. p 29
+REALISATIONS……………………………………………………. p 34
+CONCLUSION……………………………………………………. p 44
+REMERCIEMENTS……………………………………………… p 45
+LEXIQUE…………………………………………………………… p 46
+
+Waby (57p)
+1. INTRODUCTION …… ?p.5
+2. RÉSUMÉ DU PROJET EN ANGLAIS …… ?p.6
+3. LISTE DES COMPÉTENCES ……? p.7 à 8
+3.1 DÉVELOPPER UNE APPLICATION CLIENT SERVEUR
+3.2 DÉVELOPPER UNE APPLICATION WEB
+4. CAHIER DES CHARGES MyCoach! …… ?p.9 à 11
+4.1 CONTEXTE ET DÉFINITION DES BESOINS
+4.2 OBJECTIF DE L’APPLICATION MYCOACH!
+4.3 PÉRIMÈTRE
+4.4 DESCRIPTION FONCTIONNELLE DES BESOINS
+4.5 ENVELOPPE BUDGÉTAIRE
+4.6 DÉLAIS
+4.7 AUTRES SPÉCIFICATIONS
+?DOSSIER PROJET? Page 25. SPÉCIFICATION FONCTIONNELLES …… ?p.12 à 14
+5.1 USE CASES DE L’APPLICATION MYCOACH!
+5.1.1 USE CASE 1 : CREATE WORKOUT
+5.1.2 USE CASE 2 : CONSULTE WORKOUT
+5.1.3 USE CASE 3 : CALCULATE MAX
+5.1.4 USE CASE 4 : CREATE MAXI PERFORMANCE
+5.1.5 USE CASE 5 : CONSULTE MAXI PERFORMANCE
+5.1.6 USE CASE 6 : CONSULTE EXERCISES
+6. ?GESTION DU PROJET MyCoach! ……. ?p.15 à 19
+6.1 REFLECTION SUR LE SUJET , PRINCIPES , ET CRÉATION DU CAHIER DES CHARGES
+6.2 EVALUATION DU TIMING
+6.3 CONCEPTION PROTOTYPE FRONT, MOCKUP : PAPIER PUIS ANGULAR
+6.4 CRÉATION DE L’APPLICATION MYCOACH!
+6.4.1 LA PARTIE FRONT
+6.4.2 LA PARTIE BACK
+6.4.3 RELATION ENTRE FRONT ET BACK
+6.4.4 AJUSTEMENTS ET DÉBOGAGES
+6.4.5 MISE EN FORME ET AJOUT DE FONCTIONNALITÉS
+6.4.6 SAUVEGARDE DES VERSIONS
+6.4.7 FEEDBACK ET TEST USERS
+6.5 CONCEPTION DU DOSSIER PROJET
+6.6 RELECTURE DU CODE SOURCE
+6.7 MISE EN SITUATION
+?DOSSIER PROJET? Page 37. RÉALISATION …….. ?p.20 à 54
+7.1 L’ARCHITECTURE GÉNÉRALE MYCOACH! ….. P.20
+7.2 LA PARTIE FRONT DE MYCOACH! ……. P.27
+?7.2.1 MISE EN FORME DES FONCTIONNALITÉS
+7.3 LA PARTIE BACK DE MYCOACH! …….. P.37
+7.4 LA RELIURE ENTRE LE FRONT ET LE BACK ….. P.47
+7.5 LA DÉMO DE L’APPLICATION MYCOACH!
+8. CONCLUSION ……… ?p.55
+9. REMERCIEMENTS …….. ?p.56
+10. LEXIQUE ……… ?p.57
+
+
+Hugues (66p)
+INTRODUCTION 6
+Mon parcours 6
+BNP Paribas Finance 6
+Le projet UPSKILLING 6
+Simplon CO 6
+L’alternance la terre d’accueil 7
+Mon Application chef d’oeuvre 7
+PROJECT’S ABSTRACT 8
+Context 8
+Current Situation 8
+Planned evolution 8
+My training 8
+My Project 8
+LISTE DES COMPÉTENCES MISES EN OEUVRE 9
+Activité Type : Développer une application client-serveur 9
+Maquetter une application 9
+Concevoir une base de données 9
+Mettre en place une base de données 9
+Développer une interface utilisateur 9
+Développer des composant d’accès aux données 9
+Activité Type : Développer une application web 10
+Développer des pages web en lien avec une base de données 10
+Développer une application simple de mobilité numérique 10
+Utiliser l’anglais dans son activité professionnelle en informatique. 10
+Compétence non couverte 10
+Mettre en oeuvre une solution de gestion de contenu ou de e-commerce 10
+CAHIER DES CHARGES 11
+Contexte 11
+Existant 11
+Les utilisateurs 12
+Les fonctionnalités actuelles 12
+Le projet global 13
+Les Spécifications Fonctionnelles 14
+Contrôle d’accès à l’application 14
+Gestion des comptes et ressources TEC 14
+Gestion des projets / groupes de projets 14
+Consultation état d’avancement 14
+Saisie et édition des rapports 14
+Édition des Procès Verbaux. 14
+Panneau d’accueil (Dashboard) 14
+LES SPÉCIFICATIONS TECHNIQUES 15
+Compatibilité matérielle 15
+Compatibilité logicielle 15
+Modes de connexion 15
+Mon Projet Chef d’Oeuvre : MyTEC Web POC 16
+GESTION DU PROJET 17
+Constitution de l’équipe 17
+Méthodologie utilisée 17
+Outillage utilisé 18
+Outillage pour le suivi de projet 18
+Outillage pour la modélisation UML 19
+Outillage pour la modélisation MPD 20
+Outillage pour le maquettage 21
+CONCEPTION 22
+Spécifications fonctionnelles UML 22
+Le diagramme des cas d’utilisation 23
+Les Acteurs 24
+Le futur utilisateur 24
+L’utilisateur avec compte 24
+L’administrateur fonctionnel 24
+Les cas d’utilisation 24
+La demande de création de compte 24
+La validation adresse email. 24
+La gestion des demandes de comptes. 24
+La gestion des comptes utilisateurs / ressources TEC. 24
+L’authentification. 25
+La réinitialisation du mot de passe. 25
+La consultation Dashboard 25
+Les diagrammes d’activités 26
+Accueil et authentification 27
+Demande de création de compte 29
+Le diagramme conceptuel des entités et relations 31
+La demande de création de compte 31
+Le compte Utilisateur 31
+Le paramètre 31
+Le type de paramètre 31
+Le diagramme conceptuel des responsabilités 32
+Le diagramme des classes 33
+La classe Parameter Type 34
+La classe Parameter 34
+La classe UserAccountRequest 34
+La classe UserAccount 35
+Réalisation des maquettes fil de fer (Wireframe) 36
+Tests des maquettes 42
+L’architecture Technique 43
+Application web SPA 43
+Web service REST 43
+RÉALISATION 44
+Les langages et frameworks de développement 44
+Pour le back END : web Service REST 44
+Java 1.8 44
+SpringBoot 44
+JPA et HIBERNATE 44
+Pour le front END : SPA web 45
+Angular 45
+L’environnement de développement 46
+Le poste de travail 46
+Les outils pour le backend 46
+JAVA 1.8 runtime et SDK 46
+ECLIPSE 46
+POSTMAN 46
+POSTGRESQL 10 46
+PGADMIN 4 46
+Les outils pour le front END 47
+Node JS, NPM, Angular CLI 47
+Visual Studio Code (VSC) 47
+Navigateurs Chrome, Firefox, Edge 47
+Augury 47
+Le développement de mon projet 48
+Le Sprint Zéro : Initialisation du projet 48
+Le Back 48
+Initialisation de la base de données 48
+Initialisation du code 48
+Le front. 48
+Initialisation dossier projet 49
+Installation librairies bootstrap, material, hammer js 49
+Ouverture de l’éditeur 49
+Paramétrage et personnalisation 49
+Stockage local des ressources 50
+Création du composant Navigation 50
+Les sprints suivants… Organisation de mon code. 51
+PRÉSENTATION DU CODE 52
+Le code BACK END : Service web REST 52
+Modèle de développement 52
+La couche Model : 52
+La couche repository : 53
+La couche service : 54
+RequestUserAccount – méthode create 54
+RequestUserAccount – méthode update 55
+La couche controller : 57
+La sécurité : 59
+Le code FRONT End : Web SPA Angular 61
+Le modèle de développement 61
+La couche modèle 61
+La couche service 61
+La couche view (V) 62
+Les pages 62
+Les composants 62
+La sécurité 63
+CONCLUSION 63
+REMERCIEMENTS 65
+LEXIQUE 66
+

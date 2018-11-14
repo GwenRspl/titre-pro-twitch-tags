@@ -1,0 +1,154 @@
+Introduction (mon parcours)
+1 Compétences mises en oeuvre 
+> citer les compétences + expliquer briévement (voir reac et synthétiser)
+2 A propos (200-250 mots chacun)
+a Francais
+b Anglais
+CONCEPTION
+3 Cahier des charges / Besoins, /Spécifications fonctionelles
+>Context/Besoins présenter twitch/ quels problèmes? pourquoi ?comment ? en tant qu'utilisatrice
+
+Cahier des charges : user stories, use case
+Maquette, schéma enchaine maquette
+
+diagramme ER, diagramme de classe
+
+b spécifications sécurité
+c spécifications web mobile
+
+REALISATION
+> outils utilisés
+> structure back et explication
+> structure front et explication
+
+5 Extraits code argumentés
+a
+b sécurtié
+c web mobile
+6 Fonctionnalité réprésentative
+
+VEILLE TECHNOLOGIQUE
+7Veille vulnérabilité sécurité
+8 Recherche sur site anglophone et extrait traduit
+
+9 Conclusion
+10 Remerciements
+11 Lexique
+
+
+_________________________________________________________________
+
+1. Introduction
+I, my, me, mine
+
+2. Compétences mises en oeuvre 
+> citer les compétences + expliquer briévement (voir reac et synthétiser)
+
+3. A propos (200-250 mots chacun)
+a Francais
+b Anglais
+
+4.CONCEPTION
+> Cahier des charges : contexte et définition du problème, objectif du projet
+> user stories, use case
+> Maquette, schéma enchaine maquette
+> diagramme ER, diagramme de classe
+
+5.REALISATION
+> outils utilisés
+> structure back et explication
+	-la db
+	-springboot
+	-test de l'api avec insomnia
+> structure front et explication
+	-angular
+	- référencement
+> deploiement heroku
+
+6.VEILLE TECHNOLOGIQUE
+> Veille vulnérabilité sécurité
+	-ANSSI (documents que j'ai dl)
+> Recherche sur site anglophone et extrait traduit
+	-baeldung > converter ?
+	(- grokonez > authentication ?)
+> questions/réponses sur stack overflow et partages sur slack
+
+7. Conclusion
+8. Remerciements
+9. Lexique
+
+_____________________________________________________________________________
+
+1. INTRODUCTION
+
+N'ayant pas suivi un cursus informatique dans mes études, j'ai découvert mon interet pour le dévelopement totalement par hasard au sein de mon premier emploi. J'étais chargée d'effectuer des taches répétitives sur des fichiers Excel, et un de mes collègues développeur m'a expliqué qu'il était possible d'automatiser certaines actions grâce aux macros Excel. J'ai par la suite eu l'occasion assister à une formation Visual Basic for Application dans le cadre du DIF de mon entreprise.
+Cette introduction au développement m'a fait me questionner sur mon orientation professionelle, j'ai ainsi décider de me reconvertir dans ce domaine. J'ai commencé par me former par moi-même sur des MOOC en ligne mais je cherchais surtout une formation qui soit diplomane.
+Après plusieurs mois de recherches pour trouver une formation qui correspondent à mes moyens, je suis tombée sur Simplon.co et sa formation Développeur web et web mobile.
+
+
+2. COMPÉTENCES MISES EN OEUVRE 
+
+I. Développer la partie front-end d’une application web ou web mobile en intégrant les recommandations de sécurité
+1 Maquetter une application
+La maquettage de l'application se fait généralement pendant la phase de conception de l'application à partir de cas d'utilisation. Elle peut se faire en plusieurs itérations que l'utilisateur final valide quand il estime qu'il y retrouve toutes les fonctionnalités necessaires.
+
+2 Réaliser une interface utilisateur web statique et adaptable
+L'interface utilisateur se réalise à partir de la maquette de l'application. Son rôle est de proposer à l'utilisateur une navigation simple et fluide pour réaliser ses tâches.
+
+3 Développer une interface utilisateur web dynamique
+Contrairement à l'interface web statique, le contenu de l'interface dynamique change en fonction d'informations qui ne sont connues qu'au moment où l'utilisateur la consulte.
+
+
+II. Développer la partie back-end d’une application web ou web mobile en intégrant les recommandations de sécurité
+5 Créer une base de données
+La base de données va permettre de stocker les informations en rapport avec l'application. On a besoin d'un système de gestion de base de données pour manipuler les données ainsi stockées.
+
+6 Développer les composants d’accès aux données
+Des composants sont nécessaires afin que l'application puisse accéder aux informations de la base de données. On utilise un language en back-end afin de faire communique l'application avec la base de données.
+
+7 Développer la partie back-end d’une application web ou web mobile
+La partie back-end de l'application ayant la capacité de communiquer avec la base de données, c'est elle qui va fournir indirectement les informations aux services de la partie front-end de l'application.
+
+
+III Compétences transversales de l’emploi 
+> Utiliser l’anglais dans son activité professionnelle en développement web et web mobile
+Il est important de maitriser l'anglais dans le développement web car cela permet de comprendre les documentations techiniques qui sont rarement en français. Il aussi importer de développer en anglais pour pouvoir partager son code et qu'il soit compréhensible pour un maximum de personnes, quel que soit leur langue maternelle.
+> Actualiser et partager ses compétences en développement web et web mobile
+L'informatique étant un domaine en constante évolution, le développeur doit être capable de se former par lui-même et de partager le résultat de ses recherches avec ses pairs.
+
+
+
+
+3. A PROPOS (200-250 mots chacun)
+a Francais
+b Anglais
+
+4.CONCEPTION
+> Cahier des charges : contexte et définition du problème, objectif du projet
+> user stories, use case
+> Maquette, schéma enchaine maquette
+> diagramme ER, diagramme de classe
+
+5.REALISATION
+> outils utilisés
+> structure back et explication
+	-la db
+	-springboot
+	-test de l'api avec insomnia
+> structure front et explication
+	-angular
+	- référencement
+> deploiement heroku
+
+6.VEILLE TECHNOLOGIQUE
+> Veille vulnérabilité sécurité
+	-ANSSI (documents que j'ai dl)
+> Recherche sur site anglophone et extrait traduit
+	-baeldung > converter ?
+	(- grokonez > authentication ?)
+> questions/réponses sur stack overflow et partages sur slack
+
+7. CONCLUSION
+8. REMERCIEMENTS
+9. LEXIQUE
+

@@ -15,7 +15,7 @@ Pour finir, je me suis occupée du design de mon application à l'aide d'Angular
 
 2. Précisez les moyens utilisés :
 
-Pour développer cette application, j'ai utilisé l'éditeur de texte Sublime Test.
+Pour développer cette application, j'ai utilisé l'éditeur de texte Sublime Text.
 J'ai dessiné les maquettes à la main sur une feuille blanche.
 J'ai utilisé Angular 4 ainsi que le framework Angular Material pour le design de l'application, et pour l'API, j'ai utilisé celle trouvable à l'adresse https://hp-api.herokuapp.com/.
 Enfin j'ai utilisé Git et GitHub pour le versioning du projet.
@@ -38,16 +38,14 @@ Book catalog
 1 - Décrivez les tâches ou opérations que vous avez effectuées, et dans quelles conditions :
 
 J'ai réalisé ce projet pendant ma formation en alternance afin de bien assimiler la façon de développer une API REST en Jdbc. J'ai donc choisi de développer le backend d'une application de collection de livres.
-
 J'ai commencé par faire un diagramme de classe et un diagramme Entité-Relation grace au logiciel StarUML.
 J'ai ensuite initialisé un projet SpringBoot via SpringCLI, j'ai créé les fichiers schema.sql et data.sql dans le dossier resources pour créer les tables de ma base de données et y insérer des entrées. Ensuite j'ai créé les entitées de mes deux classes Book et Author ainsi que leurs mappers respectifs. Cela permet de transformer directement le résultat des requêtes SQL en objet java. J'ai ensuite créé les repositorys des deux classes Book et Author qui seront chargés d'executer les requêtes SQL. Puis j'ai créé un service pour chaque classe, c'est lui qui se chargera de faire communiquer les repository avec les controllers.
 Et enfin, j'ai créé les controllers de Book et Author, puis j'ai testé que les requêtes marchaient bien grâce à Insomnia.
 
 2. Précisez les moyens utilisés :
-J'ai utilisé StarUML pour le diagramme Entité-Relation et diagramme de classe.
-Pour développer ce projet j'ai utilisé l'environnement de développement Intellij IDEA et j'ai utilisé GitHub pour le versionning. Il s'agit d'un projet SpringBoot avec les dépendances Web, jdbc...
-Pour la database, j'ai utilisé PostgreSQL avec PgAdmin.
-Insomnia est un logiciel qui permet de tester les api rest ...//TODO
+J'ai utilisé StarUML pour faire le diagramme Entité-Relation et le diagramme de classe.
+Pour développer ce projet j'ai utilisé l'environnement de développement Intellij IDEA et j'ai utilisé git et GitHub pour le versionning. Il s'agit d'un projet SpringBoot avec les dépendances Web, Jdbc et PostgreSQL.
+Pour la database, j'ai utilisé PostgreSQL avec PgAdmin et pour tester les requêtes, j'ai utilisé Insomnia.
 
 
 3. Avec qui avez-vous travaillé ?
@@ -59,24 +57,40 @@ chantier: Projet exercice pendant la formation en alternance
 Période :  du 09/11/2018 au ??/11/2018
 
 
+
 WORDPRESS
 
-Pour utiliser VVV, j'ai d'abord installé VitualBox et Vagrant. J'ai aussi utilisé le plugin vagrant-hostupdater qui va modifier le fichier des hosts afin de pouvoir accéder aux instances de wordpress via des urls simples comme http://vvv.test par exemple. Ensuite j'ai installé VVV, en clonant son repo GitHub en local et je l'ai lancé avec la ligne de commande vagrant up.
+J'ai réalisé de projet pendant mes semaines de formation en alternance. Le but étant de créer un site wordpress, nous avions le choix entre faire un e-commerce ou un blog. J'ai personnelement choisi de faire un e-commerce car nous avions déjà réalisé un blog par le passé à l'occasion d'un cours sur Angular.
 
-J'ai utilisé l'extension Elementor pour contruire la page d'accueil de façon plus personelle, WPForms Lite afin de créer un formulaire de contact et WooCommerce et WooComercePaypal Checkout Gateway pour faire de mon site WordPress un véritable e-commerce.
+J'ai donc commencé par installer VirtualBox, Vagrant et Varying Vagrant Vagrants (VVV) sur mon pc afin de pouvoir installer Wordpress en local. J'ai aussi utilisé le plugin vagrant-hostupdater qui va modifier le fichier des hosts afin de pouvoir accéder aux instances de wordpress via des urls simples comme http://vvv.test par exemple. Après avoir provisionné mon serveur avec tous les composants necessaires, j'ai créé une nouvelle instance de site Wordpress sur VVV. Après avoir vérifié que mon site marchait bien en local, j'ai installé les extensions necessaires à mon e-commerce: j'ai utilisé Elementor pour contruire la page d'accueil de façon plus personelle, WPForms Lite afin de créer un formulaire de contact et WooCommerce et WooComercePaypal Checkout Gateway pour faire de mon site WordPress un véritable e-commerce.
 
-J'ai aussi créé un rôle Shop Manager en plus de l'administrateur, ainsi qu'un compte Customer.
-Des captures d'écran du site sont disponibles en annexe.
+J'ai créé mes articles que j'ai importé dans mon site via un fichier .csv. Puis j'ai modifié le layout du site pour qu'il corresponse plus à mes attentes.
+J'ai ensuites créé de nouveaux utilisateurs : un shop manager et un customer. je n'ai pas créé de compte éditeur, auteur, contributeur ou abonné n'en ayant pas d'utilité dans le cadre d'un e-commerce.
+
 
 Pour le déploiement du site, j'ai utilisé l'option gratuite de Byethost.com et leur installateur Softaculous pour installer WordPress, puis j'ai utilisé l'extension All-in-One WP Migration pour exporter mon site local dans un fichier, puis l'importer sur mon nouveau serveur.
-Mon site wordpress est donc visible à l'adresse http://doggy-treats.byethost6.com/wp/.
+Mon site wordpress est donc visible à l'adresse http://doggy-treats.byethost6.com/wp/
+
+Des captures d'écran du site sont disponibles en annexe.
 
 
 
-Vagrant est un outil pour construire et distribuer des environnement de development. Ca marche avec des logiciels de machine virtuel (comme VirtualBox donc) pour proposer une machine virtuelle depuis notre environement local.
+2. Précisez les moyens utilisés :
+VirtualBox : logiciel libre de virtualisation.
+Vagrant : logiciel libre et open-source pour la création et la configuration des environnements de développement virtuel.
+Varying Vagrant Vagrants : configuration open source de vagrant spécialement conçue pour WordPress.
+Extensions WordPress : Elementor, WP Forms Lite, WooCommerce, WooCommercePaypal Checkout Gateway, All-in-One WP Migration.
+Pixabay : site web de partage de photographies et de vidéos libres de droit.
 
-Pixabay
 
+
+3. Avec qui avez-vous travaillé ?
+
+Ce projet étant un exercice personnel demandé par ma formatrice, j'ai travaillé seule dessus.
+
+4. ets : Simplon.co
+chantier: Projet exercice pendant la formation en alternance
+Période : du 03/09/2018 au 07/09/2018
 
 
 
