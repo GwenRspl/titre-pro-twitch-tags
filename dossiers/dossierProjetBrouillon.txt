@@ -121,6 +121,13 @@ L'informatique étant un domaine en constante évolution, le développeur doit être
 
 3. A PROPOS (200-250 mots chacun)
 a Francais
+
+Avant de parler de mon application Twitch-Tags, je dois d'abord présenter Twitch. Il s'agit d'un site permettant de regarder ou de diffuser des vidéos live. C'est un site très similaire à Youtube, sauf que l'accent est mis sur les diffusions en live et sur l'interaction entre les spectateurs et les diffuseurs. La thématique du contenu que l'on trouve sur Twitch est surtout le jeu-vidéo, car le site n'autorisait par le passé que ce genre de contenu, mais depuis récemment, plus de thématiques sont désormais autorisées. Twitch est donc composé de chaines, et chaque chaine possède une chat-room où les spectateurs peuvnt discuter entre eux ou parler directement au diffuseur.
+
+J'ai décidé de faire de mon application un catalogue de chaines Twitch, sur lesquels il est possible d'ajouter des tags afin de mieux définir ces chaines, leur contenu, leur ambiance. Il est possible de sélectionner des tags pour effectuer un recherche qui retournera ainsi un résultat spécifique aux attentes de l'utilisateur. Si il manque une chaine à l'application, l'utilisateur peut la rajouter à l'application. Il est aussi possible de créer un compte pour avoir accès à des fonctionnalités supplémentaires. Un utilisateur enregistré peut donc rajouter un nouveau tag à une chaine, ou encore exprimer son accord quant à un tag d'un simple clic.
+L'objectif de mon application est de permettre à ses utilisateurs de découvrir facilement de nouvelles chaines correspondant à ses goûts.
+
+
 b Anglais
 
 4.CONCEPTION
