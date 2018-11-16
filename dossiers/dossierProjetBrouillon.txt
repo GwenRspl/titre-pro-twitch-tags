@@ -167,12 +167,27 @@ Voici la liste des Users Stories principales de mon projet :
 Le Use Case ou Cas d'utilisation est un diagramme qui permet d'identifier les interactions entre le système et ses utilisateurs. Le Use Case différe des User Stories dans le sens où il permet de mieux identifier les liaisons et  apporte une vision globale facilitée.
 
 Voici mon diagramme Use Case :
-
-
+ _
+|_|
 
 
 > Maquette, schéma enchaine maquette
-> diagramme ER, diagramme de classe
+Après avoir faire les User Story et le diagramme Use Case, j'ai décidé de passer à la création de la maquette. J'ai commencé par faire du zoning sur papier afin de schématiser grossièrement l'interface de mon application et d'en d'identifier les principales zones.
+ _
+|_|
+Je suis ensuite passé à la création du wireframe, aussi appelé maquete fil de fer, sur le logiciel Pencil. J'ai ainsi pu définir plus précisément l'organisation et la structure des éléments de mon application.
+ _
+|_|
+
+> diagramme ER, diagramme de classe( à faire en full)
+J'ai me suis ensuite attelée au diagramme Entité-Relations, celui-ci montre les differentes entitées de mon application et quel type de relation les lies entre elles. Ce diagramme est crucial pour bien organiser la base de données.
+ _
+|_|
+
+Enfin, la dernière étape dans la conception de mon application était la création du diagramme de classe UML (Unified Modeling Language = Language de Modélisation Unifié). Il va décrire clairement la structure des éléments qui composeront mon back-end en modélisant ses classes, leurs attributs et opérations et les relations les charactérisant.
+ _
+|_|
+
 
 5.REALISATION
 > outils utilisés
