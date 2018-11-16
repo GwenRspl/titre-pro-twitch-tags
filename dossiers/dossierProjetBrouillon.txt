@@ -85,6 +85,8 @@ N'ayant pas suivi un cursus informatique dans mes études, j'ai découvert mon int
 Cette introduction au développement m'a fait me questionner sur mon orientation professionelle, j'ai ainsi décider de me reconvertir dans ce domaine. J'ai commencé par me former par moi-même sur des MOOC en ligne mais je cherchais surtout une formation qui soit diplomane.
 Après plusieurs mois de recherches pour trouver une formation qui correspondent à mes moyens, je suis tombée sur Simplon.co et sa formation Développeur web et web mobile.
 
+//TODO : parler début alternance, recherche ets et  poec, payintech
+
 
 2. COMPÉTENCES MISES EN OEUVRE 
 
@@ -184,19 +186,71 @@ J'ai me suis ensuite attelée au diagramme Entité-Relations, celui-ci montre les 
  _
 |_|
 
-Enfin, la dernière étape dans la conception de mon application était la création du diagramme de classe UML (Unified Modeling Language = Language de Modélisation Unifié). Il va décrire clairement la structure des éléments qui composeront mon back-end en modélisant ses classes, leurs attributs et opérations et les relations les charactérisant.
+Enfin, la dernière étape dans la conception de mon application était la création du diagramme de classe UML. Il va décrire clairement la structure des éléments qui composeront mon back-end en modélisant ses classes, leurs attributs et opérations et les relations les charactérisant.
  _
 |_|
 
 
 5.REALISATION
 > outils utilisés
+Une fois la phase de conception finie, je me suis attelée à la réalisation de mon application. Pour cela un certain nombre d'outils m'ont été utiles.
+Pour m'organiser dans la réalisation du travail et la gestion du temps, j'ai utilisé l'application Trello.J'ai ainsi listé grossièrement les tâches que j'avais à réaliser et le détails de leur réalisation. 
+ _
+|_|
+Une fois le développement de mon application bien commencé, j'ai un peu changé ma façon d'organiser mon Trello pour plutôt fonctionner avec un système de tickets comme je le faisais déjà dans mon entreprise. Les tickets ont chacun une tache bien précise à réaliser et une priorité allant de "triviale" à "critique", il était ainsi plus facile de répérer en coup d'oeil les tickets les plus urgents.
+ _
+|_|
+Pour les sauvegardes de mon travail, j'ai utilisé git et GitHub. Quand je developpais une nouvelle fonctionnalité, je le faisais sur une branche distincte de master, puis je faisais une pull-request que je mergeais une fois le développement de la fonctionnalité terminé. Ainsi la branche master était toujours protégée d'éventuelles erreurs ou problèmes de manipulation.
+ _
+|_|
+
+J'ai utilisé l'IDE IntelliJ IDEA. C'est le logiciel que j'utilise en entreprise, je le maitrise donc bien et suis plus efficace dessus que sur Eclipse, son concurrent. Je m'en suis servi pour coder le back-end mais aussi le front-end puisque qu'il supporte plusieurs languages et de framework différents.
+
+Back-end
+Concernant le système de gestion de base de données, j'ai utilisé PostgreSQL avec son outil d'administration graphique pgAdmin.
+Pour le développement de l'API REST, j'ai choisi d'utilisé Java dans un projet SpringBoot. SpringBoot est un micro framework qui a pour but de faciliter la confirguration d'un projet Spring. 
+Pour manager mon projet SpringBoot, j'ai utilisé Maven. C'est un outil de gestion de projets qui permet d'automatiser certaines taches et de gérer les dépendances du projet.
+Concernant les dépendances, j'utilise l'ORM Spring Data JPA. Son rôle est de faire correspondre les objets de mon système aux tables correspondantes dans la base de données.
+Enfin, j'ai utilisé le logiciel Insomnia pour tester les endpoints de mon API. Il s'agit d'une application permettant d'organiser, lancer et débugger des requests HTTP.
+
+Front-end
+Pour développer mon interface utilisateur, j'ai choisi d'utiliser Angular 6. Angular est un framework basé sur TypeScript, qui permet de contruire facilement des applications web grâce à un système de conventions
+J'ai choisi d'utiliser Angular car TypeScript se base sur ES6, mon projet peut par conséquent bénéficier de toutes ses nouvelles fonctionnalités et le code est ainsi mieux structuré et plus lisible. Angular me permet aussi d'avoir une architecture SPA, l'expérience utilisateur en est fluidifiée puisque que cela éviter le chargemen d'une nouvelle page à chaque action demandée. Enfin Angular est régulièrement mis à jour et possède une grande communauté, il est donc très facile de trouver des informations ou des dépendances compatibles.
+J'utilise aussi NodeJS et NPM pour faire fonctionner Angular. NodeJS permet de faire fonctionner le serveur dont aura besoin Angular, mais il est aussi necessaire pour faire fonctionner AngularCLI, l'outil de ligne de commande d'Angular et NPM, qui lui s'occupe de la gestion des dépendances .
+J'ai aussi choisi d'utiliser le framework CSS Bulma. Ce dernier est basé sur Flexbox, il est open-source,simple et surtout très lisible, contrairement à Bootstrap par exemple.
+Enfin ayant fait la majeure partie de mon développemnt sous linux, j'ai surtout utilisé le navigateur Firefox Developer Edition mais j'ai aussi testé mon application sur les navigateurs Chrome et Edge les quelques fois où j'ai développé sous Windows.
+
 > structure back et explication
+	-choix api rest
+Quand j'ai réfléchi à la façon dont j'allais faire le backend de mon application, mon choix s'est vite porté sur une API REST pour plusieurs raisons:
+> Il  s'agit d'une architecture standardisé et simple à mettre en oeuvre, elle est aussi facilement compréhensible pour un developpeur qui ne l'aurait pas développée lui-même. 
+> Elle supporte plusieurs formats de données différentes mais est surtout utilisé avec JSON ce qui se traduit par un meilleur support des navigateurs clients.
+> REST utilise peu de bande passante
+
 	-la db
+La première étape dans le démarrage de mon projet a été d'initialiser la base de donnée. J'ai donc créé une nouvelle base de donnée twitch-tags-db et son utilisateur.
+ Ensuite, j'ai écrit un script SQL pour créer mes tables en me référant à mon diagramme d'entité-relation. Ainsi j'ai créé les tables channel, website_user, tag et la table de jonction channel_tag_user_link avec les clés primaires et étrangères necessaires.
+ _
+|_|
+Puis j'ai écrit le script SQL chargé d'insérer des données dans mes tables.
+ _
+|_|
+
 	-springboot
+L'étape suivante était d'initialiser mon projet SpringBoot avec ses dépendances. Pour ça j'utilisé SpringCLI avec la ligne de commande "spring init --dependencies=Web,JPA,PostgreSQL,Security,Lombok, DevTools twitch-tags".
+Par defaut, SpringBoot va chercher des entités dans les packages pour créer leurs tables respectives en base de données. Mais étant donné que je désirais les créer moi-même pour avoir un maximum de controle dessus, j'ai mis les scrips SQL précédement écrits dans le dossier resources situé dans src/main. Dans ce même dossier, il y a un fichier application.properties qui sert à définir certains paramètres, dont ceux pour que SpringBoot puisse se connecter à la base de données. J'ai aussi rajouté deux paramètre pour que JPA affiche les logs de SQL et pour que les tables soit supprimées et recrées à chaque lancement de SpringBoot.
+ _
+|_|
+
+Ensuite en m'aidant de mon diagramme de classe, j'ai créé les classes et les packages donc j'avais besoin. Je me suis donc retrouvée avec structure finale : 
+ _
+|_|
+
+
+
 	-test de l'api avec insomnia
 > structure front et explication
-	-angular
+	- angular
 	- référencement
 > deploiement heroku
 
@@ -212,3 +266,11 @@ Enfin, la dernière étape dans la conception de mon application était la création
 8. REMERCIEMENTS
 9. LEXIQUE
 
+API REST ( Application Programming Interface Representational State Transfer)
+ES6 (ECMAScript 6)
+SPA (Single Page Application = application web monopage
+ JPA (Java Persistence Api)
+ORM (Object-Relational mapping = mapping objet-relationnel) 
+IDE (Integrated Development Envrionment = Environnement de développement)
+UML (Unified Modeling Language = Language de Modélisation Unifié)
+JSON
