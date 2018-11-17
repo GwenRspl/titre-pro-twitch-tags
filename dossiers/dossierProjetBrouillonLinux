@@ -1,0 +1,276 @@
+Introduction (mon parcours)
+1 Comp�tences mises en oeuvre 
+> citer les comp�tences + expliquer bri�vement (voir reac et synth�tiser)
+2 A propos (200-250 mots chacun)
+a Francais
+b Anglais
+CONCEPTION
+3 Cahier des charges / Besoins, /Sp�cifications fonctionelles
+>Context/Besoins pr�senter twitch/ quels probl�mes? pourquoi ?comment ? en tant qu'utilisatrice
+
+Cahier des charges : user stories, use case
+Maquette, sch�ma enchaine maquette
+
+diagramme ER, diagramme de classe
+
+b sp�cifications s�curit�
+c sp�cifications web mobile
+
+REALISATION
+> outils utilis�s
+> structure back et explication
+> structure front et explication
+
+5 Extraits code argument�s
+a
+b s�curti�
+c web mobile
+6 Fonctionnalit� r�pr�sentative
+
+VEILLE TECHNOLOGIQUE
+7Veille vuln�rabilit� s�curit�
+8 Recherche sur site anglophone et extrait traduit
+
+9 Conclusion
+10 Remerciements
+11 Lexique
+
+
+_________________________________________________________________
+
+1. Introduction
+I, my, me, mine
+
+2. Comp�tences mises en oeuvre 
+> citer les comp�tences + expliquer bri�vement (voir reac et synth�tiser)
+
+3. A propos (200-250 mots chacun)
+a Francais
+b Anglais
+
+4.CONCEPTION
+> Cahier des charges : contexte et d�finition du probl�me, objectif du projet
+> user stories, use case
+> Maquette, sch�ma enchaine maquette
+> diagramme ER, diagramme de classe
+
+5.REALISATION
+> outils utilis�s
+> structure back et explication
+	-la db
+	-springboot
+	-test de l'api avec insomnia
+> structure front et explication
+	-angular
+	- r�f�rencement
+> deploiement heroku
+
+6.VEILLE TECHNOLOGIQUE
+> Veille vuln�rabilit� s�curit�
+	-ANSSI (documents que j'ai dl)
+> Recherche sur site anglophone et extrait traduit
+	-baeldung > converter ?
+	(- grokonez > authentication ?)
+> questions/r�ponses sur stack overflow et partages sur slack
+
+7. Conclusion
+8. Remerciements
+9. Lexique
+
+_____________________________________________________________________________
+
+1. INTRODUCTION
+
+N'ayant pas suivi un cursus informatique dans mes �tudes, j'ai d�couvert mon interet pour le d�velopement totalement par hasard au sein de mon premier emploi. J'�tais charg�e d'effectuer des taches r�p�titives sur des fichiers Excel, et un de mes coll�gues d�veloppeur m'a expliqu� qu'il �tait possible d'automatiser certaines actions gr�ce aux macros Excel. J'ai par la suite eu l'occasion assister � une formation Visual Basic for Application dans le cadre du DIF de mon entreprise.
+Cette introduction au d�veloppement m'a fait me questionner sur mon orientation professionelle, j'ai ainsi d�cider de me reconvertir dans ce domaine. J'ai commenc� par me former par moi-m�me sur des MOOC en ligne mais je cherchais surtout une formation qui soit diplomane.
+Apr�s plusieurs mois de recherches pour trouver une formation qui correspondent � mes moyens, je suis tomb�e sur Simplon.co et sa formation D�veloppeur web et web mobile.
+
+//TODO : parler d�but alternance, recherche ets et  poec, payintech
+
+
+2. COMP�TENCES MISES EN OEUVRE 
+
+I. D�velopper la partie front-end d�une application web ou web mobile en int�grant les recommandations de s�curit�
+1 Maquetter une application
+La maquettage de l'application se fait g�n�ralement pendant la phase de conception de l'application � partir de cas d'utilisation. Elle peut se faire en plusieurs it�rations que l'utilisateur final valide quand il estime qu'il y retrouve toutes les fonctionnalit�s necessaires.
+
+2 R�aliser une interface utilisateur web statique et adaptable
+L'interface utilisateur se r�alise � partir de la maquette de l'application. Son r�le est de proposer � l'utilisateur une navigation simple et fluide pour r�aliser ses t�ches.
+
+3 D�velopper une interface utilisateur web dynamique
+Contrairement � l'interface web statique, le contenu de l'interface dynamique change en fonction d'informations qui ne sont connues qu'au moment o� l'utilisateur la consulte.
+
+
+II. D�velopper la partie back-end d�une application web ou web mobile en int�grant les recommandations de s�curit�
+5 Cr�er une base de donn�es
+La base de donn�es va permettre de stocker les informations en rapport avec l'application. On a besoin d'un syst�me de gestion de base de donn�es pour manipuler les donn�es ainsi stock�es.
+
+6 D�velopper les composants d�acc�s aux donn�es
+Des composants sont n�cessaires afin que l'application puisse acc�der aux informations de la base de donn�es. On utilise un language en back-end afin de faire communique l'application avec la base de donn�es.
+
+7 D�velopper la partie back-end d�une application web ou web mobile
+La partie back-end de l'application ayant la capacit� de communiquer avec la base de donn�es, c'est elle qui va fournir indirectement les informations aux services de la partie front-end de l'application.
+
+
+III Comp�tences transversales de l�emploi 
+> Utiliser l�anglais dans son activit� professionnelle en d�veloppement web et web mobile
+Il est important de maitriser l'anglais dans le d�veloppement web car cela permet de comprendre les documentations techiniques qui sont rarement en fran�ais. Il aussi importer de d�velopper en anglais pour pouvoir partager son code et qu'il soit compr�hensible pour un maximum de personnes, quel que soit leur langue maternelle.
+> Actualiser et partager ses comp�tences en d�veloppement web et web mobile
+L'informatique �tant un domaine en constante �volution, le d�veloppeur doit �tre capable de se former par lui-m�me et de partager le r�sultat de ses recherches avec ses pairs.
+
+
+
+
+3. A PROPOS (200-250 mots chacun)
+a Francais
+
+Avant de parler de Twitch-Tags, mon application, je dois d'abord pr�senter Twitch. Il s'agit d'un site permettant de regarder ou de diffuser des vid�os live. C'est un site tr�s similaire � Youtube, sauf que l'accent est mis sur les diffusions en live et sur l'interaction entre les spectateurs et les diffuseurs. La th�matique du contenu que l'on trouve sur Twitch est surtout le jeu-vid�o, car le site n'autorisait par le pass� que ce genre de contenu, mais depuis r�cemment, plus de th�matiques sont d�sormais autoris�es. Twitch est donc compos� de chaines, et chaque chaine poss�de une chat-room o� les spectateurs peuvnt discuter entre eux ou parler directement au diffuseur.
+
+J'ai d�cid� de faire de mon application un catalogue de chaines Twitch, sur lesquels il est possible d'ajouter des tags afin de mieux d�finir ces chaines, leur contenu, leur ambiance. Il est possible de s�lectionner des tags pour effectuer un recherche qui retournera ainsi un r�sultat sp�cifique aux attentes de l'utilisateur. Si il manque une chaine � l'application, l'utilisateur peut la rajouter. Il est aussi possible de cr�er un compte pour avoir acc�s � des fonctionnalit�s suppl�mentaires. Un utilisateur enregistr� peut donc rajouter un nouveau tag � une chaine, ou encore exprimer son accord quant � un tag d'un simple clic.
+L'objectif de mon application est de permettre � ses utilisateurs de d�couvrir facilement de nouvelles chaines correspondant � ses go�ts.
+
+
+b Anglais
+
+Before talking about Twitch-Tags, my application, I must introduce Twitch. It is a website for watching and streaming digital video broadcast. It is very similar to Youtube, except the focus is on live broadcast and on the interaction between viewers and streamers.  Twitch originally focused entirely on video games but has since expanded to include more themes for its content. Twitch is composed of channels, and each of theses channels has a chat room where viewers can talk among themselves or directly speak to the streamer.
+
+I hav decided that my application would be a catalog of Twitch channel, on which it is possible to add tags to better characterize it, its content, and its atmosphere.It is possible to selct tags to perfom a search that will return a result custom made for the expectations of the user. If a user cannot find the channel he was looking for, he can add it to the application. It is also possible de create an account, or also agree with a tag with a simple clic.
+The goal of my application is to help users to easily discover new channels matching their needs.
+
+4.CONCEPTION
+> Cahier des charges : contexte et d�finition du probl�me, objectif du projet
+L'id�e pour mon application m'est venue d'une probl�matique personnelle. J'utilise Twitch autant en tant que spectatrice qu'en tant que diffuseuse et cela m'a permit de faire �merger une probl�matique de chaque c�t� qui en fait se rejoignent. 
+
+Quand je suis diffuseuse, ma pr�occupation premi�re est de r�ussir � attirer des spectateurs. Pour �a, tout ce que je peux faire, c'est lancer ma diffusion, et prier pour qu'un spectateur clique sur ma vignette dans le r�pertoire de ma cat�gorie de jeu. Seulement ce r�pertoire est class� pour que les channels populaires soient tout en haut de la page, et il n'y aucun moyen d'inverser ce tri. Donc pour trouver mon channel, le spectateur devra scroller jusqu'� tomber sur mon channel. Sachant qu'il y a plusieurs centaines de channels dans cette cat�gorie et que les channels les plus populaires ont entre 2000 et 5000 spectateurs, le spectateur potentiel devra scroller pendant de longues secondes pour arriver jusqu'� la ligne o� se situe mon channel. Tout cela n'est pas tr�s pratique pour les diffuseurs qui d�butent, puisque �vid�mment, les spectateurs choisissent g�n�ralement de regarder les premiers channels.
+
+Quand je suis spectatrice et que je veux d�couvrir une nouvelle chaine sur Twitch, je suis oblig�e de choisir un jeu ou une cat�gorie en particulier pour pouvoir afficher une liste de channel. Cette liste m'affiche uniquement le nom du channel, le titre de la diffusion, une capture d'�cran et le nombre de personne regardant cette diffusion. Et c'est tout. Est-ce que le diffuseur est un tr�s bon dans ce jeu ? Est-il dr�le ? Est-ce qu'il a plut�t tendance � s'�nerver ? Est-ce que cette chaine est regardable par toute la famille ? Autant de questions auquelles on ne peut r�pondre qu'en prenant du temps pour voir ce que propose le diffuseur. En tant que spectatrice, j'ai d�j� pass� une heure, � cliquer sur des chaines au hasard pour voir si elles me convenaient, pour finalement abandonner faute d'avoir trouv� ce que je cherchais.
+
+L'objectif de mon application est donc d'aider les spectateurs de Twitch � d�couvrir de nouvelles chaines correspondant le mieux possible � ses attentes gr�ce � un syst�me de tag. Un diffuseur sur Twitch pourra par exemple rajouter son channel � l'application et y rentrer les tags qu'il pense lui correspondent. Ainsi les utilisateurs venant sur l'application pour faire une recherche pourront s�lectionner les tags qu'ils d�sirent et afficher toutes les chaines correspondant � ces tags. Si il trouve qu'un tag convient particuli�rement bien �  un channel, ils pourront m�me cliquer dessus et ainsi incr�menter un compteur qui montrera aux autres utilisaturs que ce tag est tout � fait pertinent sur cette chaine.
+De cette mani�re un diffuseur poss�dant une chaine ayant peu de spectateurs pourra plus facilement �tre trouv� si il s'adresse � une niche en particulier par exemple.
+
+> user stories
+Les user stories ou r�cit utilisateur sont des courtes et simples descriptions d'une fonctionnalit� d�crite par la personne � laquelle elle est destin�e : "En tant que <role de l'utilisateur>, je veux <but de la fonctionnalit�>.
+
+J'ai choisi de d�buter la phase de conception de mon application en �crivant des User Stories. Cela m'a permit de clarifier les roles utilisateurs, de bien d�finir les fonctionnalit�s dont j'aurai besoin et d'aider � l'organisation et � a r�partition du temps de travail.
+
+Voici la liste des Users Stories principales de mon projet :
+
+-En tant qu'utilisateur, je veux pouvoir taper le nom d'une chaine pour la rechercher.
+-En tant qu'utilisateur, je veux pouvoir s�lectionner des tags dans une lister pour chercher des chaines.
+-En tant qu'utilisateur, je veux pouvoir rajouter une nouvelle chaine � l'application.
+-En tant qu'utilisateur, je veux pouvoir cr�er un compte pour acc�der aux fonctionnalit�s suppl�mentaires.
+-En tant qu'utilisateur, je veux pouvoir acc�der aux d�tails d'une chaine.
+-En tant qu'utilisateur, je veux pouvoir rajouter un tag � une chaine.
+-En tant qu'utilisateur, je veux pouvoir supprimer mon compte.
+-En tant qu'administrateur, je veux pouvoir supprimer un tag.
+-En tant qu'administrateur, je veux pouvoir modifier ou supprimer une chaine.
+
+> Use case
+Le Use Case ou Cas d'utilisation est un diagramme qui permet d'identifier les interactions entre le syst�me et ses utilisateurs. Le Use Case diff�re des User Stories dans le sens o� il permet de mieux identifier les liaisons et  apporte une vision globale facilit�e.
+
+Voici mon diagramme Use Case :
+ _
+|_|
+
+
+> Maquette, sch�ma enchaine maquette
+Apr�s avoir faire les User Story et le diagramme Use Case, j'ai d�cid� de passer � la cr�ation de la maquette. J'ai commenc� par faire du zoning sur papier afin de sch�matiser grossi�rement l'interface de mon application et d'en d'identifier les principales zones.
+ _
+|_|
+Je suis ensuite pass� � la cr�ation du wireframe, aussi appel� maquete fil de fer, sur le logiciel Pencil. J'ai ainsi pu d�finir plus pr�cis�ment l'organisation et la structure des �l�ments de mon application.
+ _
+|_|
+
+> diagramme ER, diagramme de classe( � faire en full)
+J'ai me suis ensuite attel�e au diagramme Entit�-Relations, celui-ci montre les differentes entit�es de mon application et quel type de relation les lies entre elles. Ce diagramme est crucial pour bien organiser la base de donn�es.
+ _
+|_|
+
+Enfin, la derni�re �tape dans la conception de mon application �tait la cr�ation du diagramme de classe UML. Il va d�crire clairement la structure des �l�ments qui composeront mon back-end en mod�lisant ses classes, leurs attributs et op�rations et les relations les charact�risant.
+ _
+|_|
+
+
+5.REALISATION
+> outils utilis�s
+Une fois la phase de conception finie, je me suis attel�e � la r�alisation de mon application. Pour cela un certain nombre d'outils m'ont �t� utiles.
+Pour m'organiser dans la r�alisation du travail et la gestion du temps, j'ai utilis� l'application Trello.J'ai ainsi list� grossi�rement les t�ches que j'avais � r�aliser et le d�tails de leur r�alisation. 
+ _
+|_|
+Une fois le d�veloppement de mon application bien commenc�, j'ai un peu chang� ma fa�on d'organiser mon Trello pour plut�t fonctionner avec un syst�me de tickets comme je le faisais d�j� dans mon entreprise. Les tickets ont chacun une tache bien pr�cise � r�aliser et une priorit� allant de "triviale" � "critique", il �tait ainsi plus facile de r�p�rer en coup d'oeil les tickets les plus urgents.
+ _
+|_|
+Pour les sauvegardes de mon travail, j'ai utilis� git et GitHub. Quand je developpais une nouvelle fonctionnalit�, je le faisais sur une branche distincte de master, puis je faisais une pull-request que je mergeais une fois le d�veloppement de la fonctionnalit� termin�. Ainsi la branche master �tait toujours prot�g�e d'�ventuelles erreurs ou probl�mes de manipulation.
+ _
+|_|
+
+J'ai utilis� l'IDE IntelliJ IDEA. C'est le logiciel que j'utilise en entreprise, je le maitrise donc bien et suis plus efficace dessus que sur Eclipse, son concurrent. Je m'en suis servi pour coder le back-end mais aussi le front-end puisque qu'il supporte plusieurs languages et de framework diff�rents.
+
+Back-end
+Concernant le syst�me de gestion de base de donn�es, j'ai utilis� PostgreSQL avec son outil d'administration graphique pgAdmin.
+Pour le d�veloppement de l'API REST, j'ai choisi d'utilis� Java dans un projet SpringBoot. SpringBoot est un micro framework qui a pour but de faciliter la confirguration d'un projet Spring. 
+Pour manager mon projet SpringBoot, j'ai utilis� Maven. C'est un outil de gestion de projets qui permet d'automatiser certaines taches et de g�rer les d�pendances du projet.
+Concernant les d�pendances, j'utilise l'ORM Spring Data JPA. Son r�le est de faire correspondre les objets de mon syst�me aux tables correspondantes dans la base de donn�es.
+Enfin, j'ai utilis� le logiciel Insomnia pour tester les endpoints de mon API. Il s'agit d'une application permettant d'organiser, lancer et d�bugger des requests HTTP.
+
+Front-end
+Pour d�velopper mon interface utilisateur, j'ai choisi d'utiliser Angular 6. Angular est un framework bas� sur TypeScript, qui permet de contruire facilement des applications web gr�ce � un syst�me de conventions
+J'ai choisi d'utiliser Angular car TypeScript se base sur ES6, mon projet peut par cons�quent b�n�ficier de toutes ses nouvelles fonctionnalit�s et le code est ainsi mieux structur� et plus lisible. Angular me permet aussi d'avoir une architecture SPA, l'exp�rience utilisateur en est fluidifi�e puisque que cela �viter le chargemen d'une nouvelle page � chaque action demand�e. Enfin Angular est r�guli�rement mis � jour et poss�de une grande communaut�, il est donc tr�s facile de trouver des informations ou des d�pendances compatibles.
+J'utilise aussi NodeJS et NPM pour faire fonctionner Angular. NodeJS permet de faire fonctionner le serveur dont aura besoin Angular, mais il est aussi necessaire pour faire fonctionner AngularCLI, l'outil de ligne de commande d'Angular et NPM, qui lui s'occupe de la gestion des d�pendances .
+J'ai aussi choisi d'utiliser le framework CSS Bulma. Ce dernier est bas� sur Flexbox, il est open-source,simple et surtout tr�s lisible, contrairement � Bootstrap par exemple.
+Enfin ayant fait la majeure partie de mon d�veloppemnt sous linux, j'ai surtout utilis� le navigateur Firefox Developer Edition mais j'ai aussi test� mon application sur les navigateurs Chrome et Edge les quelques fois o� j'ai d�velopp� sous Windows.
+
+> structure back et explication
+	-choix api rest
+Quand j'ai r�fl�chi � la fa�on dont j'allais faire le backend de mon application, mon choix s'est vite port� sur une API REST pour plusieurs raisons:
+> Il  s'agit d'une architecture standardis� et simple � mettre en oeuvre, elle est aussi facilement compr�hensible pour un developpeur qui ne l'aurait pas d�velopp�e lui-m�me. 
+> Elle supporte plusieurs formats de donn�es diff�rentes mais est surtout utilis� avec JSON ce qui se traduit par un meilleur support des navigateurs clients.
+> REST utilise peu de bande passante
+
+	-la db
+La premi�re �tape dans le d�marrage de mon projet a �t� d'initialiser la base de donn�e. J'ai donc cr�� une nouvelle base de donn�e twitch-tags-db et son utilisateur.
+ Ensuite, j'ai �crit un script SQL pour cr�er mes tables en me r�f�rant � mon diagramme d'entit�-relation. Ainsi j'ai cr�� les tables channel, website_user, tag et la table de jonction channel_tag_user_link avec les cl�s primaires et �trang�res necessaires.
+ _
+|_|
+Puis j'ai �crit le script SQL charg� d'ins�rer des donn�es dans mes tables.
+ _
+|_|
+
+	-springboot
+L'�tape suivante �tait d'initialiser mon projet SpringBoot avec ses d�pendances. Pour �a j'utilis� SpringCLI avec la ligne de commande "spring init --dependencies=Web,JPA,PostgreSQL,Security,Lombok, DevTools twitch-tags".
+Par defaut, SpringBoot va chercher des entit�s dans les packages pour cr�er leurs tables respectives en base de donn�es. Mais �tant donn� que je d�sirais les cr�er moi-m�me pour avoir un maximum de controle dessus, j'ai mis les scrips SQL pr�c�dement �crits dans le dossier resources situ� dans src/main. Dans ce m�me dossier, il y a un fichier application.properties qui sert � d�finir certains param�tres, dont ceux pour que SpringBoot puisse se connecter � la base de donn�es. J'ai aussi rajout� deux param�tre pour que JPA affiche les logs de SQL et pour que les tables soit supprim�es et recr�es � chaque lancement de SpringBoot.
+ _
+|_|
+
+Ensuite en m'aidant de mon diagramme de classe, j'ai cr�� les classes et les packages donc j'avais besoin. Je me suis donc retrouv�e avec structure finale : 
+ _
+|_|
+
+
+
+	-test de l'api avec insomnia
+> structure front et explication
+	- angular
+	- r�f�rencement
+> deploiement heroku
+
+6.VEILLE TECHNOLOGIQUE
+> Veille vuln�rabilit� s�curit�
+	-ANSSI (documents que j'ai dl)
+> Recherche sur site anglophone et extrait traduit
+	-baeldung > converter ?
+	(- grokonez > authentication ?)
+> questions/r�ponses sur stack overflow et partages sur slack
+
+7. CONCLUSION
+8. REMERCIEMENTS
+9. LEXIQUE
+
+API REST ( Application Programming Interface Representational State Transfer)
+ES6 (ECMAScript 6)
+SPA (Single Page Application = application web monopage
+ JPA (Java Persistence Api)
+ORM (Object-Relational mapping = mapping objet-relationnel) 
+IDE (Integrated Development Envrionment = Environnement de d�veloppement)
+UML (Unified Modeling Language = Language de Mod�lisation Unifi�)
+JSON
