@@ -1,6 +1,6 @@
 INSERT INTO public.channel(status, avatar, followers, language, name, url)
 	VALUES (1 , 'https://static-cdn.jtvnw.net/jtv_user_pictures/e1d1c7bf-7e51-4e55-ba08-98451a3f9fc2-profile_image-300x300.png', 327, 'fr', 'Naevyah',  'https://twitch.tv/naevyah'),
-        (2 , 'https://static-cdn.jtvnw.net/jtv_user_pictures/redfanny_-profile_image-25848107b59dae96-300x300.jpeg', 4432, 'fr', 'RedFanny',  'https://twitch.tv/redfanny_'),
+        (2 , 'https://static-cdn.jtvnw.net/jtv_user_pictures/redfanny_-profile_image-25848107b59dae96-300x300.jpeg', 4432, 'fr', 'RedFanny_',  'https://twitch.tv/redfanny_'),
         (0 , 'https://static-cdn.jtvnw.net/jtv_user_pictures/zerator-profile_image-48eee9de24a47e53-300x300.png', 493724, 'fr', 'ZeratoR',  'https://www.twitch.tv/zerator'),
         (0 , 'https://static-cdn.jtvnw.net/jtv_user_pictures/ed72b641-83ea-4ee6-81fd-aa195759c512-profile_image-300x300.png', 995847, 'en', 'CohhCarnage',  'https://www.twitch.tv/cohhcarnage'),
         (0 , 'https://static-cdn.jtvnw.net/jtv_user_pictures/646dfb23762feb9a-profile_image-300x300.jpeg', 126244, 'en', 'Elspeth',  'https://www.twitch.tv/elspeth'),
