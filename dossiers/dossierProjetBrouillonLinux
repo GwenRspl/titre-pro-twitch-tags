@@ -238,7 +238,7 @@ Puis j'ai �crit le script SQL charg� d'ins�rer des donn�es dans mes tabl
 
 	-springboot
 L'�tape suivante �tait d'initialiser mon projet SpringBoot avec ses d�pendances. Pour �a j'utilis� SpringCLI avec la ligne de commande "spring init --dependencies=Web,JPA,PostgreSQL,Security,Lombok, DevTools twitch-tags".
-Par defaut, SpringBoot va chercher des entit�s dans les packages pour cr�er leurs tables respectives en base de donn�es. Mais �tant donn� que je d�sirais les cr�er moi-m�me pour avoir un maximum de controle dessus, j'ai mis les scrips SQL pr�c�dement �crits dans le dossier resources situ� dans src/main. Dans ce m�me dossier, il y a un fichier application.properties qui sert � d�finir certains param�tres, dont ceux pour que SpringBoot puisse se connecter � la base de donn�es. J'ai aussi rajout� deux param�tre pour que JPA affiche les logs de SQL et pour que les tables soit supprim�es et recr�es � chaque lancement de SpringBoot.
+Par defaut, SpringBoot va chercher des entit�s dans les packages pour cr�er leurs tables respectives en base de donn�es. Mais �tant donn� que je d�sirais les cr�er moi-m�me pour avoir un maximum de controle dessus, j'ai mis les scrips SQL pr�c�dement �crits dans le dossier resources situ� dans src/main. Dans ce m�me dossier, il y a un fichier application.properties qui sert � d�finir certains param�tres, dont ceux pour que SpringBoot puisse se connecter � la base de donn�es. J'ai aussi rajout� deux param�tre pour que JPA affiche les logs de SQL et qu'il ne génère pas lui-même les tables.
  _
 |_|
 
