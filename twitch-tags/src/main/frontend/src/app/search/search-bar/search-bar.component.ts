@@ -2,7 +2,7 @@ import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {Tag} from "../../shared/models/tag.model";
 import {TagsService} from "../../services/tags.service";
 import {ChannelsService} from "../../services/channels.service";
-import {SearchService} from "../../services/search.service";
+import {SearchService} from "../search.service";
 import {Channel} from "../../shared/models/channel.model";
 
 @Component({

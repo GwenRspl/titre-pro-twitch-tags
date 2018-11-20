@@ -1,13 +1,13 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute, Data, Router} from '@angular/router';
 
-import {Channel} from '../shared/models/channel.model';
-import {Tag} from "../shared/models/tag.model";
-import {TagsService} from "../services/tags.service";
-import {LinkTagChannelUserInfo} from "../services/link-tag-channel-user-info";
-import {User} from "../shared/models/user.model";
-import {TokenStorageService} from "../auth/token-storage.service";
-import {UsersService} from "../services/users.service";
+import {Channel} from '../../shared/models/channel.model';
+import {Tag} from "../../shared/models/tag.model";
+import {TagsService} from "../../services/tags.service";
+import {LinkTagChannelUserInfo} from "../../services/link-tag-channel-user-info";
+import {User} from "../../shared/models/user.model";
+import {TokenStorageService} from "../../auth/token-storage.service";
+import {UsersService} from "../../services/users.service";
 
 @Component({
   selector: 'app-channel-profile',

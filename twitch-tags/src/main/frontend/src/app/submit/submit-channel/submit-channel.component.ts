@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ChannelsService} from "../services/channels.service";
-import {Channel} from "../shared/models/channel.model";
+import {ChannelsService} from "../../services/channels.service";
+import {Channel} from "../../shared/models/channel.model";
 import {Router} from "@angular/router";
 
 @Component({
