@@ -1,0 +1,344 @@
+Introduction (mon parcours)
+1 Compétences mises en oeuvre 
+> citer les compétences + expliquer briévement (voir reac et synthétiser)
+2 A propos (200-250 mots chacun)
+a Francais
+b Anglais
+CONCEPTION
+3 Cahier des charges / Besoins, /Spécifications fonctionelles
+>Context/Besoins présenter twitch/ quels problèmes? pourquoi ?comment ? en tant qu'utilisatrice
+
+Cahier des charges : user stories, use case
+Maquette, schéma enchaine maquette
+
+diagramme ER, diagramme de classe
+
+b spécifications sécurité
+c spécifications web mobile
+
+REALISATION
+> outils utilisés
+> structure back et explication
+> structure front et explication
+
+5 Extraits code argumentés
+a
+b sécurtié
+c web mobile
+6 Fonctionnalité réprésentative
+
+VEILLE TECHNOLOGIQUE
+7Veille vulnérabilité sécurité
+8 Recherche sur site anglophone et extrait traduit
+
+9 Conclusion
+10 Remerciements
+11 Lexique
+
+
+_________________________________________________________________
+
+1. Introduction
+I, my, me, mine
+
+2. Compétences mises en oeuvre 
+> citer les compétences + expliquer briévement (voir reac et synthétiser)
+
+3. A propos (200-250 mots chacun)
+a Francais
+b Anglais
+
+4.CONCEPTION
+> Cahier des charges : contexte et définition du problème, objectif du projet
+> user stories, use case
+> Maquette, schéma enchaine maquette
+> diagramme ER, diagramme de classe
+
+5.REALISATION
+> outils utilisés
+> structure back et explication
+	-la db
+	-springboot
+	-test de l'api avec insomnia
+> structure front et explication
+	-angular
+	- référencement
+> deploiement heroku
+
+6.VEILLE TECHNOLOGIQUE
+> Veille vulnérabilité sécurité
+	-ANSSI (documents que j'ai dl)
+> Recherche sur site anglophone et extrait traduit
+	-baeldung > converter ?
+	(- grokonez > authentication ?)
+> questions/réponses sur stack overflow et partages sur slack
+
+7. Conclusion
+8. Remerciements
+9. Lexique
+
+_____________________________________________________________________________
+
+1. INTRODUCTION
+
+N'ayant pas suivi un cursus informatique dans mes études, j'ai découvert mon interet pour le dévelopement totalement par hasard au sein de mon premier emploi. J'étais chargée d'effectuer des taches répétitives sur des fichiers Excel, et un de mes collègues développeur m'a expliqué qu'il était possible d'automatiser certaines actions grâce aux macros Excel. J'ai par la suite eu l'occasion assister à une formation Visual Basic for Application dans le cadre du DIF de mon entreprise.
+Cette introduction au développement m'a fait me questionner sur mon orientation professionelle, j'ai ainsi décider de me reconvertir dans ce domaine. J'ai commencé par me former par moi-même sur des MOOC en ligne mais je cherchais surtout une formation qui soit diplomane.
+Après plusieurs mois de recherches pour trouver une formation qui correspondent à mes moyens, je suis tombée sur Simplon.co et sa formation Développeur web et web mobile.
+
+//TODO : parler début alternance, recherche ets et  poec, payintech
+
+
+2. COMPÉTENCES MISES EN OEUVRE 
+
+I. Développer la partie front-end d’une application web ou web mobile en intégrant les recommandations de sécurité
+1 Maquetter une application
+La maquettage de l'application se fait généralement pendant la phase de conception de l'application à partir de cas d'utilisation. Elle peut se faire en plusieurs itérations que l'utilisateur final valide quand il estime qu'il y retrouve toutes les fonctionnalités necessaires.
+
+2 Réaliser une interface utilisateur web statique et adaptable
+L'interface utilisateur se réalise à partir de la maquette de l'application. Son rôle est de proposer à l'utilisateur une navigation simple et fluide pour réaliser ses tâches.
+
+3 Développer une interface utilisateur web dynamique
+Contrairement à l'interface web statique, le contenu de l'interface dynamique change en fonction d'informations qui ne sont connues qu'au moment où l'utilisateur la consulte.
+
+
+II. Développer la partie back-end d’une application web ou web mobile en intégrant les recommandations de sécurité
+5 Créer une base de données
+La base de données va permettre de stocker les informations en rapport avec l'application. On a besoin d'un système de gestion de base de données pour manipuler les données ainsi stockées.
+
+6 Développer les composants d’accès aux données
+Des composants sont nécessaires afin que l'application puisse accéder aux informations de la base de données. On utilise un language en back-end afin de faire communique l'application avec la base de données.
+
+7 Développer la partie back-end d’une application web ou web mobile
+La partie back-end de l'application ayant la capacité de communiquer avec la base de données, c'est elle qui va fournir indirectement les informations aux services de la partie front-end de l'application.
+
+
+III Compétences transversales de l’emploi 
+> Utiliser l’anglais dans son activité professionnelle en développement web et web mobile
+Il est important de maitriser l'anglais dans le développement web car cela permet de comprendre les documentations techiniques qui sont rarement en français. Il aussi importer de développer en anglais pour pouvoir partager son code et qu'il soit compréhensible pour un maximum de personnes, quel que soit leur langue maternelle.
+> Actualiser et partager ses compétences en développement web et web mobile
+L'informatique étant un domaine en constante évolution, le développeur doit être capable de se former par lui-même et de partager le résultat de ses recherches avec ses pairs.
+
+
+
+
+3. A PROPOS (200-250 mots chacun)
+a Francais
+
+Avant de parler de Twitch-Tags, mon application, je dois d'abord présenter Twitch. Il s'agit d'un site permettant de regarder ou de diffuser des vidéos live. C'est un site très similaire à Youtube, sauf que l'accent est mis sur les diffusions en live et sur l'interaction entre les spectateurs et les diffuseurs. La thématique du contenu que l'on trouve sur Twitch est surtout le jeu-vidéo, car le site n'autorisait par le passé que ce genre de contenu, mais depuis récemment, plus de thématiques sont désormais autorisées. Twitch est donc composé de chaines, et chaque chaine possède une chat-room où les spectateurs peuvnt discuter entre eux ou parler directement au diffuseur.
+
+J'ai décidé de faire de mon application un catalogue de chaines Twitch, sur lesquels il est possible d'ajouter des tags afin de mieux définir ces chaines, leur contenu, leur ambiance. Il est possible de sélectionner des tags pour effectuer un recherche qui retournera ainsi un résultat spécifique aux attentes de l'utilisateur. Si il manque une chaine à l'application, l'utilisateur peut la rajouter. Il est aussi possible de créer un compte pour avoir accès à des fonctionnalités supplémentaires. Un utilisateur enregistré peut donc rajouter un nouveau tag à une chaine, ou encore exprimer son accord quant à un tag d'un simple clic.
+L'objectif de mon application est de permettre à ses utilisateurs de découvrir facilement de nouvelles chaines correspondant à ses goûts.
+
+
+b Anglais
+
+Before talking about Twitch-Tags, my application, I must introduce Twitch. It is a website for watching and streaming digital video broadcast. It is very similar to Youtube, except the focus is on live broadcast and on the interaction between viewers and streamers.  Twitch originally focused entirely on video games but has since expanded to include more themes for its content. Twitch is composed of channels, and each of theses channels has a chat room where viewers can talk among themselves or directly speak to the streamer.
+
+I hav decided that my application would be a catalog of Twitch channel, on which it is possible to add tags to better characterize it, its content, and its atmosphere.It is possible to selct tags to perfom a search that will return a result custom made for the expectations of the user. If a user cannot find the channel he was looking for, he can add it to the application. It is also possible de create an account, or also agree with a tag with a simple clic.
+The goal of my application is to help users to easily discover new channels matching their needs.
+
+4.CONCEPTION
+> Cahier des charges : contexte et définition du problème, objectif du projet
+L'idée pour mon application m'est venue d'une problématique personnelle. J'utilise Twitch autant en tant que spectatrice qu'en tant que diffuseuse et cela m'a permit de faire émerger une problématique de chaque côté qui en fait se rejoignent. 
+
+Quand je suis diffuseuse, ma préoccupation première est de réussir à attirer des spectateurs. Pour ça, tout ce que je peux faire, c'est lancer ma diffusion, et prier pour qu'un spectateur clique sur ma vignette dans le répertoire de ma catégorie de jeu. Seulement ce répertoire est classé pour que les channels populaires soient tout en haut de la page, et il n'y aucun moyen d'inverser ce tri. Donc pour trouver mon channel, le spectateur devra scroller jusqu'à tomber sur mon channel. Sachant qu'il y a plusieurs centaines de channels dans cette catégorie et que les channels les plus populaires ont entre 2000 et 5000 spectateurs, le spectateur potentiel devra scroller pendant de longues secondes pour arriver jusqu'à la ligne où se situe mon channel. Tout cela n'est pas très pratique pour les diffuseurs qui débutent, puisque évidémment, les spectateurs choisissent généralement de regarder les premiers channels.
+
+Quand je suis spectatrice et que je veux découvrir une nouvelle chaine sur Twitch, je suis obligée de choisir un jeu ou une catégorie en particulier pour pouvoir afficher une liste de channel. Cette liste m'affiche uniquement le nom du channel, le titre de la diffusion, une capture d'écran et le nombre de personne regardant cette diffusion. Et c'est tout. Est-ce que le diffuseur est un très bon dans ce jeu ? Est-il drôle ? Est-ce qu'il a plutôt tendance à s'énerver ? Est-ce que cette chaine est regardable par toute la famille ? Autant de questions auquelles on ne peut répondre qu'en prenant du temps pour voir ce que propose le diffuseur. En tant que spectatrice, j'ai déjà passé une heure, à cliquer sur des chaines au hasard pour voir si elles me convenaient, pour finalement abandonner faute d'avoir trouvé ce que je cherchais.
+
+L'objectif de mon application est donc d'aider les spectateurs de Twitch à découvrir de nouvelles chaines correspondant le mieux possible à ses attentes grâce à un système de tag. Un diffuseur sur Twitch pourra par exemple rajouter son channel à l'application et y rentrer les tags qu'il pense lui correspondent. Ainsi les utilisateurs venant sur l'application pour faire une recherche pourront sélectionner les tags qu'ils désirent et afficher toutes les chaines correspondant à ces tags. Si il trouve qu'un tag convient particulièrement bien à  un channel, ils pourront même cliquer dessus et ainsi incrémenter un compteur qui montrera aux autres utilisaturs que ce tag est tout à fait pertinent sur cette chaine.
+De cette manière un diffuseur possédant une chaine ayant peu de spectateurs pourra plus facilement être trouvé si il s'adresse à une niche en particulier par exemple.
+
+> user stories
+Les user stories ou récit utilisateur sont des courtes et simples descriptions d'une fonctionnalité décrite par la personne à laquelle elle est destinée : "En tant que <role de l'utilisateur>, je veux <but de la fonctionnalité>.
+
+J'ai choisi de débuter la phase de conception de mon application en écrivant des User Stories. Cela m'a permit de clarifier les roles utilisateurs, de bien définir les fonctionnalités dont j'aurai besoin et d'aider à l'organisation et à a répartition du temps de travail.
+
+Voici la liste des Users Stories principales de mon projet :
+
+-En tant qu'utilisateur, je veux pouvoir taper le nom d'une chaine pour la rechercher.
+-En tant qu'utilisateur, je veux pouvoir sélectionner des tags dans une lister pour chercher des chaines.
+-En tant qu'utilisateur, je veux pouvoir rajouter une nouvelle chaine à l'application.
+-En tant qu'utilisateur, je veux pouvoir créer un compte pour accéder aux fonctionnalités supplémentaires.
+-En tant qu'utilisateur, je veux pouvoir accéder aux détails d'une chaine.
+-En tant qu'utilisateur, je veux pouvoir rajouter un tag à une chaine.
+-En tant qu'utilisateur, je veux pouvoir supprimer mon compte.
+-En tant qu'administrateur, je veux pouvoir supprimer un tag.
+-En tant qu'administrateur, je veux pouvoir modifier ou supprimer une chaine.
+
+> Use case
+Le Use Case ou Cas d'utilisation est un diagramme qui permet d'identifier les interactions entre le système et ses utilisateurs. Le Use Case différe des User Stories dans le sens où il permet de mieux identifier les liaisons et  apporte une vision globale facilitée.
+
+Voici mon diagramme Use Case :
+ _
+|_|
+
+
+> Maquette, schéma enchaine maquette
+Après avoir faire les User Story et le diagramme Use Case, j'ai décidé de passer à la création de la maquette. J'ai commencé par faire du zoning sur papier afin de schématiser grossièrement l'interface de mon application et d'en d'identifier les principales zones.
+ _
+|_|
+Je suis ensuite passé à la création du wireframe, aussi appelé maquete fil de fer, sur le logiciel Pencil. J'ai ainsi pu définir plus précisément l'organisation et la structure des éléments de mon application.
+ _
+|_|
+
+> diagramme ER, diagramme de classe( à faire en full)
+J'ai me suis ensuite attelée au diagramme Entité-Relations, celui-ci montre les differentes entitées de mon application et quel type de relation les lies entre elles. Ce diagramme est crucial pour bien organiser la base de données.
+ _
+|_|
+
+Enfin, la dernière étape dans la conception de mon application était la création du diagramme de classe UML. Il va décrire clairement la structure des éléments qui composeront mon back-end en modélisant ses classes, leurs attributs et opérations et les relations les charactérisant.
+ _
+|_|
+
+
+5.REALISATION
+> outils utilisés
+Une fois la phase de conception finie, je me suis attelée à la réalisation de mon application. Pour cela un certain nombre d'outils m'ont été utiles.
+Pour m'organiser dans la réalisation du travail et la gestion du temps, j'ai utilisé l'application Trello.J'ai ainsi listé grossièrement les tâches que j'avais à réaliser et le détails de leur réalisation. 
+ _
+|_|
+Une fois le développement de mon application bien commencé, j'ai un peu changé ma façon d'organiser mon Trello pour plutôt fonctionner avec un système de tickets comme je le faisais déjà dans mon entreprise. Les tickets ont chacun une tache bien précise à réaliser et une priorité allant de "triviale" à "critique", il était ainsi plus facile de répérer en coup d'oeil les tickets les plus urgents.
+ _
+|_|
+Pour les sauvegardes de mon travail, j'ai utilisé git et GitHub. Quand je developpais une nouvelle fonctionnalité, je le faisais sur une branche distincte de master, puis je faisais une pull-request que je mergeais une fois le développement de la fonctionnalité terminé. Ainsi la branche master était toujours protégée d'éventuelles erreurs ou problèmes de manipulation.
+ _
+|_|
+
+J'ai utilisé l'IDE IntelliJ IDEA. C'est le logiciel que j'utilise en entreprise, je le maitrise donc bien et suis plus efficace dessus que sur Eclipse, son concurrent. Je m'en suis servi pour coder le back-end mais aussi le front-end puisque qu'il supporte plusieurs languages et de framework différents.
+
+Back-end
+Concernant le système de gestion de base de données, j'ai utilisé PostgreSQL avec son outil d'administration graphique pgAdmin.
+Pour le développement de l'API REST, j'ai choisi d'utilisé Java dans un projet SpringBoot. SpringBoot est un micro framework qui a pour but de faciliter la confirguration d'un projet Spring. 
+Pour manager mon projet SpringBoot, j'ai utilisé Maven. C'est un outil de gestion de projets qui permet d'automatiser certaines taches et de gérer les dépendances du projet.
+Concernant les dépendances, j'utilise l'ORM Spring Data JPA. Son rôle est de faire correspondre les objets de mon système aux tables correspondantes dans la base de données.
+Enfin, j'ai utilisé le logiciel Insomnia pour tester les endpoints de mon API. Il s'agit d'une application permettant d'organiser, lancer et débugger des requests HTTP.
+
+Front-end
+Pour développer mon interface utilisateur, j'ai choisi d'utiliser Angular 6. Angular est un framework basé sur TypeScript, qui permet de contruire facilement des applications web grâce à un système de conventions
+J'ai choisi d'utiliser Angular car TypeScript se base sur ES6, mon projet peut par conséquent bénéficier de toutes ses nouvelles fonctionnalités et le code est ainsi mieux structuré et plus lisible. Angular me permet aussi d'avoir une architecture SPA, l'expérience utilisateur en est fluidifiée puisque que cela éviter le chargemen d'une nouvelle page à chaque action demandée. Enfin Angular est régulièrement mis à jour et possède une grande communauté, il est donc très facile de trouver des informations ou des dépendances compatibles.
+J'utilise aussi NodeJS et NPM pour faire fonctionner Angular. NodeJS permet de faire fonctionner le serveur dont aura besoin Angular, mais il est aussi necessaire pour faire fonctionner AngularCLI, l'outil de ligne de commande d'Angular et NPM, qui lui s'occupe de la gestion des dépendances .
+J'ai aussi choisi d'utiliser le framework CSS Bulma. Ce dernier est basé sur Flexbox, il est open-source,simple et surtout très lisible, contrairement à Bootstrap par exemple.
+Enfin ayant fait la majeure partie de mon développemnt sous linux, j'ai surtout utilisé le navigateur Firefox Developer Edition mais j'ai aussi testé mon application sur les navigateurs Chrome et Edge les quelques fois où j'ai développé sous Windows.
+
+> structure back et explication
+	-choix api rest
+Quand j'ai réfléchi à la façon dont j'allais faire le backend de mon application, mon choix s'est vite porté sur une API REST pour plusieurs raisons:
+> Il  s'agit d'une architecture standardisé et simple à mettre en oeuvre, elle est aussi facilement compréhensible pour un developpeur qui ne l'aurait pas développée lui-même. 
+> Elle supporte plusieurs formats de données différentes mais est surtout utilisé avec JSON ce qui se traduit par un meilleur support des navigateurs clients.
+> REST utilise peu de bande passante
+
+	-la db
+La première étape dans le démarrage de mon projet a été d'initialiser la base de donnée. J'ai donc créé une nouvelle base de donnée twitch-tags-db et son utilisateur.
+ Ensuite, j'ai écrit un script SQL pour créer mes tables en me référant à mon diagramme d'entité-relation. Ainsi j'ai créé les tables channel, website_user, tag et la table de jonction channel_tag_user_link avec les clés primaires et étrangères necessaires.
+ _
+|_|
+Puis j'ai écrit le script SQL chargé d'insérer des données dans mes tables.
+ _
+|_|
+
+	-springboot
+L'étape suivante était d'initialiser mon projet SpringBoot avec ses dépendances. Pour ça j'utilisé SpringCLI avec la ligne de commande "spring init --dependencies=Web,JPA,PostgreSQL,Security,Lombok, DevTools twitch-tags".
+Par defaut, SpringBoot va chercher des entités dans les packages pour créer leurs tables respectives en base de données. Mais étant donné que je désirais les créer moi-même pour avoir un maximum de controle dessus, j'ai mis les scrips SQL précédement écrits dans le dossier resources situé dans src/main. Dans ce même dossier, il y a un fichier application.properties qui sert à définir certains paramètres, dont ceux pour que SpringBoot puisse se connecter à la base de données. J'ai aussi rajouté deux paramètre pour que JPA affiche les logs de SQL et pour que les tables soit supprimées et recrées à chaque lancement de SpringBoot.
+ _
+|_|
+
+Ensuite en m'aidant de mon diagramme de classe, j'ai créé les classes et les packages donc j'avais besoin. Je me suis donc retrouvée avec cette structure finale : 
+ _
+|_|
+
+J'ai commencé par créer mes entitées dans le package model : Channel, Tag, User et l'entité de liaison ChannelTagUserLink.
+Regardons de plus près la classe Channel :
+ _
+|_|
+J'ai ajouté l'annotation @Entity pour que JPA comprenne qu'il s'agit d'une entitée. @Data et @AllArgsConstructor sont des annotations pour Lombok : @Data permet de générer tout le code standard qui accompagne générable un objet Java : les getters et setters et les méthodes toString, equals et hashcode. Quand à @AllArgsConstructor, elle permet de générer un constructeur avec tous les arguments correspondant aux attributs de la classe. Grâce à ces deux annotations, le code de ma classe est beaucoup plus concis.
+J'ai ensuite défini les attributs de ma classe. Mon attribut id est annoté de @Id pour indiquer à JPA qu'il s'agit de l'attribut correspondant à la clé primaire de la table. @GeneratedValue indique que la clé primaire doit être incrémentée automatiquement et son paramètre strategy indique que la génération se fera à partir d'une identité propre au SGBD (PostgreSQL dans notre cas).
+L'attribut status étant de type Enum, j'ai crée ChannelStatus à l'intérieur de la classe Channel.
+J'ai annoté l'atribut channelTagUserLinks avec @OneToMany pour signaler à JPA qu'il existe une relation de cardinalité 0,n. En effet, un channel peut avoir plusieurs channelTagUserLinks, mais un channelTagUserLinks ne peut avoir qu'un seul channel.
+Enfin pour éviter d'avoir un boucle infinie lors de l'affichage du JSON, j'ai ajouté l'annotation @JsonSerialize avec son paramètre converter pour indiquer que cet attribut doit être sérialisé à l'aide de la classe ListChannelTagUserLinkConverter.
+ _
+|_|
+Si on regarde la classe ListChannelTagUserLinkConverter, on peut voir qu'elle étend la classe StdConverter et qu'elle override la méthode convert. J'ai créé une classe interne LinkSummary qui représente un "résumé" de la classe ChannelTagUserLink, c'est elle qui sera serializée. Ses attributs sont id, channelName, tagName et username, ce sont les seuls attributs qui m'interesse quand je serialize la classe Channel.
+La méthode convert prend donc en paramètre notre liste de ChannelTagUserLink et renvoi une liste de LinkSummary à la place. C'est à l'intérieur de cette méthode que la conversion a lieu : j'initialise ma liste de LinkSummary et je vais la remplir avec les données de la liste de ChannelTagUserLink.
+
+Une fois les entitées et les converters faits, j'ai créé les interfaces des repository pour chaque entité. Chaque interface étend JpaRepository, il s'agit d'une interface qu'offre Spring Data Jpa. Jpa Repository étend PagingAndSortingRepository, qui étend CrudRepository qui elle-même étend l'interface Repository. Pour faire simple Repository sert simplement à dire qu'une interface est un repository (qui vient du patron de conception repository, servant à abstraire l'accès aux données), le CrudRepository ajoute des méthodes CRUD pour la base de données, PagingAndSortingRepository rajoute un ensemble de méthodes pour la pagination et le tri. Enfin JpaRepository rajoute des méthodes comme la suppression en lots ou le vidage du cache.
+ _
+|_|
+
+Ensuite, j'ai créé les services qui seront chargés de faire la communication entre le repository et le controller. J'ai commencé par créer une interface qui liste les méthodes disponibles :
+ _
+|_|
+Puis j'ai créé l'implémentation du service :
+ _
+|_|
+L'annotation @Service permet de dire à Spring que cette classe est un service. C'est dans cette classe que je défini les méthodes de l'interface, elles sont en charge de faire les opérations necessaires à la logique métier.
+
+Enfin, j'ai créé les controllers de chaque entité:
+ _
+|_|
+L'annotation @RestController indique à Spring que la classe est un controller, @RequestMapping sert à indiquer l'url où seront accessibles par défaut les requêtes du controller, enfin @CrossOrigin permet d'autoriser les requêtes cross-origin provenant de l'url spécifiée. Cette dernière annotation est nécessaire car les requêtes AJAX interdomaine sont interdites par sécurité. La W3C a donc créé CORS  qui offre donc la possibilité aux servers de pouvoir mieux controler leurs requêtes interdomaine en ajoutant un header HTTP à leurs réponses qui permet au client de savoir quels sont les origines authorisés.
+Chaque méthode du controller possède une annotation indiquant le type de requête qu'elle accepte et sur quelle URL. En paramètre, j'ai défini si la méthode attendait un @RequestBody, @RequestParam ou encore un @PathVariable.
+Pour la méthode create par exemple, n'accepte que les requête POST à l'adresse /api/channels/create et doit recevoir un objet de type Channel dans le corps de la requête, sous forme de JSON par exemple. 
+
+
+	- authentification
+	
+	
+	
+	
+	
+	
+
+	-test de l'api avec insomnia
+Une fois les controllers créé, j'ai utilisé le logiciel Insomnia pour faire des requêtes et ainsi tester mes controllers. Dans un souci d'organisation et pour pouvoir les réutiliser facilement plus tard, j'ai mis mes requêtes dans des dossiers séparé selon qu'elles concernent les channels, les users ou les tags.
+ _
+|_|
+
+
+> structure front et explication
+	- angular
+	- référencement
+> deploiement heroku
+
+6.VEILLE TECHNOLOGIQUE
+> Veille vulnérabilité sécurité
+	-ANSSI (documents que j'ai dl)
+> Recherche sur site anglophone et extrait traduit
+	-baeldung > converter ?
+	(- grokonez > authentication ?)
+> questions/réponses sur stack overflow et partages sur slack
+
+
+
+7. CONCLUSION
+
+Mon année de formation chez Simplon.co et mon alternance chez PayinTech auront été un grand challenge pour moi, mais surtout un pari réussi. Quand j'ai quitté mon ancien poste pour entamer ma reconversion, je ne connaissait pas grand chose à l'informatique et au code. Je m'étais formée en autodidacte sur des langages mais je n'avais aucune idée de comment réaliser un projet professionel. J'ai pu acquérir les base qu'il me manquait, je comprend mieux comment le front-end et le back-end s'articulent et je suis fière d'avoir pu réaliser un projet ainsi toute seule de bout en bout. 
+Mes semaines en entreprise m'ont permis d'appréhender le travail en équipe et m'ont fait découvrir des outils professionnels tels que YouTrack et m'ont permis de m'améliorer aussi sur ma façon d'utiliser Git.
+
+Concernant mon application, elle n'est pas encore tout à fait finie, mais il ne me reste plus qu'une fonctionnalité à implémenter pour qu'elle soit totalement opérationnelle. L'application est bien conforme aux maquettes et aux user stories que j'ai écrites pendant la phase de conception. J'ai aussi quelques idées de fonctionnalités supplémentaires que je pourrais implémenter dans une itération future, comme par exemple la possibilité de lier le compte Twitch de l'utilisateur à son compte sur l'application, ou encore faire un système de validation des tags ajoutés par les utilisateurs afin qu'ils ne soient visible que par la personne qui l'a soumis le temps qu'il soit validé par un administrateur.
+
+Je pense avoir encore beaucoup à apprendre, mais c'est aussi un partie du travail de développeur que j'aime, les technologies étant toujours en constante évolution, le développeur est en quelque sorte un éternel étudiant.
+
+
+8. REMERCIEMENTS
+
+Je tiens à remercier mon équipe au sein de PayinTech : Pierre Adam pour m'avoir accueilli en alternance mais aussi pour m'avoir permis de commencer mon contrat plusieurs mois avant le début de la formation, afin que je ne me retrouve pas sans moyens, et malgré le fait que je partais presque de zéro niveau programmation. Mon tuteur, Olivier Buiron, pour son aide, sa confiance et ses retours sur mon code. Et bien sûr à mes autres collègues du bureau des développeurs, pour leur accueuil et la bonne ambiance.
+
+Je remercie aussi mes formateur.rice.s de Simplon.co, Sara Guerric et Yoann Blanchet, pour leur accompagnement ainsi que mes collègues de formation pour leur soutien et leur aide sans lesquels je n'en serai pas là.
+
+
+9. LEXIQUE
+
+API REST ( Application Programming Interface Representational State Transfer)
+ES6 (ECMAScript 6)
+SPA (Single Page Application = application web monopage
+ JPA (Java Persistence Api)
+ORM (Object-Relational mapping = mapping objet-relationnel) 
+IDE (Integrated Development Envrionment = Environnement de développement)
+UML (Unified Modeling Language = Language de Modélisation Unifié)
+JSON
+SGBD
+CRUD
+AJAX
+CORS
+W3C
+HTTP
