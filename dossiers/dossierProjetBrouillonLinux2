@@ -59,6 +59,8 @@ b Anglais
 > structure back et explication
 	-la db
 	-springboot
+	-security (https://grokonez.com/spring-framework/spring-security/spring-boot-spring-security-jwt-authentication-architecture-tutorial)
+	https://grokonez.com/spring-framework/spring-security/angular-spring-boot-jwt-authentication-example-angular-6-spring-security-mysql-full-stack-part-1-overview-and-architecture
 	-test de l'api avec insomnia
 > structure front et explication
 	-angular
@@ -206,14 +208,14 @@ Pour les sauvegardes de mon travail, j'ai utilisé git et GitHub. Quand je devel
 
 J'ai utilisé l'IDE IntelliJ IDEA. C'est le logiciel que j'utilise en entreprise, je le maitrise donc bien et suis plus efficace dessus que sur Eclipse, son concurrent. Je m'en suis servi pour coder le back-end mais aussi le front-end puisque qu'il supporte plusieurs languages et de framework différents.
 
-Back-end
+-Back-end
 Concernant le système de gestion de base de données, j'ai utilisé PostgreSQL avec son outil d'administration graphique pgAdmin.
 Pour le développement de l'API REST, j'ai choisi d'utilisé Java dans un projet SpringBoot. SpringBoot est un micro framework qui a pour but de faciliter la confirguration d'un projet Spring. 
 Pour manager mon projet SpringBoot, j'ai utilisé Maven. C'est un outil de gestion de projets qui permet d'automatiser certaines taches et de gérer les dépendances du projet.
 Concernant les dépendances, j'utilise l'ORM Spring Data JPA. Son rôle est de faire correspondre les objets de mon système aux tables correspondantes dans la base de données.
 Enfin, j'ai utilisé le logiciel Insomnia pour tester les endpoints de mon API. Il s'agit d'une application permettant d'organiser, lancer et débugger des requests HTTP.
 
-Front-end
+-Front-end
 Pour développer mon interface utilisateur, j'ai choisi d'utiliser Angular 6. Angular est un framework basé sur TypeScript, qui permet de contruire facilement des applications web grâce à un système de conventions
 J'ai choisi d'utiliser Angular car TypeScript se base sur ES6, mon projet peut par conséquent bénéficier de toutes ses nouvelles fonctionnalités et le code est ainsi mieux structuré et plus lisible. Angular me permet aussi d'avoir une architecture SPA, l'expérience utilisateur en est fluidifiée puisque que cela éviter le chargemen d'une nouvelle page à chaque action demandée. Enfin Angular est régulièrement mis à jour et possède une grande communauté, il est donc très facile de trouver des informations ou des dépendances compatibles.
 J'utilise aussi NodeJS et NPM pour faire fonctionner Angular. NodeJS permet de faire fonctionner le serveur dont aura besoin Angular, mais il est aussi necessaire pour faire fonctionner AngularCLI, l'outil de ligne de commande d'Angular et NPM, qui lui s'occupe de la gestion des dépendances .
@@ -280,12 +282,23 @@ Chaque méthode du controller possède une annotation indiquant le type de requ�
 Pour la méthode create par exemple, n'accepte que les requête POST à l'adresse /api/channels/create et doit recevoir un objet de type Channel dans le corps de la requête, sous forme de JSON par exemple. 
 
 
-	- authentification
-	
-	
-	
-	
-	
+	- authentification/ sécurité ?
+Concernant la sécurité de mon application, la plupart des endpoints (point de terminaison) de mon API sont public puisqu'elles doivent pouvoir être accédées par n'importe quel visiteur du site, en revanche certaines sont sécurisées car il faut que l'utilisateur soit enregistré pour y avoir accès, certaines ne sont aussi accessible que par les utilisateurs ayant le status d'administrateur.
+Pour implémenté la sécurité j'ai utilisé Spring Security avec un système d'authentification à l'aide de jetons JWT. (Voici un diagramme expliquand le fonctionnement :
+ _
+|_|)
+Spring Security va intercepter les requetes HTTP, et les filtrer grâce à la classe JwtAuthTokenFilter. La classe JwtProvider est chargée de générer ou valider le token reçu. JwtAuthEntryPoint va s'occuper des erreurs d'authentification.
+La classe UserPrinciple implemente UserDetails, c'est elle qui contient les informations necessaires pour construire l'authentification.
+La classe UserDetailsServiceImpl est là pour aider à créer un UserPrinciple à partir d'un string représentant le username de l'utilisateur.
+Enfin, la classe WebSecurityConfig sert de configuration pour Spring Security, c'est là qu'on lui indique quels sont les endpoints que l'on souhaite sécuriser ou non.
+ _
+|_|
+Ici on voit bien que les urls "/api/auth/**", "/api/channels/**", "/api/channel-tag-user-link/**", "/api/tags/**" et "/api/users/usernames" ne sont pas sécurisées par exemple.
+Enfin j'ai créé un controller pour que les utilisateurs puisse s'enregistrer et s'identifier.
+ _
+|_|
+Quand l'utilisateur s'enregistre, on vérifie que le username qu'il a choisi n'est pas déjà pris, et si son adresse email n'existe pas déjà dans la base de données. Si tout est bon, on encrypte son mot de passe, on lui assigne un rôle et ses informations sont enregistré dans la base de donnée.
+C'est au moment où l'utilisateur s'identifie que le token JWT est généré et renvoyé dans la réponse.	
 	
 
 	-test de l'api avec insomnia
@@ -294,7 +307,81 @@ Une fois les controllers créé, j'ai utilisé le logiciel Insomnia pour faire d
 |_|
 
 
-> structure front et explication
+>Structure Front
+Pour la réalisation de mon front-end, j'ai choisi d'initialiser mon projet Angular dans mon projet SpringBoot, dans le dossier main:
+ _
+|_|
+J'ai donc généré mon projet dans un dossier nommé frontend dont voici la structure :
+ _
+|_|
+J'ai réparti mon projet en plusieurs modules pour plus de clarté. J'ai choisi de faire trois feature modules,auth, search et submit, un shared module et un core module. 
+Un feature module est comme son nom l'indique un module contenant tous les composants et services necessaires à une fonctionnalité en particulier.
+Le core module contient les composants nécessaire au fonctionnement basique de l'application, comme le header, le footer ou la home par exemple, mais aussi les services utilisés par plusieurs autres modules.
+Le shared module regroupe les composants nécessaires à d'autres modules.
+
+((
+J'ai commencé par créer les classes typescript représentant mes objets Java (channel, tag, user et channel-tag-user-link) dans un dossier models, dans le shared module, puisque ces classes seront utilisées dans tout mon application.
+Voici par exemple la classe Channel :
+ _
+|_|
+On y retrouve les même attributs que dans la classe Java, ainsi qu'un constructeur.
+))
+
+Dans le composant home, j'affiche une liste de tous les channels existant dans la base de données. Pour réaliser cette fonctionalité, j'ai utilisé un service :
+ _
+|_|
+ChannelsService est chargé de communiquer avec l'API REST de mon backend pour toutes les opérations à effectuer en rapport avec les channels. Ainsi, pour récupérer la liste des channels, le service va faire une requête HTTP GET sur l'endpoint correspondant de l'API :
+ getChannels() {
+    return this.http.get<Channel[]>(this.defaultPath);
+}
+Etant donné qu'il s'agit là d'une opération asynchrone, le composant voulant récupérer la réponse de cette requête va devoir s'y abonner avec la méhode subscribe(). C'est ce que fait la méthode getChannels() de notre composant home, que l'on appelle dans le ngOnInit() pour que les channels soient récupéré à l'initialisation du composant :
+ _
+|_|
+
+Si on retourne sur ChannelsService, on peut voir que la méthode getDataFromTwitchApi() est différentes des autres. En effet, je voulais que lorsqu'un nouveau channel est rajouté à mon application, celle-ci aille chercher toutes les informations correspondantes directemen sur l'API mise à disposition par Twitch, plutot que d'obliger l'utilisateur à renseigner toutes les informations lui-même. Cela permet aussi d'éviter les erreurs et d'avoir des informations à jour.
+ _
+|_|
+
+Le composant SubmitChannel permet à l'utilisateur de rajouter un nouveau channel dans l'application:
+ _
+|_|
+Pour se faire, il va vérifier que le le channel n'existe pas déjà dans la base de donnée, et le cas échéant, il va essayer de récupérer les informations sur l'API Twitch via le service. Si le channel existe bien sur Twitch, ses informations sont récupérées et uilisées pour créer un nouvel objet Channel que le service va ensuite sauver en base de données. L'utilisateur est enfin redirigé vers la page du channel nouvellement créé.
+
+
+-auth
+Après avoir fait tous les composants et services nécessaires au fonctionnement basique de mon application, je suis passée à l'implémentation de l'authentification.
+Pour ça j'ai créé le service suivant pour effectuer les requêtes sur l'API:
+ _
+|_|
+La méthode attemptAuthentication() prend en paramètre les informations d'identification de l'utilisateur et renvoi un objet de type JwtResponse. La class JwtResponse est un simple objet contenant le token JWT, le pseudo et le role de l'utilisateur.
+J'ai aussi besoin d'un service qui va stocker le token dans la session du navigateur, il s'agit de TokenStorageService :
+ _
+|_|
+Ce service va aussi stoker le pseudo et le rôle de l'utilisateur, et possède des méthodes pour déterminer si l'utilisateur est bien identifié et si il a le role d'administrateur.
+
+Le composant SigninComponent est en charge de récupérer les identifiants de l'utilisateur à partir d'un formulaire, puis de récupérer le token transmi par AuthService et de le passer à TokenStorageService pour qu'il le stocke.
+ _
+|_| html
+
+ _
+|_| ts
+
+Enfin, j'ai créé un HTTP interceptor, nommé AuthInterceptor ici :
+ _
+|_|
+Il est en charge d'intercepter toutes les requêtes HTTP émises par l'application, pour y ajouter un header contenant le token de l'utilisateur. Ainsi les requêtes vers les endpoints sécurisés de l'API ne seront pas rejetées.
+
+J'ai également créé une classe AuthGuard, implémentant CanActivate, qui consiste à filter l'accès de mes routes. Dans le cas présent, l'utilisateur ne pourra accéder aux pages sécurisé par l'AuthGuard que si il est authentifié.
+ _
+|_|
+Pour appliquer l'AuthGuard à des composants, il faut l'ajouter au fichier de routing via la propriété canActivate. J'ai aussi créé un deuxième guard, AuthAdminGuard, pour cette fois n'autoriser l'accès qu'aux utilisateurs ayant le rôle d'administrateur :
+ _
+|_|
+
+
+
+
+
 	- angular
 	- référencement
 > deploiement heroku
@@ -312,7 +399,7 @@ Une fois les controllers créé, j'ai utilisé le logiciel Insomnia pour faire d
 7. CONCLUSION
 
 Mon année de formation chez Simplon.co et mon alternance chez PayinTech auront été un grand challenge pour moi, mais surtout un pari réussi. Quand j'ai quitté mon ancien poste pour entamer ma reconversion, je ne connaissait pas grand chose à l'informatique et au code. Je m'étais formée en autodidacte sur des langages mais je n'avais aucune idée de comment réaliser un projet professionel. J'ai pu acquérir les base qu'il me manquait, je comprend mieux comment le front-end et le back-end s'articulent et je suis fière d'avoir pu réaliser un projet ainsi toute seule de bout en bout. 
-Mes semaines en entreprise m'ont permis d'appréhender le travail en équipe et m'ont fait découvrir des outils professionnels tels que YouTrack et m'ont permis de m'améliorer aussi sur ma façon d'utiliser Git.
+Mes semaines en entreprise m'ont permis d'appréhender le travail en équipe et m'ont fait découvrir des outils professionnels tel que YouTrack et m'ont permis de m'améliorer aussi sur ma façon d'utiliser Git.
 
 Concernant mon application, elle n'est pas encore tout à fait finie, mais il ne me reste plus qu'une fonctionnalité à implémenter pour qu'elle soit totalement opérationnelle. L'application est bien conforme aux maquettes et aux user stories que j'ai écrites pendant la phase de conception. J'ai aussi quelques idées de fonctionnalités supplémentaires que je pourrais implémenter dans une itération future, comme par exemple la possibilité de lier le compte Twitch de l'utilisateur à son compte sur l'application, ou encore faire un système de validation des tags ajoutés par les utilisateurs afin qu'ils ne soient visible que par la personne qui l'a soumis le temps qu'il soit validé par un administrateur.
 
@@ -342,3 +429,4 @@ AJAX
 CORS
 W3C
 HTTP
+JWT
