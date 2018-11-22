@@ -41,7 +41,6 @@ export class ChannelProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.title.setTitle('TwitchTags - ' + this.channel.name);
     this._authenticated = this.tokenStorage.isAuthenticated();
     this.getChannelAndTags();
     this.tagService.getTags().subscribe(data => {
@@ -52,7 +51,8 @@ export class ChannelProfileComponent implements OnInit {
   getChannelAndTags(): void {
     this.route.data.subscribe(
       (data: Data) => {
-        this._channel = data['channel']
+        this._channel = data['channel'];
+        this.title.setTitle('TwitchTags - ' + this.channel.name);
       }
     );
   }

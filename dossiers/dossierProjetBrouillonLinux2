@@ -432,16 +432,18 @@ Quand j'effectuais ma veille sur les vulnérabilités et la sécurité pour mon 
  _
 |_| page d'acceuil
 (Le guide recommande par exemple l'usage d'un certificat SSL, ses derniers n'étant pas gratuit, je n'ai pas pu en utiliser pour mon application.)
-Un exemple de règle du guide que j'ai suivi est de ne pas stocker les mots de passes utilisateurs en clair dans la base de données, et de les hacher en y ajoutant un sel aléatoire.
+Un exemple de règle du guide que j'ai suivi est de ne pas stocker les mots de passes utilisateurs en clair dans la base de données, et de les hasher en y ajoutant un sel aléatoire.
  _
 |_| R22+23
-C'est une règle que j'ai appliqué dans mon application : Le mot de passe de l'utilisateur est encodé avec un sel aléatoire, puis stocké dans la base de donnée. //TODO in app
+C'est une règle que j'ai appliqué dans mon application : Le mot de passe de l'utilisateur est hashé puis stocké dans la base de donnée. Mon encoder de mot de passe est un encoder BCrypt, contrairement à d'autres implémentations comme SHAPasswordEncoder par exemple, le client n'a pas besoin de lui spécifier le sel, BCrypt le générate tout seul aléatoirement. Cela veut dire que chaque appel aura un résultat différent.
  _
 |_| db
  _
 |_| authcontroler
-Pour avoir plus de renseignement sur le fonctionnement du hachage de mot de passe, j'ai visité le site https://crackstation.net/hashing-security.htm
-Il explique les bonnes pratiques, comme générer le sel avec un Cryptographically Secure Pseudo-Random Number Generator et les choses à ne pas faire, comme générer un sel trop court ou écrire soi-même son programme de hachage.
+ _
+|_| WebSecurtyCofig bcrypt
+Pour avoir plus de renseignements sur le fonctionnement du hachage de mot de passe, j'ai visité le site https://crackstation.net/hashing-security.htm
+Il explique les bonnes pratiques, comme générer le sel avec un Cryptographically Secure Pseudo-Random Number Generator sur notre encoder ne le fait pas seul, et les choses à ne pas faire, comme écrire soi-même son programme de hachage.
 
 
 > Recherche sur site anglophone et extrait traduit
@@ -498,7 +500,5 @@ SEO
 
 _________________________________________________
 TODO in app : 
-add SEO (front)
-add salt (back)
 test unitaires (back)
 renommer nom des tables dans diagramme
