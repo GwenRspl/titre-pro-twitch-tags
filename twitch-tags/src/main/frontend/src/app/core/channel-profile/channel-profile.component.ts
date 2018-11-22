@@ -1,5 +1,6 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute, Data, Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 import {Channel} from '../../shared/models/channel.model';
 import {Tag} from "../../shared/models/tag.model";
@@ -35,10 +36,12 @@ export class ChannelProfileComponent implements OnInit {
               private tagService: TagsService,
               private elementRef: ElementRef,
               private tokenStorage: TokenStorageService,
-              private userService:UsersService) {
+              private userService:UsersService,
+              private title: Title) {
   }
 
   ngOnInit() {
+    this.title.setTitle('TwitchTags - ' + this.channel.name);
     this._authenticated = this.tokenStorage.isAuthenticated();
     this.getChannelAndTags();
     this.tagService.getTags().subscribe(data => {

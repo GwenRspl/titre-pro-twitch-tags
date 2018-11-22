@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {Title} from '@angular/platform-browser';
+
 import {ChannelsService} from "../../services/channels.service";
 import {Channel} from "../../shared/models/channel.model";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-submit-channel',
@@ -14,9 +16,10 @@ export class SubmitChannelComponent implements OnInit {
   private _message = '';
   submittedChannel: string;
 
-  constructor(private service: ChannelsService, private router: Router) { }
+  constructor(private service: ChannelsService, private router: Router, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('TwitchTags - Submit channel');
   }
 
   submitChannel(){

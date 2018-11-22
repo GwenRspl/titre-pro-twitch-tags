@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../../shared/models/user.model";
 import {UsersService} from "../../services/users.service";
 import {SignupInfo} from "../signup-info";
 import {AuthService} from "../auth.service";
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-signup',
@@ -20,9 +20,10 @@ export class SignupComponent implements OnInit {
   isSignupFailed = false;
   errorMessage = '';
 
-  constructor(private route: Router, private formBuilder: FormBuilder, private usersService: UsersService, private authService: AuthService) { }
+  constructor(private route: Router, private formBuilder: FormBuilder, private usersService: UsersService, private authService: AuthService, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('TwitchTags - Register');
     this.usersService.getUsernameList().subscribe(data => {
       this.usedUsernames = data;
     });

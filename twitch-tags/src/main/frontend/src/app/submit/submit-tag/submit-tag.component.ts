@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {TagsService} from "../../services/tags.service";
-import {Tag} from "../../shared/models/tag.model";
 import {Router} from "@angular/router";
+import {Title} from '@angular/platform-browser';
+
+import {TagsService} from '../../services/tags.service';
+import {Tag} from '../../shared/models/tag.model';
 
 @Component({
   selector: 'app-submit-tag',
@@ -13,9 +15,10 @@ export class SubmitTagComponent implements OnInit {
 	tagAlreadyExist = false;
 	modalActive = false;
 
-  constructor(private tagsService: TagsService, private router: Router) { }
+  constructor(private tagsService: TagsService, private router: Router, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('TwitchTags - Submit new tag');
   }
 
   submitTag(){

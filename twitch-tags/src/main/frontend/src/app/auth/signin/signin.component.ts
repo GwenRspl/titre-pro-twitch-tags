@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Title} from '@angular/platform-browser';
 import {LoginInfo} from "../login-info";
 import {AuthService} from "../auth.service";
 import {TokenStorageService} from "../token-storage.service";
@@ -20,9 +21,10 @@ export class SigninComponent implements OnInit {
   errorMessage = '';
   isAdmin = false;
 
-  constructor(private route: Router, private formBuilder: FormBuilder, private authService:AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private route: Router, private formBuilder: FormBuilder, private authService:AuthService, private tokenStorage: TokenStorageService, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('TwitchTags - Log in');
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]

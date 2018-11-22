@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {Title} from '@angular/platform-browser';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+
 import {User} from "../../shared/models/user.model";
 import {UsersService} from "../../services/users.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
 import {TokenStorageService} from "../token-storage.service";
 
 @Component({
@@ -17,12 +19,12 @@ export class AccountComponent implements OnInit {
   changeEmailForm: FormGroup;
   modalActive = false;
 
-  constructor(private usersService: UsersService, private formBuilder: FormBuilder, private router: Router, private tokenService: TokenStorageService) {
+  constructor(private usersService: UsersService, private formBuilder: FormBuilder, private router: Router, private tokenService: TokenStorageService, private title: Title) {
     this.user = new User(null, null, null);
   }
 
   ngOnInit() {
-
+    this.title.setTitle('TwitchTags - Account');
     let username = this.tokenService.getUsername();
     this.usersService.getUserByUsername(username).subscribe(
       data => {

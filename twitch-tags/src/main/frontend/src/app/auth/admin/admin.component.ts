@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from '@angular/platform-browser';
 import {TokenStorageService} from "../token-storage.service";
-import {Channel} from "../../shared/models/channel.model";
-import {ChannelsService} from "../../services/channels.service";
-import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-admin',
@@ -12,9 +11,10 @@ import {Router} from "@angular/router";
 export class AdminComponent implements OnInit {
   currentTab: string = 'channels';
 
-  constructor(private tokenStorage: TokenStorageService) { }
+  constructor(private tokenStorage: TokenStorageService, private title:Title) { }
 
   ngOnInit() {
+    this.title.setTitle('TwitchTags - Admin');
     this.tokenStorage.isAdmin();
   }
 
