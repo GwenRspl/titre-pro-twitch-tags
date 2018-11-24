@@ -5,13 +5,17 @@ import com.gwenrspl.twitchtags.converter.ChannelConverter;
 import com.gwenrspl.twitchtags.converter.TagConverter;
 import com.gwenrspl.twitchtags.converter.UserConverter;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ChannelTagUserLink {
 
     @Id
@@ -33,6 +37,4 @@ public class ChannelTagUserLink {
     @JsonSerialize(converter = TagConverter.class)
     private Tag tag;
 
-    public ChannelTagUserLink() {
-    }
 }

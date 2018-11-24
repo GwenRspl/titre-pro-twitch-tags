@@ -53,6 +53,7 @@ public class TagServiceImpl implements TagService {
         final Optional<Tag> optTag = this.repository.findById(id);
         if (!optTag.isPresent()) return null;
         tag.setId(id);
+        this.repository.save(tag);
         return tag;
     }
 

@@ -3,7 +3,9 @@ package com.gwenrspl.twitchtags.model;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.gwenrspl.twitchtags.converter.ListChannelTagUserLinkConverter;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.List;
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Tag {
 
     @Id
@@ -21,6 +25,4 @@ public class Tag {
     @JsonSerialize(converter = ListChannelTagUserLinkConverter.class)
     private List<ChannelTagUserLink> channelTagUserLinks;
 
-    public Tag() {
-    }
 }
