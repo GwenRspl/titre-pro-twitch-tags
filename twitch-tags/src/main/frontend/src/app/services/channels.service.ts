@@ -11,8 +11,7 @@ import {throwError} from "rxjs/internal/observable/throwError";
 })
 export class ChannelsService {
 
-  private defaultPath = 'http://localhost:8080/api/channels/';
-  //private defaultPath = '/api/channels/';
+  private defaultPath = '/api/channels/';
   private createPath = this.defaultPath + 'create';
   private existencePath = this.defaultPath + 'is-present';
   private searchPath = this.defaultPath + 'search';

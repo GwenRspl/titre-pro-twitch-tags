@@ -9,9 +9,9 @@ import {User} from "../shared/models/user.model";
 })
 export class UsersService {
 
-  private defaultPath = 'http://localhost:8080/api/users/';
-  private usernamesPath = 'http://localhost:8080/api/users/usernames';
-  private createPath = 'http://localhost:8080/api/users/create';
+  private defaultPath = '/api/users/';
+  private usernamesPath = this.defaultPath + 'usernames';
+  private createPath = this.defaultPath + 'create';
 
   constructor(private http: HttpClient) {
   }

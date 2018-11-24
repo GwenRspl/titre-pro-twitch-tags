@@ -9,10 +9,10 @@ import {LinkTagChannelUserInfo} from "./link-tag-channel-user-info";
 })
 export class TagsService {
 
-  private defaultPath = 'http://localhost:8080/api/tags/';
+  private defaultPath = '/api/tags/';
   private existencePath = this.defaultPath + 'is-present/';
   private createPath = this.defaultPath + 'create/';
-  private linkTagChannelPath = 'http://localhost:8080/api/channel-tag-user-link/create';
+  private linkTagChannelPath = '/api/channel-tag-user-link/create';
 
   constructor(private http: HttpClient) {
   }
