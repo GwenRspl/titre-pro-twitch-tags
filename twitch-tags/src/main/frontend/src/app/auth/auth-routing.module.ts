@@ -12,12 +12,12 @@ import {AuthGuard} from './auth-guard.service';
 import {AuthAdminGuard} from './admin/auth-admin-guard.service';
 
 const authRoutes: Routes = [
-  {path: 'signin', component: SigninComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
-  {path: 'admin', component: AdminComponent, canActivate: [AuthAdminGuard]},
-  {path: 'fpswrd', component: ForgotPasswordComponent},
-  {path: 'chgpswrd', component: ChangePasswordComponent}
+  {path: 'app/signin', component: SigninComponent},
+  {path: 'app/signup', component: SignupComponent},
+  {path: 'app/account', component: AccountComponent, canActivate: [AuthGuard]},
+  {path: 'app/admin', component: AdminComponent, canActivate: [AuthAdminGuard]},
+  {path: 'app/fpswrd', component: ForgotPasswordComponent},
+  {path: 'app/chgpswrd', component: ChangePasswordComponent}
 ];
 
 @NgModule({

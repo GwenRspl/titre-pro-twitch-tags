@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit {
   }
 
   goToSearchByTags() {
-    this.router.navigate(['/search']);
+    this.router.navigate(['/app/search']);
   }
 
   goToSearchByName() {
-    this.router.navigate(['/searchName']);
+    this.router.navigate(['/app/searchName']);
   }
 }

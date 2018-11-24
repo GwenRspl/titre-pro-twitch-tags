@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.tokenStorage.signOut();
     this._authority = null;
-    this.router.navigate(['/'])
+    this.router.navigate(['/app/'])
   }
 
   toggleMenuBurger(){

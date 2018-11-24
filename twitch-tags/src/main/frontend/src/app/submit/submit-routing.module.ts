@@ -5,8 +5,8 @@ import {SubmitTagComponent} from './submit-tag/submit-tag.component';
 import {SubmitChannelComponent} from './submit-channel/submit-channel.component';
 
 const routes: Routes = [
-  {path: 'submitchannel', component: SubmitChannelComponent},
-  {path: 'submittag', component: SubmitTagComponent},
+  {path: 'app/submitchannel', component: SubmitChannelComponent},
+  {path: 'app/submittag', component: SubmitTagComponent},
 ];
 
 @NgModule({

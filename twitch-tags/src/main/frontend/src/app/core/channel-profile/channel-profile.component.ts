@@ -26,7 +26,7 @@ export class ChannelProfileComponent implements OnInit {
   private _channel: Channel;
   private _seeMoreTags = false;
   private _seeMoreTagsString = 'See more';
-  private _userInput='';
+  userInput='';
   private _tags: Tag[] = [];
   private _filteredList = [];
   private _tagToAdd: Tag;
@@ -68,17 +68,17 @@ export class ChannelProfileComponent implements OnInit {
   }
 
   goToSubmitTag() {
-    this.router.navigate(['/submittag']);
+    this.router.navigate(['/app/submittag']);
   }
 
   filter() {
     this._filteredList = this._tags.filter(tag => {
-      return tag.name.toLowerCase().indexOf(this._userInput.toLowerCase()) > -1;
+      return tag.name.toLowerCase().indexOf(this.userInput.toLowerCase()) > -1;
     })
   }
 
   select(item) {
-    this._userInput = item.name;
+    this.userInput = item.name;
     this._tagToAdd = item;
     this._filteredList = [];
   }
@@ -104,7 +104,7 @@ export class ChannelProfileComponent implements OnInit {
         this.tagService.addTagToChannel(link).subscribe(
           () => {
             let str = this.route.snapshot['_routerState'].url;
-            this.router.navigate(['/']).then(()=> this.router.navigate([str]));
+            this.router.navigate(['/app/']).then(()=> this.router.navigate([str]));
           },
           error => {
             console.log(error);
@@ -143,9 +143,6 @@ export class ChannelProfileComponent implements OnInit {
     return this._seeMoreTagsString;
   }
 
-  get userInput(): string {
-    return this._userInput;
-  }
 
   get tags(): Tag[] {
     return this._tags;

@@ -1,6 +1,6 @@
 <nav class="navbar header">
   <div class="navbar-brand">
-    <a class="navbar-item" routerLink="/index">TwitchTags</a>
+    <a class="navbar-item" routerLink="/app">TwitchTags</a>
     <div aria-label="menu" aria-expanded="false" class="navbar-burger burger" data-target="navbarLinks" (click)="toggleMenuBurger()" [ngClass]="{'is-active': toggled}">
       <span></span>
       <span></span>
@@ -10,18 +10,18 @@
 
   <div id="navbarLinks" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" routerLinkActive="active-link" routerLink="/submitchannel">Submit a new channel</a>
-      <a class="navbar-item" routerLinkActive="active-link" routerLink="/submittag">Submit a new tag</a>
+      <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/submitchannel">Submit a new channel</a>
+      <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/submittag">Submit a new tag</a>
     </div>
 
     <div class="navbar-end" *ngIf="!authority; else LoggedIn">
-        <a class="navbar-item" routerLinkActive="active-link" routerLink="/signin">Sign in</a>
-        <a class="navbar-item" routerLinkActive="active-link" routerLink="/signup">Sign up</a>
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/signin">Sign in</a>
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/signup">Sign up</a>
     </div>
     <ng-template #LoggedIn>
       <div class="navbar-end">
-        <a class="navbar-item" routerLinkActive="active-link" routerLink="/admin" *ngIf="authority === 'admin'">Admin Dashboard</a>
-        <a class="navbar-item" routerLinkActive="active-link" routerLink="/account">My Account</a>
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/admin" *ngIf="authority === 'admin'">Admin Dashboard</a>
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/account">My Account</a>
         <a class="navbar-item" style="cursor: pointer" (click)="logout()">Logout</a>
       </div>
     </ng-template>
@@ -30,18 +30,18 @@
 
   <div id="navbarLinksMobile" class="navbar-menu" [ngClass]="{'is-active': toggled}" *ngIf="toggled" (click)="toggleMenuBurger()">
     <div class="navbar-end">
-      <a class="navbar-item" routerLinkActive="active-link" routerLink="/submitchannel" >Submit a new channel</a>
-      <a class="navbar-item" routerLinkActive="active-link" routerLink="/submittag">Submit a new tag</a>
+      <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/submitchannel" >Submit a new channel</a>
+      <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/submittag">Submit a new tag</a>
     </div>
 
     <div class="navbar-end" *ngIf="!authority; else LoggedIn">
-      <a class="navbar-item" routerLinkActive="active-link" routerLink="/signin">Sign in</a>
-      <a class="navbar-item" routerLinkActive="active-link" routerLink="/signup">Sign up</a>
+      <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/signin">Sign in</a>
+      <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/signup">Sign up</a>
     </div>
     <ng-template #LoggedIn>
       <div class="navbar-end">
-        <a class="navbar-item" routerLinkActive="active-link" routerLink="/admin" *ngIf="authority === 'admin'">Admin Dashboard</a>
-        <a class="navbar-item" routerLinkActive="active-link" routerLink="/account">My Account</a>
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/admin" *ngIf="authority === 'admin'">Admin Dashboard</a>
+        <a class="navbar-item" routerLinkActive="active-link" routerLink="/app/account">My Account</a>
         <a class="navbar-item" style="cursor: pointer" (click)="logout()">Logout</a>
       </div>
     </ng-template>

@@ -41,6 +41,6 @@ export class SubmitTagComponent implements OnInit {
   }
 
   goToHomepage(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/app']);
   }
 }

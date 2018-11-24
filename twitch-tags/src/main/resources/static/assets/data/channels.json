@@ -1,0 +1,61 @@
+[
+	{	"id":1,
+		"name":"Naevyah",
+		"url": "twitch.tv/naevyah",
+		"avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/e1d1c7bf-7e51-4e55-ba08-98451a3f9fc2-profile_image-300x300.png",
+		"followers": 304,
+		"partner": false,
+		"affiliate": true,
+		"tags": [{
+			"name":"humor"
+		},
+		{
+			"name":"positivity"
+		}]
+	},
+	{	"id":2,
+		"name":"RedFanny",
+		"url": "twitch.tv/redfanny_",
+		"avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/redfanny_-profile_image-25848107b59dae96-300x300.jpeg",
+		"followers": 4432,
+		"partner": false,
+		"affiliate": false,
+		"tags": [{
+			"name":"humor"
+		},
+		{
+			"name":"kid-friendly"
+		}]
+	},
+	{	"id":3,
+		"name":"CohhCarnage",
+		"url": "twitch.tv/cohhcarnage",
+		"avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/ed72b641-83ea-4ee6-81fd-aa195759c512-profile_image-300x300.png",
+		"followers": 976282,
+		"partner": true,
+		"affiliate": false,
+		"tags": [{
+			"name":"humor"
+		},
+		{
+			"name":"kid-friendly"
+		},
+		{
+			"name":"positivity"
+		}]
+	},
+	{	"id":4,
+		"name":"Elspeth",
+		"url": "twitch.tv/Elspeth",
+		"avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/646dfb23762feb9a-profile_image-300x300.jpeg",
+		"followers": 122252,
+		"partner": true,
+		"affiliate": false,
+		"tags": [{
+			"name":"humor"
+		},
+		{
+			"name":"positivity"
+		}]
+	}
+]

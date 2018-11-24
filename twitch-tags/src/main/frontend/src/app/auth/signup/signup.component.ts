@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
   }
 
   goToLogin() {
-    this.route.navigate(['/signin']);
+    this.route.navigate(['/app/signin']);
   }
 
   registerUser() {

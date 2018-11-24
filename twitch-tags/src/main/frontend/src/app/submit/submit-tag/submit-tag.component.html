@@ -10,7 +10,7 @@
           <input class="input" id="input" type="text" placeholder="Type tag name here" [(ngModel)]="submittedTag" [ngClass]="{'is-danger': tagAlreadyExist}">
         </div>
         <div class="control">
-          <a class="button is-info" (click)="submitTag($event)">
+          <a class="button is-info" (click)="submitTag()">
             Submit
           </a>
         </div>

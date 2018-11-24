@@ -66,7 +66,7 @@ export class AccountComponent implements OnInit {
   }
 
   changePassword() {
-    this.router.navigate(['/chgpswrd']);
+    this.router.navigate(['/app/chgpswrd']);
   }
 
   toggleModal() {
@@ -78,7 +78,7 @@ export class AccountComponent implements OnInit {
       console.log(data);
     });
     this.tokenService.signOut();
-    this.router.navigate(['/index']);
+    this.router.navigate(['/app/index']);
   }
 
 }

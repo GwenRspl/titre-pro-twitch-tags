@@ -38,7 +38,7 @@ export class SubmitChannelComponent implements OnInit {
 
             let channel: Channel = new Channel(data.display_name, data.url, data.broadcaster_language, data.logo, data.followers, data.partner, status );
             this.service.saveChannel(channel).subscribe(data => {
-              this.router.navigate(['/profile/' + data.id]);
+              this.router.navigate(['/app/profile/' + data.id]);
             })
           }
         }, error1 => {

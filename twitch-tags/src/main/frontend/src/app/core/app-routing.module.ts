@@ -8,10 +8,9 @@ import {ErrorComponent} from "./error/error.component";
 import {ChannelResolver} from "../services/channel-resolver.service";
 
 const routes: Routes = [
-  {path: '', redirectTo: 'index', pathMatch: 'full'},
-  {path: 'index', component: HomeComponent},
-  {path: 'profile/:id', component: ChannelProfileComponent, resolve: {channel: ChannelResolver}},
-  //{path: '**', component: ErrorComponent}
+  {path: '', redirectTo: 'app', pathMatch: 'full'},
+  {path: 'app', component: HomeComponent},
+  {path: 'app/profile/:id', component: ChannelProfileComponent, resolve: {channel: ChannelResolver}},
 ];
 
 @NgModule({

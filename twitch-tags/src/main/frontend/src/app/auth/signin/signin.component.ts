@@ -41,23 +41,23 @@ export class SigninComponent implements OnInit {
   }
 
   goToSignup() {
-    this.route.navigate(['/signup']);
+    this.route.navigate(['/app/signup']);
   }
 
   goToForgottenPassword() {
-    this.route.navigate(['/fpswrd']);
+    this.route.navigate(['/app/fpswrd']);
   }
 
   goToAccount() {
-    this.route.navigate(['/account']);
+    this.route.navigate(['/app/account']);
   }
 
   goToHomepage() {
-    this.route.navigate(['/']);
+    this.route.navigate(['/app']);
   }
 
   goToAdmin() {
-    this.route.navigate(['/admin']);
+    this.route.navigate(['/app/admin']);
   }
 
   login() {
