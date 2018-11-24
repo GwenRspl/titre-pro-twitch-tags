@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle('TwitchTags - Search');
     let path = this.route.snapshot['_routerState'].url;
-    if(path == '/searchName') {
+    if(path == '/app/searchName') {
       this._searchName = true;
     }
     this.service.resultChanged.subscribe(
