@@ -509,7 +509,7 @@
 									"top": 237,
 									"width": 177,
 									"height": 13,
-									"text": "tag_linked_to_channel"
+									"text": "channel_tag_user_link"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -1144,7 +1144,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFiTcTSFhEFviM="
 					},
-					"name": "tag_linked_to_channel",
+					"name": "channel_tag_user_link",
 					"columns": [
 						{
 							"_type": "ERDColumn",

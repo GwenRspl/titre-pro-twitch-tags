@@ -1,0 +1,101 @@
+
+Introduction
+	- Presentation entreprise
+fintech paiement et techonologie sans contact
+tourisme et événementiel(stations de ski, festivals)
+pole ingéninérie de Paris avec lead dev , et 2 dev confirmés
+Android natif et play (java, scale, js, coffeescript)
+	- avant propos
+Twitch > site pr regarder/diffuser vidéos live. = Youtube mais l'accent est sur interaction
+thèmatique jv mais pas que
+Mon appli > catalogue de chaines avec tags, recherche par tag
+Objectif = Permettre aux users de découvrir new chaines à leurs gouts.
+
+	- foreword
+Before talking about Twitch-Tags, my application, I must introduce Twitch. It is a website
+for watching and streaming digital video broadcasts. It is very similar to Youtube, except the
+focus is on live broadcast and on the interaction between viewers and streamers. Twitch
+originally focused entirely on video games but has since expanded to include more themes for its
+content. Twitch is composed of channels, and each of these channels has a chat room where
+viewers can talk among themselves or directly speak to the streamer.
+I have decided that my application would be a catalog of Twitch channels, on which it is
+possible to add tags to better characterize them, their content, and their atmosphere. It is
+possible to select tags to perform a search that will return a result custom-made for the
+expectations of the user. If a user cannot find the channel he was looking for, he can add it to
+the application. It is also possible to create an account, or also approve of a tag with a simple
+clic.
+In conclusion, the goal of my application is to help users to easily discover new channels
+matching their needs. To create it, I made a REST API for the back end, developped in Java with Spring Boot. The front-end is a Single Page Application developped in Angular 6.
+
+
+
+Conception
+	-Cahier des charges
+CONTEXTE:problèmatique personelle, diffuseuse > attirer new spectateurs, spectatrice > découvrir new, pas d'info sur ambiance, contenu
+OBJECTIF: introduire les tags aux chaines
+	-user stories
+courtes simple descrition fonctionalité décrire par personne laquelle destinéee
+clarifier les roles users, définir fonctionalité, aider organisation
+	-use case
+cas d'utilisation > identifier interaction système et users > vision globale facilité
+	-maquettage (
+zoning : schema grossier de l'inteface > identifier principales zones
+wireframe: definir plus plus précisément orga et structure éléments
+	-diagramme 
+ER : crucial pour orga bd, link a relatin OneToMany avec autres tables
+classe uml: décrit clairement structure éléments du back-end, modèlise classes, attributs, opérations, relations les caractérisant.
+
+
+Réalisation
+	-orga : 
+trello > grossier puis ticket détaillé
+git github > branche séparé pour chaque feature puis push sur master
+	-outils back & Front
+	-init db
+sql exemples:
+SELECT * FROM A INNER JOIN B ON A.key = B.key
+	- structure back & front
+BACK: rest api > architecture standardisée, support JSON, peu de bande passante
+FRONT: feature : composan & service necessaire à fonctionnalitée, core : composants pr fonctionnement basique app et services utilisés par plusieurs modules, shared : compo necessaire plusieurs modules à la fois
+
+
+
+Fonctionnalité
+	- back : controller
+fournit un standard pour interagir avec l’API
+reçoit des requêtes et fournit des réponses
+	-front: consommation api (service & composant)
+SERVICE : requêtes HTTP sur les endpoints de l’API & opérations asynchrones
+Composant : déclaration du service dans le constructeur & souscription au résultat
+
+
+
+Démo live
+
+Tests
+	- tests unitaires du controller
+JUnit & mockito
+
+Exemple recherche
+	-authentification
+	-solution
+BACK-END :Authentification par JWT
+FRONT-END : Intercepteur HTTP & Router guard
+
+
+Conclusion
+	-satisfactions
+acquisition des bases de la programmation
+meilleure compréhension de la liaison entre back-end et front-end
+projet mené seule de bout en bout
+application presque fonctionnelle
+
+	-difficultés
+trouver documentation à jour
+estimer le temps requis pour développer certaines fonctionnalités
+concevoir la base de données et ses relations
+
+
+
+
+

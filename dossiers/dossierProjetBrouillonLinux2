@@ -1,86 +1,3 @@
-Introduction (mon parcours)
-1 Compétences mises en oeuvre 
-> citer les compétences + expliquer briévement (voir reac et synthétiser)
-2 A propos (200-250 mots chacun)
-a Francais
-b Anglais
-CONCEPTION
-3 Cahier des charges / Besoins, /Spécifications fonctionelles
->Context/Besoins présenter twitch/ quels problèmes? pourquoi ?comment ? en tant qu'utilisatrice
-
-Cahier des charges : user stories, use case
-Maquette, schéma enchaine maquette
-
-diagramme ER, diagramme de classe
-
-b spécifications sécurité
-c spécifications web mobile
-
-REALISATION
-> outils utilisés
-> structure back et explication
-> structure front et explication
-
-5 Extraits code argumentés
-a
-b sécurtié
-c web mobile
-6 Fonctionnalité réprésentative
-
-VEILLE TECHNOLOGIQUE
-7Veille vulnérabilité sécurité
-8 Recherche sur site anglophone et extrait traduit
-
-9 Conclusion
-10 Remerciements
-11 Lexique
-
-
-_________________________________________________________________
-
-1. Introduction
-I, my, me, mine
-
-2. Compétences mises en oeuvre 
-> citer les compétences + expliquer briévement (voir reac et synthétiser)
-
-3. A propos (200-250 mots chacun)
-a Francais
-b Anglais
-
-4.CONCEPTION
-> Cahier des charges : contexte et définition du problème, objectif du projet
-> user stories, use case
-> Maquette, schéma enchaine maquette
-> diagramme ER, diagramme de classe
-
-5.REALISATION
-> outils utilisés
-> structure back et explication
-	-la db
-	-springboot
-	-security (https://grokonez.com/spring-framework/spring-security/spring-boot-spring-security-jwt-authentication-architecture-tutorial)
-	https://grokonez.com/spring-framework/spring-security/angular-spring-boot-jwt-authentication-example-angular-6-spring-security-mysql-full-stack-part-1-overview-and-architecture
-	-test de l'api avec insomnia
-> structure front et explication
-	-angular
-	- référencement
-> deploiement heroku
-
-6.VEILLE TECHNOLOGIQUE
-> Veille vulnérabilité sécurité
-	-ANSSI (documents que j'ai dl)
-> Recherche sur site anglophone et extrait traduit
-	-baeldung > converter ?
-	(- grokonez > authentication ?)
-> questions/réponses sur stack overflow et partages sur slack
-
-7. Conclusion
-8. Remerciements
-9. Lexique
-
-_____________________________________________________________________________
-
 1. INTRODUCTION
 
 N'ayant pas suivi un cursus informatique dans mes études, j'ai découvert mon interet pour le dévelopement totalement par hasard au sein de mon premier emploi. J'étais chargée d'effectuer des taches répétitives sur des fichiers Excel, et un de mes collègues développeur m'a montré comment automatiser certaines actions grâce aux macros Excel. J'ai par la suite eu l'occasion assister à une formation Visual Basic for Application dans le cadre du DIF de mon entreprise.
@@ -270,7 +187,7 @@ Puis j'ai écrit le script SQL chargé d'insérer des données dans mes tables.
 
 	-springboot
 L'étape suivante était d'initialiser mon projet SpringBoot avec ses dépendances. Pour ça j'utilisé SpringCLI avec la ligne de commande "spring init --dependencies=Web,JPA,PostgreSQL,Security,Lombok, DevTools twitch-tags".
-Par defaut, SpringBoot va chercher des entités dans les packages pour créer leurs tables respectives en base de données. Mais étant donné que je désirais les créer moi-même pour avoir un maximum de controle dessus, j'ai mis les scrips SQL précédement écrits dans le dossier resources situé dans src/main. Dans ce même dossier, il y a un fichier application.properties qui sert à définir certains paramètres, dont ceux pour que SpringBoot puisse se connecter à la base de données. J'ai aussi rajouté deux paramètre pour que JPA affiche les logs de SQL et pour que les tables soit supprimées et recrées à chaque lancement de SpringBoot.
+Par defaut, SpringBoot va chercher des entités dans les packages pour créer leurs tables respectives en base de données. Mais étant donné que je désirais les créer moi-même pour avoir un maximum de controle dessus, j'ai mis les scrips SQL précédement écrits dans le dossier resources situé dans src/main. Dans ce même dossier, il y a un fichier application.properties qui sert à définir certains paramètres, dont ceux pour que SpringBoot puisse se connecter à la base de données. J'ai aussi rajouté deux paramètre pour que JPA affiche les logs de SQL et pour que JPA ne s'occupe pas de la génération des tables.
  _
 |_|
 
@@ -336,7 +253,20 @@ Une fois les controllers créé, j'ai utilisé le logiciel Insomnia pour faire d
  _
 |_|
 
-//TODO : Tests unitaires
+	- Tests unitaires
+Après avoir créé mes classes, je me suis attaquée aux tests unitaires. Ces derniers sont destinés à tester une classe, les vérifications sont faites en éxécutant une petite partie de code, pour vérifier que le résultat du test est bien le résultat attendu.
+Pour effectuer mes tests, j'ai utilisé les frameworks JUnit et Mockito. JUnit permet de faire des tests unitaire spécialement conçu pour le langage de programmation Java, et Mockito permet de créer et de configurer des doubles d'objet (mock).
+Prenons en exemple, la classe TagControllerTest, il s'agit de la classe de test de TagController:
+ _
+|_|
+L'annotation @SpringBootTest indique que cette classe effectue des test basé sur SpringBoot. L'annotation @RunWith vient de JUnit, elle indique que la classe de test doit utilisé la class spécifiée en paramètr pour lancer les tests, et non la classe qu'utilise JUnit par défaut.
+L'attribut MockMvc permet aux tests de se lancer sans avoir besoin de lancer le serveur, elle va de paire avec l'annotation @MockBean qui indique la classe à "mocker", dans ce cas TagService, et pour pouvoir initialiser la classe MockMvc, il y a besoin de WebApplicationContext.
+La création du mock pendant l'execution de la méthode setUp(), et cette dernière a lieu juste avant chaque test comme l'indique lannotation @Before. 
+Le premier test, listAll() est chargé de tester la méthode listAll() deu TagController. La première ligne, when(tagService.listAll()).thenReturn(tags); demande à tagService de renvoyer la liste de tag que nous avons initialisé pendant setUp(), à chaque fois que sa méthode listAll() est appelée.
+Ensuite avec mockMvc, on effectue une requête GET sur l'endpoint correspondant à la méthode listAll du controller : mockMvc.perform(get("/api/tags").contentType(MediaType.APPLICATION_JSON))
+Les lignes suivantes vérifient que la réponse est bien un code 200, et qu'elle contient bien les données attendues.
+
+
 
 
 >Structure Front
@@ -380,7 +310,7 @@ Le composant SubmitChannel permet à l'utilisateur de rajouter un nouveau channe
 Pour se faire, il va vérifier que le le channel n'existe pas déjà dans la base de donnée, et le cas échéant, il va essayer de récupérer les informations sur l'API Twitch via le service. Si le channel existe bien sur Twitch, ses informations sont récupérées et uilisées pour créer un nouvel objet Channel que le service va ensuite sauver en base de données. L'utilisateur est enfin redirigé vers la page du channel nouvellement créé.
 
 
--auth
+	-auth
 Après avoir fait tous les composants et services nécessaires au fonctionnement basique de mon application, je suis passée à l'implémentation de l'authentification.
 Pour ça j'ai créé le service suivant pour effectuer les requêtes sur l'API:
  _
@@ -410,8 +340,21 @@ Pour appliquer l'AuthGuard à des composants, il faut l'ajouter au fichier de ro
  _
 |_|
 
--responsive
-//TODO
+	-responsive
+Pour finir, j'ai amélioré l'apparence de mon interface grâce au framework CSS Bulma, et j'ai modifié quelques éléments pour que l'application soit bien responsive.
+Par example, ma bar de navigation en mode desktop, devient un menu burger en mode mobile:
+ _
+|_| desktop
+ _
+|_| mobile x2
+Lorsque l'on clique sur le bouton burger, cela change la valeur de la variable toggled, ce qui a pour effet de rendre active la div navbarLinksMobile et ainsi l'afficher.
+ _
+|_| header ts
+ _
+|_| header html
+
+
+
 
 	- référencement
 
@@ -423,7 +366,24 @@ J'ai aussi utilisé les attributs ALT pour décrire le contenu de mes quelques i
 |_|
 	
 	
-> deploiement heroku
+> deploiement heroku https://dasunpubudu.wordpress.com/2018/04/17/deploying-spring-angular-mast-stack-application-in-heroku/
+En ce qui concerne le déploiement de mon application, j'ai choisi d'utiliser Heroku car celui-ci possède un plan gratuit et il est compatible avec le language Java. Aussi il propose de déployer une app à partir d'un repo GitHub, c'est donc très pratique dans mon cas.
+Pour déployer mon application, j'ai d'abord modifié mon fichier angular.json afin que les fichiers générés lors du build aillent directement dans un dossier static, situé dans resources. En effet, SpringBoot est configuré pour servir le contenu static du dossier resources.
+ _
+|_|
+Ensuite j'ai lancé la commande ng build --prod pour qu'Angular génére les fichiers nécessaires. Puis j'ai créé un fichier nommé Procfile à la racine de mon projet:
+ _
+|_|
+Ce fichier spécifie les commandes devant être executées par les dynos(All Heroku applications run in a collection of lightweight Linux containers called dynos) de l'application.  Dynos are isolated, virtualized Linux containers that are designed to execute code based on a user-specified command
+Ensuite j'ai pushé mon application sur une nouvelle branch Git, spécialement pour le déploiement.
+Sur le site de Heroku, j'ai créé une nouvelle application, j'ai choisi son adresse puis je l'ai lié à mon repository sur GitHub et j'ai choisi la branche que je souhaitais déployer:
+ _
+|_|
+Mon application est donc visitable à l'adresse twitch-tags.herokuapp.com
+
+
+
+
 
 6.VEILLE TECHNOLOGIQUE
 > Veille vulnérabilité sécurité
@@ -446,7 +406,7 @@ Pour avoir plus de renseignements sur le fonctionnement du hachage de mot de pas
 Il explique les bonnes pratiques, comme générer le sel avec un Cryptographically Secure Pseudo-Random Number Generator sur notre encoder ne le fait pas seul, et les choses à ne pas faire, comme écrire soi-même son programme de hachage.
 
 
-> Recherche sur site anglophone et extrait traduit
+> Situation ayant necessité recherche sur site anglophone et extrait traduit
 
 Pour mon exemple de recherche de solution, je vais prendre le moment où j'ai voulu améliorer le référencement naturel de mon application. En effet, les application Angular étant des SPA, leur contenu peut ne pas être visible par certains robots car leur contenu change dynamiquement grâce à JavaScript. Si on regarder de le code source de mon application, on ne voit effectivement rien dans l'app-root.
  _
@@ -459,6 +419,14 @@ La meilleure solution est d'utiliser Angular Universal pour que mon application 
 J'ai d'abord essayé la solution détaillée par cette page :https://coursetro.com/posts/code/155/Angular-6-SEO-Tutorial-from-Scratch---It%27s-Super-Simple-Now!
 C'est la plus simple et elle est compatible avec la version d'Angular qu'utilise mon application. J'ai réussi à l'implémenter sur un projet tout neuf, après avoir bataillé avec plusieurs erreurs du à des versions de dépendances incompatibles entre elles. Par contre je n'ai pas réussi à l'implémenter sur mon application, sa structure étant plus complexe qu'un simple projet tout neuf.
 J'ai trouvé une autre solution sur le site https://blog.pusher.com/make-angular-4-app-seo-friendly/, mais celle-ci a l'air plus longue et difficile à mettre en place, j'ai donc préféré remettre à plus tard son implémentation.
+ _
+|_| extrait site
+Traduction:
+Les applications Angular 4 charge dabord le premier contenu HTML basique avant de récuperer le contenu HTML de la page étant en train d'être chargée en utilisant XMLHttpRequest. Les Application Mono-Page sont géniale ! Elles chargent rapidement et vous donne beaucop de ontrol sur la façon dont vous voulez que votre application fonctionne. Elles sont analysées par le navigateur et de cette façon vous avez le control sur les éléments du DOM.
+
+Cependant, les applications mono-pages ne sont pas pratique pour le référencement naturel parce qu'elles ont besoin de dynamiquement changer les tags meta et le contenu en utilisant JavaScript, et ce changement n'est généralement pas répéré par les robots des moteurs de recherche. Comm certains robots ne peuvent pas analyser le JavaScript quand ils parcourent le site web, ils voietn seulement le premier contenu de base à chaque fois.
+
+Même si Google dit que ses robots sont désormais capable de déchiffrer le JavaScript, c'est encore un domaine vague et il vaudrait mieux être prudent concernant ce problème. Aussi, il y ad'autres moteurs de recherche qui ne supportent pas le JavaScript. Cet article explique comment rendre votre application Angular 4 plus optimisé pour le référencement naturel et donc plus pratique à analyser pour les robots des moteurs de recherche.
 
 
 7. CONCLUSION
@@ -480,25 +448,29 @@ Je remercie aussi mes formateur.rice.s de Simplon.co, Sara Guerric et Yoann Blan
 
 9. LEXIQUE
 
-API REST ( Application Programming Interface Representational State Transfer)
-ES6 (ECMAScript 6)
-SPA (Single Page Application = application web monopage
- JPA (Java Persistence Api)
-ORM (Object-Relational mapping = mapping objet-relationnel) 
-IDE (Integrated Development Envrionment = Environnement de développement)
-UML (Unified Modeling Language = Language de Modélisation Unifié)
-JSON
-SGBD
-CRUD
-AJAX
-CORS
-W3C
-HTTP
-JWT
-sel
-SEO
+API REST: Application Programming Interface Representational State Transfer
+ES6: ECMAScript 6
+SPA: Single Page Application = application web monopage
+JPA: Java Persistence Api
+ORM: Object-Relational mapping = mapping objet-relationnel
+IDE: Integrated Development Envrionment = Environnement de développement
+UML: Unified Modeling Language = Language de Modélisation Unifié
+JSON: JavaScript Object Notation
+SGBD: Système de Gestion de Base de Données
+CRUD: Create, Read, Update, Delete
+AJAX: Asynchronous JavaScript and XML
+CORS: Cross-Origin Resource Sharing
+W3C: World Wide Web Consortium
+JWT: JSON Web token
+sel: Le salage st une méthode permettant de renforcer la sécurité d'un mot de passe.
+SEO: Search Engine Optimization
 
 _________________________________________________
 TODO in app : 
-test unitaires (back)
+test unitaires (back) à revoir 
 renommer nom des tables dans diagramme
+
+nom des méthodes()
+mettre en reliefs les termes
+finir lexique
+faire screens

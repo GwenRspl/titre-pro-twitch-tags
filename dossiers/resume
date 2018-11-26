@@ -1,0 +1,37 @@
+Avant de parler de Twitch-Tags, mon application, je dois d'abord présenter Twitch. Il
+s'agit d'un site permettant de regarder ou de diffuser des vidéos live. C'est un site très similaire à
+Youtube, à la différence que l'accent est mis sur les diffusions en live et sur l'interaction entre les
+spectateurs et les diffuseurs. La thématique du contenu que l'on trouve sur Twitch est surtout le
+jeu-vidéo, car le site n'autorisait par le passé que ce genre de thème, mais depuis récemment,
+plus de sujets sont désormais autorisés. Twitch est donc composé de chaines, et chaque chaine
+possède une chat-room où les spectateurs peuvent discuter entre eux ou parler directement au
+diffuseur.
+J'ai décidé de faire de mon application un catalogue de chaines Twitch, sur lesquelles il
+est possible d'ajouter des tags afin de mieux définir ces chaines, leur contenu, leur ambiance. On
+peut sélectionner des tags pour effectuer une recherche qui retournera ainsi un résultat
+spécifique aux attentes de l'utilisateur. S’il manque une chaine à l'application, l'utilisateur peut la
+rajouter. Il est aussi possible de créer un compte pour avoir accès à des fonctionnalités
+supplémentaires. Un utilisateur enregistré peut donc rajouter un nouveau tag à une chaine, ou
+approuver un tag d'un simple clic.
+L'objectif de mon application est de permettre à ses utilisateurs de découvrir facilement
+de nouvelles chaines correspondant à leurs goûts.
+
+Pour la réaliser, j'ai choisi de faire une API REST pour le back-end, développée en Java avec Spring Boot. Le front-end est une application mono-page (Single Page Application) dévéloppé en Angular 6.
+
+
+
+
+Before talking about Twitch-Tags, my application, I must introduce Twitch. It is a website
+for watching and streaming digital video broadcasts. It is very similar to Youtube, except the
+focus is on live broadcast and on the interaction between viewers and streamers. Twitch
+originally focused entirely on video games but has since expanded to include more themes for its
+content. Twitch is composed of channels, and each of these channels has a chat room where
+viewers can talk among themselves or directly speak to the streamer.
+I have decided that my application would be a catalog of Twitch channels, on which it is
+possible to add tags to better characterize them, their content, and their atmosphere. It is
+possible to select tags to perform a search that will return a result custom-made for the
+expectations of the user. If a user cannot find the channel he was looking for, he can add it to
+the application. It is also possible to create an account, or also approve of a tag with a simple
+clic.
+In conclusion, the goal of my application is to help users to easily discover new channels
+matching their needs. To create it, I made a REST API for the back end, developped in Java with Spring Boot. The front-end is a Single Page Application developped in Angular 6.
