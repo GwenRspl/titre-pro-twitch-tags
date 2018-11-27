@@ -253,7 +253,20 @@ Une fois les controllers créé, j'ai utilisé le logiciel Insomnia pour faire d
  _
 |_|
 
-//TODO : Tests unitaires
+	- Tests unitaires
+Après avoir créé mes classes, je me suis attaquée aux tests unitaires. Ces derniers sont destinés à tester une classe, les vérifications sont faites en éxécutant une petite partie de code, pour vérifier que le résultat du test est bien le résultat attendu.
+Pour effectuer mes tests, j'ai utilisé les frameworks JUnit et Mockito. JUnit permet de faire des tests unitaire spécialement conçu pour le langage de programmation Java, et Mockito permet de créer et de configurer des doubles d'objet (mock).
+Prenons en exemple, la classe TagControllerTest, il s'agit de la classe de test de TagController:
+ _
+|_|
+L'annotation @SpringBootTest indique que cette classe effectue des test basé sur SpringBoot. L'annotation @RunWith vient de JUnit, elle indique que la classe de test doit utilisé la class spécifiée en paramètr pour lancer les tests, et non la classe qu'utilise JUnit par défaut.
+L'attribut MockMvc permet aux tests de se lancer sans avoir besoin de lancer le serveur, elle va de paire avec l'annotation @MockBean qui indique la classe à "mocker", dans ce cas TagService, et pour pouvoir initialiser la classe MockMvc, il y a besoin de WebApplicationContext.
+La création du mock pendant l'execution de la méthode setUp(), et cette dernière a lieu juste avant chaque test comme l'indique lannotation @Before. 
+Le premier test, listAll() est chargé de tester la méthode listAll() deu TagController. La première ligne, when(tagService.listAll()).thenReturn(tags); demande à tagService de renvoyer la liste de tag que nous avons initialisé pendant setUp(), à chaque fois que sa méthode listAll() est appelée.
+Ensuite avec mockMvc, on effectue une requête GET sur l'endpoint correspondant à la méthode listAll du controller : mockMvc.perform(get("/api/tags").contentType(MediaType.APPLICATION_JSON))
+Les lignes suivantes vérifient que la réponse est bien un code 200, et qu'elle contient bien les données attendues.
+
+
 
 
 >Structure Front
@@ -342,6 +355,7 @@ Lorsque l'on clique sur le bouton burger, cela change la valeur de la variable t
 
 
 
+
 	- référencement
 
 Concernant le référencement de mon application, j'ai choisi de modifier dynamiquement le contenu de ma balise <title> et de mes meta tags selon les différentes pages de mon application pour qu'ils correspondent le mieux possible au contenu.
@@ -365,7 +379,7 @@ Ensuite j'ai pushé mon application sur une nouvelle branch Git, spécialement p
 Sur le site de Heroku, j'ai créé une nouvelle application, j'ai choisi son adresse puis je l'ai lié à mon repository sur GitHub et j'ai choisi la branche que je souhaitais déployer:
  _
 |_|
-Mon application est donc visitable à l'adresse fgiufghr.herokuapp.com
+Mon application est donc visitable à l'adresse twitch-tags.herokuapp.com
 
 
 
@@ -392,7 +406,7 @@ Pour avoir plus de renseignements sur le fonctionnement du hachage de mot de pas
 Il explique les bonnes pratiques, comme générer le sel avec un Cryptographically Secure Pseudo-Random Number Generator sur notre encoder ne le fait pas seul, et les choses à ne pas faire, comme écrire soi-même son programme de hachage.
 
 
-> Recherche sur site anglophone et extrait traduit
+> Situation ayant necessité recherche sur site anglophone et extrait traduit
 
 Pour mon exemple de recherche de solution, je vais prendre le moment où j'ai voulu améliorer le référencement naturel de mon application. En effet, les application Angular étant des SPA, leur contenu peut ne pas être visible par certains robots car leur contenu change dynamiquement grâce à JavaScript. Si on regarder de le code source de mon application, on ne voit effectivement rien dans l'app-root.
  _
@@ -405,6 +419,14 @@ La meilleure solution est d'utiliser Angular Universal pour que mon application 
 J'ai d'abord essayé la solution détaillée par cette page :https://coursetro.com/posts/code/155/Angular-6-SEO-Tutorial-from-Scratch---It%27s-Super-Simple-Now!
 C'est la plus simple et elle est compatible avec la version d'Angular qu'utilise mon application. J'ai réussi à l'implémenter sur un projet tout neuf, après avoir bataillé avec plusieurs erreurs du à des versions de dépendances incompatibles entre elles. Par contre je n'ai pas réussi à l'implémenter sur mon application, sa structure étant plus complexe qu'un simple projet tout neuf.
 J'ai trouvé une autre solution sur le site https://blog.pusher.com/make-angular-4-app-seo-friendly/, mais celle-ci a l'air plus longue et difficile à mettre en place, j'ai donc préféré remettre à plus tard son implémentation.
+ _
+|_| extrait site
+Traduction:
+Les applications Angular 4 charge dabord le premier contenu HTML basique avant de récuperer le contenu HTML de la page étant en train d'être chargée en utilisant XMLHttpRequest. Les Application Mono-Page sont géniale ! Elles chargent rapidement et vous donne beaucop de ontrol sur la façon dont vous voulez que votre application fonctionne. Elles sont analysées par le navigateur et de cette façon vous avez le control sur les éléments du DOM.
+
+Cependant, les applications mono-pages ne sont pas pratique pour le référencement naturel parce qu'elles ont besoin de dynamiquement changer les tags meta et le contenu en utilisant JavaScript, et ce changement n'est généralement pas répéré par les robots des moteurs de recherche. Comm certains robots ne peuvent pas analyser le JavaScript quand ils parcourent le site web, ils voietn seulement le premier contenu de base à chaque fois.
+
+Même si Google dit que ses robots sont désormais capable de déchiffrer le JavaScript, c'est encore un domaine vague et il vaudrait mieux être prudent concernant ce problème. Aussi, il y ad'autres moteurs de recherche qui ne supportent pas le JavaScript. Cet article explique comment rendre votre application Angular 4 plus optimisé pour le référencement naturel et donc plus pratique à analyser pour les robots des moteurs de recherche.
 
 
 7. CONCLUSION
@@ -426,25 +448,25 @@ Je remercie aussi mes formateur.rice.s de Simplon.co, Sara Guerric et Yoann Blan
 
 9. LEXIQUE
 
-API REST ( Application Programming Interface Representational State Transfer)
-ES6 (ECMAScript 6)
-SPA (Single Page Application = application web monopage
- JPA (Java Persistence Api)
-ORM (Object-Relational mapping = mapping objet-relationnel) 
-IDE (Integrated Development Envrionment = Environnement de développement)
-UML (Unified Modeling Language = Language de Modélisation Unifié)
-JSON
-SGBD
-CRUD
-AJAX
-CORS
-W3C
-HTTP
-JWT
-sel
-SEO
+API REST: Application Programming Interface Representational State Transfer
+ES6: ECMAScript 6
+SPA: Single Page Application = application web monopage
+JPA: Java Persistence Api
+ORM: Object-Relational mapping = mapping objet-relationnel
+IDE: Integrated Development Envrionment = Environnement de développement
+UML: Unified Modeling Language = Language de Modélisation Unifié
+JSON:
+SGBD:
+CRUD:
+AJAX:
+CORS:
+W3C:
+HTTP:
+JWT:
+sel:
+SEO:
 
 _________________________________________________
 TODO in app : 
-test unitaires (back)
+test unitaires (back) à revoir et écrire
 renommer nom des tables dans diagramme
