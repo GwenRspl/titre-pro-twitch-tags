@@ -1,86 +1,3 @@
-Introduction (mon parcours)
-1 Compétences mises en oeuvre 
-> citer les compétences + expliquer briévement (voir reac et synthétiser)
-2 A propos (200-250 mots chacun)
-a Francais
-b Anglais
-CONCEPTION
-3 Cahier des charges / Besoins, /Spécifications fonctionelles
->Context/Besoins présenter twitch/ quels problèmes? pourquoi ?comment ? en tant qu'utilisatrice
-
-Cahier des charges : user stories, use case
-Maquette, schéma enchaine maquette
-
-diagramme ER, diagramme de classe
-
-b spécifications sécurité
-c spécifications web mobile
-
-REALISATION
-> outils utilisés
-> structure back et explication
-> structure front et explication
-
-5 Extraits code argumentés
-a
-b sécurtié
-c web mobile
-6 Fonctionnalité réprésentative
-
-VEILLE TECHNOLOGIQUE
-7Veille vulnérabilité sécurité
-8 Recherche sur site anglophone et extrait traduit
-
-9 Conclusion
-10 Remerciements
-11 Lexique
-
-
-_________________________________________________________________
-
-1. Introduction
-I, my, me, mine
-
-2. Compétences mises en oeuvre 
-> citer les compétences + expliquer briévement (voir reac et synthétiser)
-
-3. A propos (200-250 mots chacun)
-a Francais
-b Anglais
-
-4.CONCEPTION
-> Cahier des charges : contexte et définition du problème, objectif du projet
-> user stories, use case
-> Maquette, schéma enchaine maquette
-> diagramme ER, diagramme de classe
-
-5.REALISATION
-> outils utilisés
-> structure back et explication
-	-la db
-	-springboot
-	-security (https://grokonez.com/spring-framework/spring-security/spring-boot-spring-security-jwt-authentication-architecture-tutorial)
-	https://grokonez.com/spring-framework/spring-security/angular-spring-boot-jwt-authentication-example-angular-6-spring-security-mysql-full-stack-part-1-overview-and-architecture
-	-test de l'api avec insomnia
-> structure front et explication
-	-angular
-	- référencement
-> deploiement heroku
-
-6.VEILLE TECHNOLOGIQUE
-> Veille vulnérabilité sécurité
-	-ANSSI (documents que j'ai dl)
-> Recherche sur site anglophone et extrait traduit
-	-baeldung > converter ?
-	(- grokonez > authentication ?)
-> questions/réponses sur stack overflow et partages sur slack
-
-7. Conclusion
-8. Remerciements
-9. Lexique
-
-_____________________________________________________________________________
-
 1. INTRODUCTION
 
 N'ayant pas suivi un cursus informatique dans mes études, j'ai découvert mon interet pour le dévelopement totalement par hasard au sein de mon premier emploi. J'étais chargée d'effectuer des taches répétitives sur des fichiers Excel, et un de mes collègues développeur m'a montré comment automatiser certaines actions grâce aux macros Excel. J'ai par la suite eu l'occasion assister à une formation Visual Basic for Application dans le cadre du DIF de mon entreprise.
@@ -411,7 +328,19 @@ Pour appliquer l'AuthGuard à des composants, il faut l'ajouter au fichier de ro
 |_|
 
 -responsive
-//TODO
+Pour finir, j'ai amélioré l'apparence de mon interface grâce au framework CSS Bulma, et j'ai modifié quelques éléments pour que l'application soit bien responsive.
+Par example, ma bar de navigation en mode desktop, devient un menu burger en mode mobile:
+ _
+|_| desktop
+ _
+|_| mobile x2
+Lorsque l'on clique sur le bouton burger, cela change la valeur de la variable toggled, ce qui a pour effet de rendre active la div navbarLinksMobile et ainsi l'afficher.
+ _
+|_| header ts
+ _
+|_| header html
+
+
 
 	- référencement
 
@@ -423,7 +352,24 @@ J'ai aussi utilisé les attributs ALT pour décrire le contenu de mes quelques i
 |_|
 	
 	
-> deploiement heroku
+> deploiement heroku https://dasunpubudu.wordpress.com/2018/04/17/deploying-spring-angular-mast-stack-application-in-heroku/
+En ce qui concerne le déploiement de mon application, j'ai choisi d'utiliser Heroku car celui-ci possède un plan gratuit et il est compatible avec le language Java. Aussi il propose de déployer une app à partir d'un repo GitHub, c'est donc très pratique dans mon cas.
+Pour déployer mon application, j'ai d'abord modifié mon fichier angular.json afin que les fichiers générés lors du build aillent directement dans un dossier static, situé dans resources. En effet, SpringBoot est configuré pour servir le contenu static du dossier resources.
+ _
+|_|
+Ensuite j'ai lancé la commande ng build --prod pour qu'Angular génére les fichiers nécessaires. Puis j'ai créé un fichier nommé Procfile à la racine de mon projet:
+ _
+|_|
+Ce fichier spécifie les commandes devant être executées par les dynos(All Heroku applications run in a collection of lightweight Linux containers called dynos) de l'application.  Dynos are isolated, virtualized Linux containers that are designed to execute code based on a user-specified command
+Ensuite j'ai pushé mon application sur une nouvelle branch Git, spécialement pour le déploiement.
+Sur le site de Heroku, j'ai créé une nouvelle application, j'ai choisi son adresse puis je l'ai lié à mon repository sur GitHub et j'ai choisi la branche que je souhaitais déployer:
+ _
+|_|
+Mon application est donc visitable à l'adresse fgiufghr.herokuapp.com
+
+
+
+
 
 6.VEILLE TECHNOLOGIQUE
 > Veille vulnérabilité sécurité
