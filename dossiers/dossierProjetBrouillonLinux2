@@ -310,7 +310,7 @@ Le composant SubmitChannel permet à l'utilisateur de rajouter un nouveau channe
 Pour se faire, il va vérifier que le le channel n'existe pas déjà dans la base de donnée, et le cas échéant, il va essayer de récupérer les informations sur l'API Twitch via le service. Si le channel existe bien sur Twitch, ses informations sont récupérées et uilisées pour créer un nouvel objet Channel que le service va ensuite sauver en base de données. L'utilisateur est enfin redirigé vers la page du channel nouvellement créé.
 
 
--auth
+	-auth
 Après avoir fait tous les composants et services nécessaires au fonctionnement basique de mon application, je suis passée à l'implémentation de l'authentification.
 Pour ça j'ai créé le service suivant pour effectuer les requêtes sur l'API:
  _
@@ -340,7 +340,7 @@ Pour appliquer l'AuthGuard à des composants, il faut l'ajouter au fichier de ro
  _
 |_|
 
--responsive
+	-responsive
 Pour finir, j'ai amélioré l'apparence de mon interface grâce au framework CSS Bulma, et j'ai modifié quelques éléments pour que l'application soit bien responsive.
 Par example, ma bar de navigation en mode desktop, devient un menu burger en mode mobile:
  _
@@ -468,5 +468,10 @@ SEO:
 
 _________________________________________________
 TODO in app : 
-test unitaires (back) à revoir et écrire
+test unitaires (back) à revoir 
 renommer nom des tables dans diagramme
+
+nom des méthodes()
+mettre en reliefs les termes
+finir lexique
+faire screens
