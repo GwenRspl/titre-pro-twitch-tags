@@ -187,7 +187,7 @@ Puis j'ai écrit le script SQL chargé d'insérer des données dans mes tables.
 
 	-springboot
 L'étape suivante était d'initialiser mon projet SpringBoot avec ses dépendances. Pour ça j'utilisé SpringCLI avec la ligne de commande "spring init --dependencies=Web,JPA,PostgreSQL,Security,Lombok, DevTools twitch-tags".
-Par defaut, SpringBoot va chercher des entités dans les packages pour créer leurs tables respectives en base de données. Mais étant donné que je désirais les créer moi-même pour avoir un maximum de controle dessus, j'ai mis les scrips SQL précédement écrits dans le dossier resources situé dans src/main. Dans ce même dossier, il y a un fichier application.properties qui sert à définir certains paramètres, dont ceux pour que SpringBoot puisse se connecter à la base de données. J'ai aussi rajouté deux paramètre pour que JPA affiche les logs de SQL et pour que les tables soit supprimées et recrées à chaque lancement de SpringBoot.
+Par defaut, SpringBoot va chercher des entités dans les packages pour créer leurs tables respectives en base de données. Mais étant donné que je désirais les créer moi-même pour avoir un maximum de controle dessus, j'ai mis les scrips SQL précédement écrits dans le dossier resources situé dans src/main. Dans ce même dossier, il y a un fichier application.properties qui sert à définir certains paramètres, dont ceux pour que SpringBoot puisse se connecter à la base de données. J'ai aussi rajouté deux paramètre pour que JPA affiche les logs de SQL et pour que JPA ne s'occupe pas de la génération des tables.
  _
 |_|
 
