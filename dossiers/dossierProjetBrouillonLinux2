@@ -455,16 +455,15 @@ JPA: Java Persistence Api
 ORM: Object-Relational mapping = mapping objet-relationnel
 IDE: Integrated Development Envrionment = Environnement de développement
 UML: Unified Modeling Language = Language de Modélisation Unifié
-JSON:
-SGBD:
-CRUD:
-AJAX:
-CORS:
-W3C:
-HTTP:
-JWT:
-sel:
-SEO:
+JSON: JavaScript Object Notation
+SGBD: Système de Gestion de Base de Données
+CRUD: Create, Read, Update, Delete
+AJAX: Asynchronous JavaScript and XML
+CORS: Cross-Origin Resource Sharing
+W3C: World Wide Web Consortium
+JWT: JSON Web token
+sel: Le salage st une méthode permettant de renforcer la sécurité d'un mot de passe.
+SEO: Search Engine Optimization
 
 _________________________________________________
 TODO in app : 
