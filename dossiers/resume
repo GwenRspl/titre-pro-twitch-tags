@@ -34,4 +34,4 @@ expectations of the user. If a user cannot find the channel he was looking for, 
 the application. It is also possible to create an account, or also approve of a tag with a simple
 clic.
 In conclusion, the goal of my application is to help users to easily discover new channels
-matching their needs. To create it, I chose to make a REST API for the back end, developped in Java with Spring Boot. The front-end is a Single Page Application developped in Angular 6.
+matching their needs. To create it, I made a REST API for the back end, developped in Java with Spring Boot. The front-end is a Single Page Application developped in Angular 6.
