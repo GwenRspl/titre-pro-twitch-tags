@@ -43,13 +43,13 @@ cas d'utilisation > identifier interaction système et users > vision globale fa
 zoning : schema grossier de l'inteface > identifier principales zones
 wireframe: definir plus plus précisément orga et structure éléments
 	-diagramme 
-ER : crucial pour orga bd, link a relatin OneToMany avec autres tables
+ER : crucial pour conception bd, link a relatin OneToMany avec autres tables
 classe uml: décrit clairement structure éléments du back-end, modèlise classes, attributs, opérations, relations les caractérisant.
 
 
 Réalisation
 	-orga : 
-trello > grossier puis ticket détaillé
+trello > grossier puis ticket détaillé par priorité
 git github > branche séparé pour chaque feature puis push sur master
 	-outils back & Front
 	-init db
@@ -70,9 +70,6 @@ SERVICE : requêtes HTTP sur les endpoints de l’API & opérations asynchrones
 Composant : déclaration du service dans le constructeur & souscription au résultat
 
 
-
-Démo live
-
 Tests
 	- tests unitaires du controller
 JUnit & mockito
@@ -83,6 +80,7 @@ Exemple recherche
 BACK-END :Authentification par JWT
 FRONT-END : Intercepteur HTTP & Router guard
 
+Démonstration
 
 Conclusion
 	-satisfactions
