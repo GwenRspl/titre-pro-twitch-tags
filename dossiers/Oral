@@ -1,12 +1,13 @@
 
 Introduction
+	-Intro sur moi rapide
 	- Presentation entreprise
 fintech paiement et techonologie sans contact
-tourisme et événementiel
-pole ingéninérie
+tourisme et événementiel(stations de ski, festivals)
+pole ingéninérie de Paris avec lead dev , et 2 dev confirmés
 Android natif et play (java, scale, js, coffeescript)
 	- avant propos
-Twitch > site pr regarder/diffuser vidéos live. = Youtube mais interaction
+Twitch > site pr regarder/diffuser vidéos live. = Youtube mais l'accent est sur interaction
 thèmatique jv mais pas que
 Mon appli > catalogue de chaines avec tags, recherche par tag
 Objectif = Permettre aux users de découvrir new chaines à leurs gouts.
@@ -52,6 +53,8 @@ trello > grossier puis ticket détaillé
 git github > branche séparé pour chaque feature puis push sur master
 	-outils back & Front
 	-init db
+sql exemples:
+SELECT * FROM A INNER JOIN B ON A.key = B.key
 	- structure back & front
 BACK: rest api > architecture standardisée, support JSON, peu de bande passante
 FRONT: feature : composan & service necessaire à fonctionnalitée, core : composants pr fonctionnement basique app et services utilisés par plusieurs modules, shared : compo necessaire plusieurs modules à la fois
@@ -93,6 +96,7 @@ trouver documentation à jour
 estimer le temps requis pour développer certaines fonctionnalités
 concevoir la base de données et ses relations
 
+Merci de votre attention
 
 
 
