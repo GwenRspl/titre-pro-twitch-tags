@@ -19,3 +19,13 @@
 .btn-width {
   width: 9.7em;
 }
+
+.mybutton {
+  background-color: #6441a4;
+  color: #ffffff;
+}
+
+.mybutton:hover {
+  background-color: #845ec9;
+  color : #f8f8f8;
+}

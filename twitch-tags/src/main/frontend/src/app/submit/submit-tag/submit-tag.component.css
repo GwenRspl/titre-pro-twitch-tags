@@ -7,3 +7,13 @@
 	margin-top: 50px;
 	font-size: 0.75em;
 }
+
+.button {
+  background-color: #6441a4;
+  color: #ffffff;
+}
+
+.button:hover {
+  background-color: #845ec9;
+  color : #f8f8f8;
+}

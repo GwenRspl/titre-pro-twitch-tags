@@ -3,7 +3,7 @@
     <div class="dropdown is-active is-grouped-centered">
 
       <input type="text" class="input" [(ngModel)]="userInput" (keyup)="filter()" >
-      <button class="button is-link" (click)="search()" >Search</button>
+      <a class="button is-link mybutton" (click)="search()" >Search</a>
 
       <div class="dropdown-menu"  *ngIf="filteredList.length > 0">
         <div class="dropdown-content">
