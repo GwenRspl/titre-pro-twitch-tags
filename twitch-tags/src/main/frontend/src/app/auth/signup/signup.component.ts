@@ -57,6 +57,7 @@ export class SignupComponent implements OnInit {
       () => {
         this.isSignedUp = true;
         this.isSignupFailed = false;
+        this.submitted = false;
       },
       error => {
         this.errorMessage = error.error.message;

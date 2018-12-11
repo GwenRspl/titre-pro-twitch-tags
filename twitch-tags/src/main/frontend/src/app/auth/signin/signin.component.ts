@@ -5,6 +5,7 @@ import {Title} from '@angular/platform-browser';
 import {LoginInfo} from "../login-info";
 import {AuthService} from "../auth.service";
 import {TokenStorageService} from "../token-storage.service";
+import {HeaderService} from '../../services/header.service';
 
 @Component({
   selector: 'app-signin',
@@ -21,7 +22,12 @@ export class SigninComponent implements OnInit {
   errorMessage = '';
   isAdmin = false;
 
-  constructor(private route: Router, private formBuilder: FormBuilder, private authService:AuthService, private tokenStorage: TokenStorageService, private title: Title) { }
+  constructor(private route: Router,
+              private formBuilder: FormBuilder,
+              private authService:AuthService,
+              private tokenStorage: TokenStorageService,
+              private title: Title,
+              private headerService: HeaderService) { }
 
   ngOnInit() {
     this.title.setTitle('TwitchTags - Log in');
@@ -76,7 +82,17 @@ export class SigninComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
         this.isAdmin = this.tokenStorage.isAdmin();
-        window.location.reload();
+
+        let authority: string = null;
+        data.authorities.every(role => {
+          if(role === 'ROLE_ADMIN') {
+            authority = 'admin';
+            return false;
+          }
+          authority = 'user';
+          return true;
+        });
+        this.headerService.toggleNavBar(authority);
       },
       error => {
         console.log(error);

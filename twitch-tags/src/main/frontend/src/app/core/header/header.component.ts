@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenStorageService} from "../../auth/token-storage.service";
 import {Router} from "@angular/router";
+import {HeaderService} from '../../services/header.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   private _authority: string;
   toggled: boolean = false;
 
-  constructor(private tokenStorage: TokenStorageService, private router: Router) { }
+  constructor(private tokenStorage: TokenStorageService, private router: Router, private headerService: HeaderService) { }
 
   ngOnInit() {
     if(this.tokenStorage.getToken()){
@@ -26,11 +27,15 @@ export class HeaderComponent implements OnInit {
         return true;
       });
     }
+    this.headerService.updateNavBar.subscribe(
+      data => this._authority = data
+    )
   }
 
   logout(){
     this.tokenStorage.signOut();
     this._authority = null;
+    //this.headerService.toggleNavBar(null);
     this.router.navigate(['/app/'])
   }
 

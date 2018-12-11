@@ -1,8 +1,4 @@
-<div *ngIf="isLoggedIn; else loggedOut">
-  You are logged in ! Go yo my account ?
-</div>
-
-<ng-template #loggedOut>
+<div *ngIf="!isLoggedIn">
 <form class="container" [formGroup]="loginForm" (ngSubmit)="login()" >
   <div class="columns">
     <div class="column"></div>
@@ -56,7 +52,7 @@
   </div>
 
 </form>
-</ng-template>
+</div>
 <div class="modal" [ngClass]="{'is-active' : isLoggedIn}">
   <div class="modal-background"></div>
   <div class="modal-card">
