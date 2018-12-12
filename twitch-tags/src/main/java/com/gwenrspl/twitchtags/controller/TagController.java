@@ -31,6 +31,11 @@ public class TagController {
         return this.service.getOne(id);
     }
 
+    @GetMapping("/search-by-name/{name}")
+    public Tag getOne(@PathVariable String name) {
+        return this.service.searchByNameStrict(name);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody final Tag tag) {
         this.service.create(tag);

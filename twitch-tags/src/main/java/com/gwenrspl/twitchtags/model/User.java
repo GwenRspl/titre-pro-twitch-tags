@@ -1,5 +1,6 @@
 package com.gwenrspl.twitchtags.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.gwenrspl.twitchtags.converter.ListChannelTagUserLinkConverter;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,7 @@ public class User {
     private Long Id;
     private String username;
     private String email;
+    @JsonIgnore
     private String password;
     private UserRole role;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

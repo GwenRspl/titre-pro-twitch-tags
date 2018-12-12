@@ -1,8 +1,8 @@
 <div class="field is-grouped is-grouped-multiline">
   <div class="control" *ngFor="let link of (arr | limitPipe:limit)">
-    <div class="tags has-addons">
-      <span class="tag purple">{{link[0]}}</span>
-      <span class="tag light-purple">+{{link[1]}}</span>
+    <div class="tags has-addons" (click)="onTagClicked(link.name)">
+      <span class="tag purple">{{link.name}}</span>
+      <span class="tag light-purple">+{{link.count}}</span>
     </div>
   </div>
 </div>

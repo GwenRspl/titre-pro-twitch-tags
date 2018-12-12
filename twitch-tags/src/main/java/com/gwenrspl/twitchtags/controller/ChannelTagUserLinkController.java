@@ -42,7 +42,7 @@ public class ChannelTagUserLinkController {
     }
 
     @GetMapping("/by-user/{id}")
-    public Iterable< ChannelTagUserLink> searchByUser(@PathVariable Long id) {
+    public Iterable<ChannelTagUserLink> searchByUser(@PathVariable Long id) {
         return this.service.findByUser(id);
     }
 
@@ -51,6 +51,9 @@ public class ChannelTagUserLinkController {
         Long channelId = payload.get("channelId");
         Long tagId = payload.get("tagId");
         Long userId = payload.get("userId");
+        if(this.service.isPresent(channelId, tagId, userId)) {
+            return new ResponseEntity<>(new ResponseMessage("Link already exists"), HttpStatus.CONFLICT);
+        }
         this.service.create(channelId, tagId, userId);
         return new ResponseEntity<>(new ResponseMessage("Link created successfully"), HttpStatus.OK);
     }
@@ -59,5 +62,10 @@ public class ChannelTagUserLinkController {
     public ResponseEntity<?> delete(@PathVariable Long id) {
         this.service.delete(id);
         return new ResponseEntity<>(new ResponseMessage("Link deleted successfully"), HttpStatus.OK);
+    }
+
+    @GetMapping("/is-present")
+    public Boolean isPresent(@RequestParam("userId") Long userId, @RequestParam("channelId") Long channelId, @RequestParam("tagId") Long tagId) {
+        return this.service.isPresent(channelId, tagId, userId);
     }
 }

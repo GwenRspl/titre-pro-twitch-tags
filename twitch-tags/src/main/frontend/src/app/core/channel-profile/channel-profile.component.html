@@ -32,12 +32,12 @@
       </div>
 
       <div *ngIf="seeMoreTags === false; else seeMore">
-        <app-tag [links]="channel.channelTagUserLinks" [limit]="5"></app-tag>
+        <app-tag [links]="channel.channelTagUserLinks" [channel]="channel" [limit]="5"></app-tag>
 
       </div>
       <ng-template #seeMore>
         <div class="field is-grouped is-grouped-multiline">
-          <app-tag [links]="channel.channelTagUserLinks" [limit]="0"></app-tag>
+          <app-tag [links]="channel.channelTagUserLinks" [channel]="channel" [limit]="0"></app-tag>
         </div>
       </ng-template>
       <a *ngIf="channel.channelTagUserLinks.length > 5" (click)="toggleTags()" class="see-more">{{ seeMoreTagsString }}</a>

@@ -81,4 +81,12 @@ public class ChannelTagUserLinkServiceImpl implements ChannelTagUserLinkService 
     public void delete(final Long id) {
         this.channelTagUserLinkRepository.deleteById(id);
     }
+
+    @Override
+    public Boolean isPresent(Long channelId, Long tagId, Long userId) {
+        List<ChannelTagUserLink> links =  this.channelTagUserLinkRepository.findAll().stream()
+                .filter(link -> link.getUser().getId().equals(userId) && link.getTag().getId().equals(tagId) && link.getChannel().getId().equals(channelId))
+                .collect(Collectors.toList());
+        return !links.isEmpty();
+    }
 }

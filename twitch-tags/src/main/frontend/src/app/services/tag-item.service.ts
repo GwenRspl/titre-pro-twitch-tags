@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Channel} from "../shared/models/channel.model";
+import {Subject} from 'rxjs/index';
+import {TagItem} from '../shared/models/tag-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +11,9 @@ export class TagItemService {
 
   constructor() { }
 
-  prepArray(links) : Array<[string, number]> {
+  prepArrayTag(links) : TagItem[] {
     if(links==null) console.log('null');
-    let arr: Array<[string, number]> = [];
+    let arr: TagItem[] = [];
     let tagNames : string[] = [];
     for(let link of links) {
       if(!tagNames.includes(link.tagName)){
@@ -25,7 +27,10 @@ export class TagItemService {
           count++;
         }
       }
-      arr.push([name, count]);
+      let item = new TagItem();
+      item.name = name;
+      item.count = count;
+      arr.push(item);
     }
     return arr;
   }

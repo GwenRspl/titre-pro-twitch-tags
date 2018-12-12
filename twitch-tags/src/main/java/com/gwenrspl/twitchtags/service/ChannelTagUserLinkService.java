@@ -11,10 +11,8 @@ public interface ChannelTagUserLinkService {
     List<ChannelTagUserLink> findByChannel(Long channelId);
     List<ChannelTagUserLink> findByTag(Long tagId);
     List<ChannelTagUserLink> findByUser(Long userId);
-
     ChannelTagUserLink getOne(Long id);
-
     ChannelTagUserLink create(Long channelId, Long tagId, Long userId);
-
+    Boolean isPresent(Long channelId, Long tagId, Long userId);
     void delete(Long id);
 }
