@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import {ActivatedRoute, Data, Router} from '@angular/router';
+import {ActivatedRoute, ActivatedRouteSnapshot, Data, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 
 import {Channel} from '../../shared/models/channel.model';
@@ -9,6 +9,9 @@ import {LinkTagChannelUserInfo} from "../../services/link-tag-channel-user-info"
 import {User} from "../../shared/models/user.model";
 import {TokenStorageService} from "../../auth/token-storage.service";
 import {UsersService} from "../../services/users.service";
+import {TagItemService} from '../../services/tag-item.service';
+import {TagItem} from '../../shared/models/tag-item.model';
+import {ChannelsService} from '../../services/channels.service';
 
 @Component({
   selector: 'app-channel-profile',
@@ -30,14 +33,17 @@ export class ChannelProfileComponent implements OnInit {
   private _tags: Tag[] = [];
   private _filteredList = [];
   private _tagToAdd: Tag;
+  tagItems : TagItem[];
 
   constructor(private router: Router,
               private route: ActivatedRoute,
+              private channelService: ChannelsService,
               private tagService: TagsService,
               private elementRef: ElementRef,
               private tokenStorage: TokenStorageService,
               private userService:UsersService,
-              private title: Title) {
+              private title: Title,
+              private tagItemService: TagItemService) {
   }
 
   ngOnInit() {
@@ -45,16 +51,22 @@ export class ChannelProfileComponent implements OnInit {
     this.getChannelAndTags();
     this.tagService.getTags().subscribe(data => {
       this._tags = data;
-    })
+    });
   }
 
   getChannelAndTags(): void {
-    this.route.data.subscribe(
-      (data: Data) => {
-        this._channel = data['channel'];
-        this.title.setTitle('TwitchTags - ' + this.channel.name);
+    this.channelService.getChannel(this.route.snapshot.params['id']).subscribe(
+      data => {
+        this._channel = data;
+        this.title.setTitle('TwitchTags - ' + this._channel.name);
+        this.tagItems = this.tagItemService.prepArrayTag(this._channel.channelTagUserLinks);
       }
     );
+  };
+
+
+  updateChannelAndTags(event: boolean) {
+    this.getChannelAndTags();
   }
 
   toggleTags() {
@@ -125,11 +137,9 @@ export class ChannelProfileComponent implements OnInit {
     return this._tagToAdd;
   }
 
-
   get authenticated(): boolean {
     return this._authenticated;
   }
-
 
   get channel(): Channel {
     return this._channel;
@@ -142,7 +152,6 @@ export class ChannelProfileComponent implements OnInit {
   get seeMoreTagsString(): string {
     return this._seeMoreTagsString;
   }
-
 
   get tags(): Tag[] {
     return this._tags;
