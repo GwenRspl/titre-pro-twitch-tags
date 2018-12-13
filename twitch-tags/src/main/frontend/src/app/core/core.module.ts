@@ -17,7 +17,6 @@ import {ChannelsService} from '../services/channels.service';
 import {TagItemService} from '../services/tag-item.service';
 import {TagsService} from '../services/tags.service';
 import {UsersService} from '../services/users.service';
-import {ChannelResolver} from '../services/channel-resolver.service';
 import {HttpInterceptorProviders} from '../auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -46,7 +45,6 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   providers: [
     ChannelsService,
-    ChannelResolver,
     TagItemService,
     TagsService,
     UsersService,
