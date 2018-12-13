@@ -3,10 +3,12 @@
     <div class="column is-half">
       <img [src]="channel.avatar" alt="{{ channel.name }}'s avatar">
     </div>
-    <div class="column is-half">
+    <div class="column is-half channel-details">
       <div class="is-vcentered">
-        <div class="channel-name">{{ channel.name }}</div>
-        <div>Followers : {{ channel.followers }}</div>
+        <div class="channel-name">{{ channel.name }}
+        <span class="channel-language">{{ channel.language | uppercase }}</span>
+        </div>
+        <div>Followers : {{ channel.followers | currency:' ':'symbol':'1.0-0'}}</div>
         <div *ngIf="channel.status === 'PARTNER'; else notPartner">
           Status: Partner
         </div>
@@ -22,7 +24,6 @@
           <a href="{{ channel.url }}" target="_blank">Go to Twitch channel </a>
         </div>
       </div>
-
     </div>
   </div>
   <div class="columns">
@@ -40,7 +41,7 @@
           <app-tag [arr]="tagItems" [channel]="channel" [limit]="0" (updateNeeded)="updateChannelAndTags($event)"></app-tag>
         </div>
       </ng-template>
-      <a *ngIf="channel.channelTagUserLinks.length > 5" (click)="toggleTags()" class="see-more">{{ seeMoreTagsString }}</a>
+      <a *ngIf="tagItems.length > 5" (click)="toggleTags()" class="see-more">{{ seeMoreTagsString }}</a>
     </div>
   </div>
   <div class="columns">

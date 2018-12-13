@@ -1,7 +1,7 @@
 .channel-name {
     font-size: 2em;
-    /* margin-top: 5%;
-    margin-bottom: 10%; */
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
 
 .tags-title {
@@ -22,7 +22,7 @@
 }
 
 .profile {
-    width: 50%;
+    width: 40%;
 }
 
 .add-tag-title {
@@ -32,6 +32,7 @@
 
 .add-tag-subtitle {
     margin-top: 5%;
+    margin-bottom: 5%;
     font-size: 0.80em;
 }
 
@@ -43,4 +44,24 @@
 .button:hover {
   background-color: #845ec9;
   color : #f8f8f8;
+}
+
+.channel-details {
+  margin-top: 5%;
+}
+
+.channel-language {
+  font-size: 0.5em;
+  vertical-align: text-top;
+}
+@media (max-width: 768px) {
+  .profile {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1215px) {
+  .profile {
+    width: 60%;
+  }
 }
