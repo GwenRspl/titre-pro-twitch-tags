@@ -3,7 +3,7 @@
     <div class="column is-one-quarter" *ngFor="let channel of channels">
       <img routerLink="/app/profile/{{channel.id}}" src="{{channel.avatar}}">
       <div class="channel-name">{{channel.name}}</div>
-      <app-tag [links]="channel.channelTagUserLinks" [channel]="channel" [limit]="2"></app-tag>
+      <app-tag [arr]="channel.channelTagUserLinks" [channel]="channel" [limit]="2"></app-tag>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import {ChannelTagUserLink} from "../models/channel-tag-user-link.model";
 import {TagItemService} from "../../services/tag-item.service";
 import {User} from '../models/user.model';
@@ -17,10 +17,12 @@ import {TagItem} from '../models/tag-item.model';
   styleUrls: ['./tag.component.css']
 })
 export class TagComponent implements OnInit {
-  @Input() links: ChannelTagUserLink[];
+  //@Input() links: ChannelTagUserLink[];
+  @Input() arr: TagItem[];
   @Input() limit: number;
   @Input() channel: Channel;
-  arr : TagItem[];
+  @Output() updateNeeded = new EventEmitter<boolean>();
+  //arr : TagItem[];
 
   constructor(private service: TagItemService,
               private tokenStorage: TokenStorageService,
@@ -30,7 +32,7 @@ export class TagComponent implements OnInit {
               private router: Router) {}
 
   ngOnInit() {
-    this.arr = this.service.prepArrayTag(this.links);
+    //this.arr = this.service.prepArrayTag(this.links);
   }
 
   onTagClicked(linkName: string) {
@@ -47,8 +49,11 @@ export class TagComponent implements OnInit {
             let link = new LinkTagChannelUserInfo(this.channel.id, tagToAdd.id, user.id);
             this.tagService.addTagToChannel(link).subscribe(
               () => {
-                let str = this.route.snapshot['_routerState'].url;
-                this.router.navigate(['/app/submittag/']).then(()=> this.router.navigate([str]));
+                console.log('lets emit');
+                this.updateNeeded.emit(true);
+                //this.arr = this.service.prepArrayTag(this.links);
+                // let str = this.route.snapshot['_routerState'].url;
+                // this.router.navigate(['/app/submittag/']).then(()=> this.router.navigate([str]));
               },
               error => {
                 console.log(error);
