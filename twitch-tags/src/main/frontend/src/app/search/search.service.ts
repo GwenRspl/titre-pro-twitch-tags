@@ -13,7 +13,6 @@ export class SearchService {
   constructor() {
   }
 
-
   get searchResult(): Channel[] {
     return this._searchResult;
   }
