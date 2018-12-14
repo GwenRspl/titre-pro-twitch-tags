@@ -8,11 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/channel-tag-user-link")
-@CrossOrigin(origins= "*")
 public class ChannelTagUserLinkController {
 
     private ChannelTagUserLinkService service;
@@ -29,21 +27,6 @@ public class ChannelTagUserLinkController {
     @GetMapping("/{id}")
     public  ChannelTagUserLink getOne(@PathVariable Long id) {
         return this.service.getOne(id);
-    }
-
-    @GetMapping("/by-channel/{id}")
-    public Iterable< ChannelTagUserLink> searchByChannel(@PathVariable Long id) {
-        return this.service.findByChannel(id);
-    }
-
-    @GetMapping("/by-tag/{id}")
-    public Iterable< ChannelTagUserLink> searchByTag(@PathVariable Long id) {
-        return this.service.findByTag(id);
-    }
-
-    @GetMapping("/by-user/{id}")
-    public Iterable<ChannelTagUserLink> searchByUser(@PathVariable Long id) {
-        return this.service.findByUser(id);
     }
 
     @PostMapping("/create")

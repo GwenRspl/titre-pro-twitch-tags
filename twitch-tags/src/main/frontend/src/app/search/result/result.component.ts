@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Channel} from '../../shared/models/channel.model';
-import {SearchService} from "../search.service";
+import {SearchService} from '../search.service';
 import {TagItem} from '../../shared/models/tag-item.model';
 import {TagItemService} from '../../services/tag-item.service';
 

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Tag} from "../shared/models/tag.model";
-import {Channel} from "../shared/models/channel.model";
-import {LinkTagChannelUserInfo} from "./link-tag-channel-user-info";
+import {HttpClient} from '@angular/common/http';
+import {Tag} from '../shared/models/tag.model';
+import {LinkTagChannelUserInfo} from './link-tag-channel-user-info';
 
 @Injectable({
   providedIn: 'root'

@@ -8,11 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/channels")
-@CrossOrigin(origins= "*")
 public class ChannelController {
 
     private final ChannelService service;
@@ -41,11 +39,6 @@ public class ChannelController {
         return this.service.searchByTags(tags);
     }
 
-    @PostMapping("/search/name")
-    public List<Channel> searchByName(@RequestBody String name) {
-        return this.service.searchByName(name);
-    }
-
     @GetMapping("/search/name")
     public List<Channel> searchByChannelName(@RequestParam("channel") String name) {
         return this.service.searchByName(name);
@@ -63,9 +56,9 @@ public class ChannelController {
         return new ResponseEntity<>(new ResponseMessage("Channel deleted successfully"), HttpStatus.OK);
     }
 
-    @PostMapping("/is-present")
-    public boolean isPresent(@RequestBody String name) {
-        return this.service.isPresent(name);
+    @GetMapping("/is-present/{channel}")
+    public boolean isPresent(@PathVariable String channel) {
+        return this.service.isPresent(channel);
     }
 
 }

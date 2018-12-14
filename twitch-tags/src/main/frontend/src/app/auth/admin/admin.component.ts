@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {TokenStorageService} from "../token-storage.service";
+import {TokenStorageService} from '../token-storage.service';
 
 
 @Component({

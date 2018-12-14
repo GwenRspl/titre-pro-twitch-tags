@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthenticationController {
@@ -66,10 +65,8 @@ public class AuthenticationController {
            default:
                role = User.UserRole.STANDARD_USER;
         }
-
         user.setRole(role);
         userService.create(user);
-
         return new ResponseEntity<>(new ResponseMessage("User registered successfully"), HttpStatus.OK);
     }
 

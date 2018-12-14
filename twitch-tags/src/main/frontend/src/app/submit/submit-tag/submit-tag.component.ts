@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 
 import {TagsService} from '../../services/tags.service';

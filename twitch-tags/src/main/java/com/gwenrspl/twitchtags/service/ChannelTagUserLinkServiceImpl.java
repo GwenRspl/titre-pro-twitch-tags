@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Service
 public class ChannelTagUserLinkServiceImpl implements ChannelTagUserLinkService {
@@ -35,24 +34,11 @@ public class ChannelTagUserLinkServiceImpl implements ChannelTagUserLinkService 
         return this.channelTagUserLinkRepository.findAll();
     }
 
-    @Override
-    public List<ChannelTagUserLink> findByChannel(Long channelId) {
-        return this.channelTagUserLinkRepository.findAll().stream()
-                .filter(link -> link.getChannel().getId().equals(channelId))
-                .collect(Collectors.toList());
-    }
 
     @Override
     public List<ChannelTagUserLink> findByTag(Long tagId) {
         return this.channelTagUserLinkRepository.findAll().stream()
                 .filter(link -> link.getTag().getId().equals(tagId))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<ChannelTagUserLink> findByUser(Long userId) {
-        return this.channelTagUserLinkRepository.findAll().stream()
-                .filter(link -> link.getUser().getId().equals(userId))
                 .collect(Collectors.toList());
     }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Channel} from "../../shared/models/channel.model";
-import {ChannelsService} from "../../services/channels.service";
-import {SearchService} from "../search.service";
+import {Channel} from '../../shared/models/channel.model';
+import {ChannelsService} from '../../services/channels.service';
+import {SearchService} from '../search.service';
 
 @Component({
   selector: 'app-search-bar-name',

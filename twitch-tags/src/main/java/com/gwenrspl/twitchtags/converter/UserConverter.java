@@ -23,15 +23,12 @@ public class UserConverter extends StdConverter<User, UserConverter.UserSummary>
         public Long getId() {
             return this.id;
         }
-
         public void setId(final Long id) {
             this.id = id;
         }
-
         public String getUsername() {
             return this.username;
         }
-
         public void setUsername(final String username) {
             this.username = username;
         }

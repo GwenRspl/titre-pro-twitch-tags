@@ -14,7 +14,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins= "*")
 public class UserController {
 
     private UserService service;
@@ -43,7 +42,6 @@ public class UserController {
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public Optional<User> getOne(@PathVariable Long id) {
         return this.service.getOne(id);
-
     }
 
     @GetMapping("/username/{username}")

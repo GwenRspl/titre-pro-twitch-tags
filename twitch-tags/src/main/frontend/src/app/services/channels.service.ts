@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {catchError} from 'rxjs/operators';
+import {throwError} from 'rxjs/internal/observable/throwError';
 
 import {Channel} from '../shared/models/channel.model';
-import {TwitchChannel} from "../shared/models/twitch-channel.model";
-import {catchError} from "rxjs/operators";
-import {throwError} from "rxjs/internal/observable/throwError";
+import {TwitchChannel} from '../shared/models/twitch-channel.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ChannelsService {
 
   private defaultPath = '/api/channels/';
   private createPath = this.defaultPath + 'create';
-  private existencePath = this.defaultPath + 'is-present';
+  private existencePath = this.defaultPath + 'is-present/';
   private searchPath = this.defaultPath + 'search';
   private searchNamePath = this.defaultPath + 'search/name';
   private twitchApiPath = 'https://api.twitch.tv/kraken/channels/';
@@ -53,7 +53,8 @@ export class ChannelsService {
   }
 
   alreadyExist(channelName: string) {
-    return this.http.post(this.existencePath, channelName);
+    const path = this.existencePath + channelName;
+    return this.http.get<Boolean>(path);
   }
 
   search(tags: string){

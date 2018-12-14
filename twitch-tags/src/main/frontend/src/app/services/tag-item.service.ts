@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Channel} from "../shared/models/channel.model";
-import {Subject} from 'rxjs/index';
+import {Channel} from '../shared/models/channel.model';
 import {TagItem} from '../shared/models/tag-item.model';
 
 @Injectable({

@@ -1,9 +1,9 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import {Tag} from "../../shared/models/tag.model";
-import {TagsService} from "../../services/tags.service";
-import {ChannelsService} from "../../services/channels.service";
-import {SearchService} from "../search.service";
-import {Channel} from "../../shared/models/channel.model";
+import {Tag} from '../../shared/models/tag.model';
+import {TagsService} from '../../services/tags.service';
+import {ChannelsService} from '../../services/channels.service';
+import {SearchService} from '../search.service';
+import {Channel} from '../../shared/models/channel.model';
 
 @Component({
   selector: 'app-search-bar',
@@ -70,7 +70,7 @@ export class SearchBarComponent implements OnInit {
     this.error = false;
     let tagNames : string = '';
     for(let tag of this._selected){
-      tagNames = tagNames + tag.name + ",";
+      tagNames = tagNames + tag.name + ',';
     }
     tagNames = tagNames.slice(0,-1);
     this.channelsService.search(tagNames).subscribe((data: Channel[]) => {

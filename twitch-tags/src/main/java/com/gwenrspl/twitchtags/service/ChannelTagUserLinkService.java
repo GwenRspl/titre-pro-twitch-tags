@@ -8,9 +8,7 @@ import java.util.Optional;
 public interface ChannelTagUserLinkService {
 
     List<ChannelTagUserLink> listAll();
-    List<ChannelTagUserLink> findByChannel(Long channelId);
     List<ChannelTagUserLink> findByTag(Long tagId);
-    List<ChannelTagUserLink> findByUser(Long userId);
     ChannelTagUserLink getOne(Long id);
     ChannelTagUserLink create(Long channelId, Long tagId, Long userId);
     Boolean isPresent(Long channelId, Long tagId, Long userId);

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
-import {LoginInfo} from "../login-info";
-import {AuthService} from "../auth.service";
-import {TokenStorageService} from "../token-storage.service";
+
+import {LoginInfo} from '../login-info';
+import {AuthService} from '../auth.service';
+import {TokenStorageService} from '../token-storage.service';
 import {HeaderService} from '../../services/header.service';
 
 @Component({

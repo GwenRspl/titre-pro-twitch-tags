@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Channel} from "../../../shared/models/channel.model";
-import {ChannelsService} from "../../../services/channels.service";
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
+import {Channel} from '../../../shared/models/channel.model';
+import {ChannelsService} from '../../../services/channels.service';
 
 @Component({
   selector: 'app-channels-dashboard',
@@ -12,7 +12,7 @@ export class ChannelsDashboardComponent implements OnInit {
   channels: Channel[];
   submittedChannel: string;
 
-  constructor(private channelService: ChannelsService, private router: Router) { }
+  constructor(private channelService: ChannelsService) { }
 
   ngOnInit() {
     this.channelService.getChannels().subscribe(
@@ -50,7 +50,7 @@ export class ChannelsDashboardComponent implements OnInit {
             }
           })
         }
-      }, error1 => console.log("An error occured: " + error1.toString()))
+      }, error1 => console.log('An error occured: ' + error1.toString()))
     });
   }
 
@@ -67,7 +67,7 @@ export class ChannelsDashboardComponent implements OnInit {
           this.ngOnInit();
         })
       }
-    }, error1 => console.log("An error occured: " + error1.toString()))
+    }, error1 => console.log('An error occured: ' + error1.toString()))
   }
 
   deleteOneChannel(channel: Channel) {
@@ -84,7 +84,7 @@ export class ChannelsDashboardComponent implements OnInit {
   addNewChannel(){
     this.channelService.alreadyExist(this.submittedChannel).subscribe((data: boolean) => {
       if(data) {
-        console.log("this channel already exist in database")
+        console.log('this channel already exist in database')
       } else {
         this.channelService.getDataFromTwitchApi(this.submittedChannel).subscribe(data => {
           if(data.status == '404') {
@@ -97,7 +97,7 @@ export class ChannelsDashboardComponent implements OnInit {
               this.ngOnInit();
             })
           }
-        }, error1 => console.log("Channel not found " + error1.toString()))
+        }, error1 => console.log('Channel not found ' + error1.toString()))
       }
     });
   }

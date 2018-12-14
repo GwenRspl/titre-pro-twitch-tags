@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 
-import {ChannelsService} from "../../services/channels.service";
-import {Channel} from "../../shared/models/channel.model";
+import {ChannelsService} from '../../services/channels.service';
+import {Channel} from '../../shared/models/channel.model';
 
 @Component({
   selector: 'app-submit-channel',
@@ -42,7 +42,7 @@ export class SubmitChannelComponent implements OnInit {
             })
           }
         }, error1 => {
-          console.log("Channel not found " + error1);
+          console.log('Channel not found ' + error1);
           this._error = true;
           this._message = 'This channel does not exist.';
         })

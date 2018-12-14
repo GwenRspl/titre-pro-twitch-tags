@@ -1,14 +1,14 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot, Data, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 
 import {Channel} from '../../shared/models/channel.model';
-import {Tag} from "../../shared/models/tag.model";
-import {TagsService} from "../../services/tags.service";
-import {LinkTagChannelUserInfo} from "../../services/link-tag-channel-user-info";
-import {User} from "../../shared/models/user.model";
-import {TokenStorageService} from "../../auth/token-storage.service";
-import {UsersService} from "../../services/users.service";
+import {Tag} from '../../shared/models/tag.model';
+import {TagsService} from '../../services/tags.service';
+import {LinkTagChannelUserInfo} from '../../services/link-tag-channel-user-info';
+import {User} from '../../shared/models/user.model';
+import {TokenStorageService} from '../../auth/token-storage.service';
+import {UsersService} from '../../services/users.service';
 import {TagItemService} from '../../services/tag-item.service';
 import {TagItem} from '../../shared/models/tag-item.model';
 import {ChannelsService} from '../../services/channels.service';

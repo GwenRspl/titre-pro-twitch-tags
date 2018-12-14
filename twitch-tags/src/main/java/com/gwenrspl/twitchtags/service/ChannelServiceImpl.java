@@ -1,7 +1,6 @@
 package com.gwenrspl.twitchtags.service;
 
 import com.gwenrspl.twitchtags.model.Channel;
-import com.gwenrspl.twitchtags.model.ChannelTagUserLink;
 import com.gwenrspl.twitchtags.model.Tag;
 import com.gwenrspl.twitchtags.repository.ChannelRepository;
 import org.springframework.stereotype.Service;
@@ -42,7 +41,6 @@ public class ChannelServiceImpl implements ChannelService {
         List<Long> channelIds = new ArrayList<>();
         this.linkService.findByTag(tag.getId()).stream()
                 .forEach(link -> channelIds.add(link.getChannel().getId()));
-
         return this.repository.findAllById(channelIds);
     }
 

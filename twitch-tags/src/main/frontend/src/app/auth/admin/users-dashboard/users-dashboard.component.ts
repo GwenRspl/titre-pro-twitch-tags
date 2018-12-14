@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../../../shared/models/user.model";
-import {UsersService} from "../../../services/users.service";
-import {Router} from "@angular/router";
-import {TokenStorageService} from "../../token-storage.service";
+import {User} from '../../../shared/models/user.model';
+import {UsersService} from '../../../services/users.service';
+import {TokenStorageService} from '../../token-storage.service';
 
 @Component({
   selector: 'app-users-dashboard',

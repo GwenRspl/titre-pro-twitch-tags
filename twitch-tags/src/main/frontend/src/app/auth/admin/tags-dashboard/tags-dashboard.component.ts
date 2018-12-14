@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Tag} from "../../../shared/models/tag.model";
-import {Router} from "@angular/router";
-import {TagsService} from "../../../services/tags.service";
+import {Tag} from '../../../shared/models/tag.model';
+import {Router} from '@angular/router';
+import {TagsService} from '../../../services/tags.service';
 
 @Component({
   selector: 'app-tags-dashboard',

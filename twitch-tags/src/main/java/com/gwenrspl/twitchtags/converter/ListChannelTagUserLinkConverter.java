@@ -35,31 +35,24 @@ public class ListChannelTagUserLinkConverter extends StdConverter<List<ChannelTa
         public Long getId() {
             return this.id;
         }
-
         public void setId(final Long id) {
             this.id = id;
         }
-
         public String getChannelName() {
             return this.channelName;
         }
-
         public void setChannelName(final String channelName) {
             this.channelName = channelName;
         }
-
         public String getTagName() {
             return this.tagName;
         }
-
         public void setTagName(final String tagName) {
             this.tagName = tagName;
         }
-
         public String getUsername() {
             return this.username;
         }
-
         public void setUsername(final String username) {
             this.username = username;
         }
