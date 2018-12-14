@@ -62,7 +62,19 @@ FRONT: feature : composan & service necessaire à fonctionnalitée, core : compo
 
 
 Fonctionnalité
+	- back : entité et repository
+JPA : Java Persistence API
+ORM : Object Relational Mapping
+propose un langage similaire à SQL mais utilisant des objets plutôt que des entités relationnelles
+repository abstrait l’accès aux données
+couche d’interaction avec les modèles 
+opérations avec la base de données
+	- back: service
+couche faisant communiquer le controller et le repository
+logique métier
+récupère les données du controller, applique des validations et la logique métier, appelle le repository pour la manipulatino de données
 	- back : controller
+couche contenant la logique de l’application
 fournit un standard pour interagir avec l’API
 reçoit des requêtes et fournit des réponses
 	-front: consommation api (service & composant)
@@ -96,6 +108,13 @@ concevoir la base de données et ses relations
 
 Merci de votre attention
 
+_________________________________________________________
+
+Securité OWASP top 10
+Injection sql, CRLF (cariage return line, LDAP
+sensitive data exposure > jsonignore password, encrypted
+XSS (cross-site scripting) > input validation
+component with known vulnerabilities
 
 
 
